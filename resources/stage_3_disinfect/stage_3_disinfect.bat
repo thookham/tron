@@ -93,7 +93,14 @@ if /i %SKIP_MBAM_INSTALL%==yes (
 	call functions\log_with_date.bat "   Launch job 'Install Malwarebytes Anti-Malware'..."
 	:: Install MBAM and remove desktop icon
 	if /i %DRY_RUN%==no (
-		"stage_3_disinfect\mbam\mb3-setup-54035.54035-3.6.1.2711-1.0.482-1.0.7469.exe" /SP- /VERYSILENT /NORESTART /SUPPRESSMSGBOXES /NOCANCEL /NOICON
+		:: Look for any exe in the mbam folder that looks like an installer
+		if exist "stage_3_disinfect\mbam\mbam-setup.exe" (
+			"stage_3_disinfect\mbam\mbam-setup.exe" /SP- /VERYSILENT /NORESTART /SUPPRESSMSGBOXES /NOCANCEL /NOICON
+		) else (
+			for %%i in ("stage_3_disinfect\mbam\mb3-setup*.exe") do (
+				"%%i" /SP- /VERYSILENT /NORESTART /SUPPRESSMSGBOXES /NOCANCEL /NOICON
+			)
+		)
 
 		:: Nuke MBAM which arrogantly auto-starts even though we didn't request it
 		net stop mbamservice >> "%LOGPATH%\%LOGFILE%" 2>NUL
