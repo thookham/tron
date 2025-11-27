@@ -96,18 +96,13 @@ for %%i in (%*) do ( if /i %%i==-h ( call :display_help && exit /b 0) )
 :: Parse command-line switches. If used these will override related settings specified in tron_settings.bat.
 call :parse_cmdline_args %*
 
-:: INTERNAL PREP: Check for missing tools and offer to download them
+:: INTERNAL PREP: Check for missing tools and automatically download them
 if /i %DRY_RUN%==no (
     if not exist "resources\stage_3_disinfect\mbam\mbam-setup.exe" (
         if not exist "resources\stage_3_disinfect\mbam\mb3-setup*.exe" (
             echo.
-            echo  ! Missing third-party tools detected.
-            echo    Tron can automatically download them for you.
-            echo.
-            set /p CHOICE= Download missing tools now? [Y/n]:
-            if /i not "!CHOICE!"=="n" (
-                powershell -NoProfile -ExecutionPolicy Bypass -File "resources\functions\fetch_tools.ps1"
-            )
+            echo  ! Missing third-party tools detected. Attempting silent download...
+            powershell -NoProfile -ExecutionPolicy Bypass -File "resources\functions\fetch_tools.ps1"
         )
     )
 )
