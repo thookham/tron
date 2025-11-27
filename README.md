@@ -570,23 +570,24 @@ Tron updates these programs if they exist on the system. If a program does not a
 3.  **upload debug logs**: Upload 'tron.log' and the system GUID dump (list of all installed program GUIDs) and Metro app list dump to the Tron developer (vocatus). Please use this option if possible, log files are extremely helpful in developing Tron! NOTE: `tron.log` can contain personal information like names of files on the system, the computer name, user name, etc, so if you're concerned about this please look through a Tron log first to understand what will be sent. I don't care what files are on random systems on the Internet, but just something to be aware of
 4.  **Remove Malwarebytes**: Automatically remove the Malwarebytes installation. Use the `-pmb` switch to skip this and leave it on the system
 
-## STAGE 8: Custom Scripts
+## STAGE 8: Custom Scripts & Automated Tools
 
-*stage-specific code is in [tron.bat](https://github.com/bmrf/tron/blob/master/tron.bat)*
+*[stage-specific code is in [tron.bat](https://github.com/bmrf/tron/blob/master/tron.bat)*
 
-1.  **Execute custom scripts**: Tron will execute any `.bat` files placed in the `\tron\resources\stage_8_custom_scripts` directory. See [Executing Custom/3rd-party Scripts](#executing-3rd-party-custom-scripts) above for more information
+1.  **Execute custom scripts**: Tron will execute any `.bat` files placed in the `\tron\resources\stage_8_custom_scripts` directory. See [Executing Custom/3rd-party Scripts](#executing-3rd-party-custom-scripts) above for more information.
 
-## STAGE 9: Manual tools
+### On-Demand Tools
 
-Tron does not run these automatically because most do not support command-line use, or are only useful in special cases.
+You can also use this stage to run "On-Demand" tools that you don't want to permanently bundle with Tron. We provide a helper script `fetch_external_tool.bat` that can:
+1.  **Download** a tool from a URL.
+2.  **Run** it (silently, if flags are provided).
+3.  **Delete** it after execution to keep the system clean.
 
-1.  **[ADSSpy](http://www.bleepingcomputer.com/download/ads-spy/)**: Scans for hidden NTFS Alternate Data Streams
-2.  **[aswMBR](http://public.avast.com/~gmerek/aswMBR.htm)**: Rootkit scanner
-3.  **[autoruns](https://technet.microsoft.com/en-us/sysinternals/bb963902.aspx)**: Examine and remove programs that run at startup
-4.  **[ComboFix](http://www.bleepingcomputer.com/download/combofix/)**: The "scorched-earth policy" of malware removal. Only works on Windows XP through Windows 8 (no Windows 8.1 or above)
-5.  **[Junkware Removal Tool](http://thisisudax.org/)**: Temp file and random junkware remover
-6.  **[Net Adapter Repair](http://www.bleepingcomputer.com/download/netadapter-repair-all-in-one/)**: Utility to repair most aspects of Windows network connections
-7.  **Remote Support Reboot Config**: Tool to quickly configure auto-login and other parameters for running Tron via a remote connection. Thanks to reddit.com/user/cuddlychops06
-8.  **Safe Mode Boot Selector.bat**: Batch file to quickly select bootup method to use (Safe Mode, Network, etc). Thanks to reddit.com/user/cuddlychops06
-9.  **ServicesRepair.exe**: ESET utility for fixing broken Windows services
-10. **Tron Reset Tool**: Tool to quickly reset Tron if it gets interrupted or breaks while running
+**Example**:
+To run **Sysinternals Autoruns** automatically:
+1.  Rename `\resources\stage_8_custom_scripts\example_autoruns.bat.example` to `example_autoruns.bat`.
+2.  Tron will now automatically download `autorunsc.exe`, run a scan, save the log, and delete the executable.
+
+You can create your own wrapper scripts for other tools (e.g., Emsisoft Emergency Kit, HitmanPro) using this same pattern.
+
+

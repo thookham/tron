@@ -102,7 +102,7 @@ if /i %DRY_RUN%==no (
         if not exist "resources\stage_3_disinfect\mbam\mb3-setup*.exe" (
             echo.
             echo  ! Missing third-party tools detected. Attempting silent download...
-            powershell -NoProfile -ExecutionPolicy Bypass -File "resources\functions\fetch_tools.ps1"
+            call resources\functions\fetch_tools.bat
         )
     )
 )
@@ -332,7 +332,6 @@ echo  *  6 Optimize:  defrag %SystemDrive% (mechanical only, SSDs skipped)      
 echo  *  7 Wrap-up:   collect logs, send email report (if requested)        *
 echo  *  8 Custom:    If present, execute user-provided custom scripts      *
 echo  *                                                                     *
-echo  * \tron\resources\stage_9_manual_tools contains other useful utils    *
 echo  ***********************************************************************
 :: So ugly
 echo  Current settings (run tron.bat -c to dump full config):
@@ -637,7 +636,7 @@ stage_0_prep\caffeine\caffeine.exe -appexit
 
 :: Notify of Tron completion
 title Tron v%TRON_VERSION% (%TRON_DATE%) [DONE]
-call functions\log_with_date.bat "  TRON RUN COMPLETE. Use \resources\stage_9_manual_tools if further action is required."
+call functions\log_with_date.bat "  TRON RUN COMPLETE."
 
 
 :: Check if auto-reboot was requested
