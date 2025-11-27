@@ -33,29 +33,29 @@ set PRERUN_CHECKS_SCRIPT_DATE=2020-03-04
 :: Skip this check if we're in Safe Mode because Safe Mode command prompts always start with Admin rights
 SETLOCAL ENABLEDELAYEDEXPANSION
 if /i not "%SAFE_MODE%"=="yes" (
+	if /i not "%DEV_MODE%"=="yes" (
+		%REG% query "HKU\S-1-5-19\Environment" > NUL
+	
+		REM Alternate method
+		REM fsutil dirty query %systemdrive% >NUL 2>&1
 	
 	
-	%REG% query "HKU\S-1-5-19\Environment" > NUL
-	
-	REM Alternate method
-	REM fsutil dirty query %systemdrive% >NUL 2>&1
-	
-	
-	if /i not !ERRORLEVEL!==0 (
-		color cf
-		cls
-		echo.
-		echo  ERROR
-		echo.
-		echo  Tron doesn't think it is running as an Administrator.
-		echo  Tron MUST be run with full Administrator rights to
-		echo  function correctly.
-		echo.
-		echo  Close this window and re-run Tron as an Administrator.
-		echo  ^(right-click tron.bat and click "Run as Administrator"^)
-		echo.
-		pause
-		exit 1
+		if /i not !ERRORLEVEL!==0 (
+			color cf
+			cls
+			echo.
+			echo  ERROR
+			echo.
+			echo  Tron doesn't think it is running as an Administrator.
+			echo  Tron MUST be run with full Administrator rights to
+			echo  function correctly.
+			echo.
+			echo  Close this window and re-run Tron as an Administrator.
+			echo  ^(right-click tron.bat and click "Run as Administrator"^)
+			echo.
+			pause
+			exit 1
+		)
 	)
 )
 ENDLOCAL DISABLEDELAYEDEXPANSION

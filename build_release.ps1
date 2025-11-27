@@ -6,8 +6,8 @@
     into a .zip file and, if 7-Zip is available, a self-extracting .exe.
 #>
 
-$Version = "13.0.0"
-$ReleaseDate = "2025-11-26"
+$Version = "13.1.0"
+$ReleaseDate = "2025-11-27"
 $OutputDir = Join-Path $PSScriptRoot "releases"
 $SourceFiles = @("tron.bat", "resources", "README.md", "LICENSE", "changelog.txt")
 
@@ -41,7 +41,8 @@ if (-not $7zPath) {
     try {
         $7zPath = (Get-Command "7z" -ErrorAction Stop).Source
         $7zSfxPath = Join-Path (Get-Item $7zPath).Directory.FullName "7z.sfx"
-    } catch {
+    }
+    catch {
         Write-Warning "7-Zip not found. SFX (.exe) creation will be skipped."
     }
 }
@@ -62,7 +63,8 @@ foreach ($item in $SourceFiles) {
     $itemPath = Join-Path $PSScriptRoot $item
     if (Test-Path $itemPath) {
         Copy-Item -Path $itemPath -Destination $TronStageDir -Recurse -Force
-    } else {
+    }
+    else {
         Write-Warning "Source file not found: $item"
     }
 }
@@ -116,7 +118,8 @@ if ($7zPath -and (Test-Path $7zSfxPath)) {
     $OutputStream.Close()
     
     Write-Host "SFX EXE package created successfully." -ForegroundColor Green
-} elseif ($7zPath -and -not (Test-Path $7zSfxPath)) {
+}
+elseif ($7zPath -and -not (Test-Path $7zSfxPath)) {
     Write-Warning "7-Zip found but '7z.sfx' module is missing. Skipping EXE creation."
 }
 
