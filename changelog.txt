@@ -15,6 +15,15 @@ Version legend:
 
 
 #########################
+# v13.0.0 // 2025-11-26 #
+#########################
+ * Modernization Fork
+     + Refactored README.md with emojis and improved formatting
+     + Updated LICENSE copyright year to 2014-2025 and removed specific author name
+     + Added "Modernization Fork" section to README
+     + Edits powered by Google Gemini Antigravity
+
+#########################
 # v12.0.9 // 2025-01-09 #
 #########################
  . tron.bat                        v1.2.3
