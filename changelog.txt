@@ -24,6 +24,8 @@ Version legend:
      + Refactored all PowerShell calls to be OS-aware (skipped on XP/Vista)
      + Updated network detection to support XP
      + Ensured codebase remains pure Batch compatible
+     + Repository cleanup: Removed test extracts and Sandbox directories
+     + Privacy enhancements: Anonymized git history and removed personal metadata
 
 #########################
 # v13.0.0 // 2025-11-26 #

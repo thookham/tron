@@ -15,6 +15,7 @@ This modernized version includes several key improvements:
 -   **👴 Legacy Support**: Full support for **Windows XP** through **Windows 11**. Scripts automatically detect the OS and use appropriate methods (PowerShell for modern, VBScript/Batch for legacy).
 -   **🌐 Improved Detection**: Network and OS detection logic has been updated to be more reliable on modern Windows versions (10/11) and non-English systems.
 -   **🛡️ Safety Checks**: Added explicit checks to prevent running in incompatible environments (e.g., Windows Terminal), ensuring a safer execution flow.
+-   **🔒 Privacy Focused**: Repository has been scrubbed of personal metadata and git history anonymized for privacy.
 
 ---
 
