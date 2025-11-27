@@ -1,6 +1,6 @@
 | NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| ORIGINAL AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (`vocatus.gate@gmail`) // PGP: [0x07d1490f82a211a2](http://pool.sks-keyservers.net:11371/pks/lookup?op=get&search=0x07D1490F82A211A2) |
+| ORIGINAL AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (`vocatus.gate@gmail`) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # 🚀 MODERNIZATION FORK
@@ -48,11 +48,9 @@ If you clone this repository, you have a "skeleton" of Tron. You can run it as-i
 6.  [Changing Defaults](#-changing-defaults-advanced)
 7.  [Executing custom/3rd-party Scripts](#-executing-3rd-party-custom-scripts)
 8.  [Executing bundled WSUS Offline updates](#-executing-bundled-wsus-offline-updates)
-9.  [Pack Integrity](#-pack-integrity)
-10. [License](#-license)
-11. [Problems and Support](#-problems-and-support)
-12. [Script exit codes](#-script-exit-codes)
-13. [Full description of ALL actions](#-full-tron-description)
+9.  [License](#-license)
+10. [Script exit codes](#-script-exit-codes)
+11. [Full description of ALL actions](#-full-tron-description)
 
 ---
 
@@ -400,11 +398,6 @@ If for some reason you want to skip the bundled update package on a certain syst
 
 ---
 
-# 🔒 PACK INTEGRITY
-
-In each release, the file `\tron\integrity_verification\checksums.txt` contains SHA-256 hashes of *every* file included in Tron, and is signed with [my PGP key](http://pool.sks-keyservers.net:11371/pks/lookup?op=get&search=0x07D1490F82A211A2) (`0x07d1490f82a211a2`, included). You can use it to verify package integrity.
-
----
 
 # ⚖️ LICENSE
 
@@ -412,20 +405,6 @@ Tron and any included subscripts and `.reg` files I've written are free to use/r
 
 ---
 
-# ❓ PROBLEMS AND SUPPORT
-
-Please look [here](https://old.reddit.com/r/TronScript/wiki/index#wiki_cq_.28common_questions.29) first for a list of common issues (Tron appearing to be stalled, etc). If it doesn't answer your issue, make a top-level post to [r/TronScript](https://old.reddit.com/r/TronScript) and myself or one of the community members will look at the issue. Additionally, you can reach me 24/7 [on Keybase](https://keybase.io/vocatus).
-
-Hope this is helpful to other PC techs,
-
-– Vocatus
-
-If you feel overly charitable, donations are accepted at these addresses:
-
--   **Bitcoin**: `1Biw8gx2kD7mZf66ZdNgB9tG1pE9YA3kEd`
--   **Bitcoin Cash**: `18sXTTrAViPZVQtm63zBK6aCK3XfJpEThk`
-
----
 
 # 🔢 SCRIPT EXIT CODES
 
