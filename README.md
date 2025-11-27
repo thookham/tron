@@ -9,9 +9,17 @@ This fork of Tron has been modernized to improve robustness and reduce external 
 - **Improved Detection**: Network and OS detection logic has been updated to be more reliable on modern Windows versions (10/11) and non-English systems.
 - **Safety Checks**: Added explicit checks to prevent running in incompatible environments (e.g., Windows Terminal).
 
-# DO NOT DOWNLOAD TRON FROM GITHUB, IT WILL NOT WORK!! YOU NEED THE ENTIRE PACKAGE FROM [r/TronScript](https://old.reddit.com/r/TronScript)
+# RUNNING FROM SOURCE (DIY MODE)
+This repository contains the logic and scripts for Tron, but **does not include the third-party binaries** (e.g., Malwarebytes, Kaspersky, CCleaner) due to size and licensing restrictions.
 
-I got tired of running these utilities manually and decided to just script everything. Tron is a glorified collection of batch files that automate the process of cleaning up and disinfecting Windows machines ([Common Questions](https://www.reddit.com/r/TronScript/wiki/index#wiki_cq_.28common_questions.29)). It is built with heavy reliance on community input, and updated regularly.
+If you clone this repository, you have a "skeleton" of Tron. You can run it as-is, and it will skip the missing tools, or you can manually populate the `resources` directory with the necessary executables to fully enable all stages.
+
+**To run from source:**
+1.  Clone the repository.
+2.  (Optional) Download tools like Malwarebytes, Kaspersky Virus Removal Tool, etc., and place them in their respective folders under `resources\stage_X...`.
+3.  Run `tron.bat` as Administrator.
+
+*Note: The official "full" package available on r/TronScript is simply this script bundled with all these tools pre-downloaded for convenience.*
 
 # CONTENTS
 1. [Usage Summary](#use)
