@@ -1,5 +1,5 @@
 # fetch_tools.ps1
-# Downloads missing third-party tools for Tron
+# Downloads missing third-party tools for Tron silently
 
 $ErrorActionPreference = "Stop"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -28,8 +28,6 @@ $Tools = @(
     }
 )
 
-Write-Host "Checking for missing tools..." -ForegroundColor Cyan
-
 foreach ($Tool in $Tools) {
     if (-not (Test-Path $Tool.DestDir)) {
         New-Item -ItemType Directory -Path $Tool.DestDir -Force | Out-Null
@@ -38,18 +36,11 @@ foreach ($Tool in $Tools) {
     $DestPath = Join-Path $Tool.DestDir $Tool.FileName
 
     if (-not (Test-Path $DestPath)) {
-        Write-Host "Downloading $($Tool.Name)..." -ForegroundColor Yellow
         try {
             Invoke-WebRequest -Uri $Tool.Url -OutFile $DestPath -UserAgent "Tron-Downloader"
-            Write-Host "  Done." -ForegroundColor Green
         }
         catch {
-            Write-Host "  Failed to download $($Tool.Name): $_" -ForegroundColor Red
+            # Silent failure
         }
     }
-    else {
-        Write-Host "$($Tool.Name) already exists." -ForegroundColor Gray
-    }
 }
-
-Write-Host "Tool check complete." -ForegroundColor Cyan

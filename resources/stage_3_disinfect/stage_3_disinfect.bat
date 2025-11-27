@@ -165,5 +165,23 @@ if /i %SKIP_KASPERSKY_SCAN%==yes (
 
 
 
+:: Cleanup
+call functions\log_with_date.bat "   Cleaning up..."
+
+:: Uninstall MBAM if we installed it (and it wasn't already there)
+if /i "%EXISTING_MBAM%"=="no" (
+    call functions\log_with_date.bat "   Uninstalling Malwarebytes..."
+    if exist "%ProgramFiles%\Malwarebytes\Anti-Malware\unins000.exe" (
+        "%ProgramFiles%\Malwarebytes\Anti-Malware\unins000.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+    )
+)
+
+:: Delete downloaded tools (to ensure fresh download next time and save space)
+if exist "stage_3_disinfect\malwarebytes_adwcleaner\adwcleaner.exe" del /f /q "stage_3_disinfect\malwarebytes_adwcleaner\adwcleaner.exe"
+if exist "stage_3_disinfect\kaspersky_virus_removal_tool\KVRT.exe" del /f /q "stage_3_disinfect\kaspersky_virus_removal_tool\KVRT.exe"
+if exist "stage_3_disinfect\mbam\mbam-setup.exe" del /f /q "stage_3_disinfect\mbam\mbam-setup.exe"
+
+call functions\log_with_date.bat "   Done."
+
 :: Stage complete
 call functions\log_with_date.bat "  stage_3_disinfect complete."

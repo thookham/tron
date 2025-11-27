@@ -17,7 +17,9 @@ If you clone this repository, you have a "skeleton" of Tron. You can run it as-i
 **To run from source:**
 1.  Clone the repository.
 2.  Run `tron.bat` as Administrator.
-3.  **Automatic Download**: If Tron detects that third-party tools (Malwarebytes, Kaspersky, etc.) are missing, it will prompt you to automatically download them.
+3.  **Automatic Tool Management**:
+    -   **Silent Download**: If Tron detects that third-party tools (Malwarebytes, Kaspersky, etc.) are missing, it will automatically download them in the background without prompting.
+    -   **Transient Execution**: Tools are installed/run for the duration of the scan and then **automatically uninstalled/deleted** afterwards to keep your system clean.
     -   *Note*: This requires an active internet connection.
     -   *Privacy*: Tools are downloaded directly from their official vendor URLs.
 
