@@ -55,7 +55,9 @@ if /i "%LOGFILE%"=="" (
 :::::::::::::::::::::::
 
 :: wget sha256sums.txt from the repo
-stage_0_prep\check_update\wget.exe --user-agent="Tron-Update-Checker/%TRON_VERSION% (%WIN_VER%)" %REPO_URL%/sha256sums.txt -O "%TEMP%\sha256sums.txt" 2>NUL
+:: Download sha256sums.txt using PowerShell
+powershell -NoProfile -Command "try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '%REPO_URL%/sha256sums.txt' -OutFile '%TEMP%\sha256sums.txt' -UserAgent 'Tron-Update-Checker/%TRON_VERSION% (%WIN_VER%)' -ErrorAction Stop } catch { exit 1 }"
+
 :: Assuming there was no error, go ahead and extract version number into REPO_TRON_VERSION, and release date into REPO_TRON_DATE
 :: We use usebackq here to allow us to quote-wrap the path to sha256sums.txt to properly handle usernames with special characters ( c:\users\rose&emma\appdata\.. etc )
 if /i %ERRORLEVEL%==0 (
@@ -105,6 +107,8 @@ if /i %TRON_VERSION:.=% LSS %REPO_TRON_VERSION:.=% (
 	echo    Option 3: Automatically download latest .exe to the desktop
 	echo              ^(This copy of Tron will self-destruct afterwards^)
 	echo.
+	echo    Option 4: Skip update
+	echo.
 	set /p CHOICE= Auto-download latest version now? [Y/n]:
 	if /i !CHOICE!==y (
 		color 8B
@@ -112,32 +116,52 @@ if /i %TRON_VERSION:.=% LSS %REPO_TRON_VERSION:.=% (
 		echo.
 		echo %TIME%   Downloading new version to the desktop, please wait...
 		echo.
-		stage_0_prep\check_update\wget.exe --user-agent="Tron-Update-Downloader/%TRON_VERSION% (%WIN_VER%)" "%REPO_URL%/Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe" -O "%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe"
-		echo.
-		echo %TIME%   Download finished.
-		echo.
-		echo %TIME%   Verifying SHA256 pack integrity, please wait...
-		echo.
-		stage_0_prep\check_update\hashdeep.exe -s -e -b -v -a -k "%TEMP%\sha256sums.txt" "%USERPROFILES%\%USERNAME%\Desktop\Tron*.exe" | %FIND% /i "Files matched: 1"
+		powershell -NoProfile -Command "try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '%REPO_URL%/Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe' -OutFile '%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe' -UserAgent 'Tron-Update-Downloader/%TRON_VERSION% (%WIN_VER%)' -ErrorAction Stop } catch { exit 1 }"
+		
 		if !ERRORLEVEL!==0 (
-			color 2f
-			echo %TIME%   SHA256 pack integrity verified. The new version is on your desktop.
 			echo.
-			echo %TIME%   This copy of Tron will now self-destruct.
+			echo %TIME%   Download finished.
 			echo.
-			popd
-			pause
-			echo. && ENDLOCAL DISABLEDELAYEDEXPANSION && set NUKE_OLD_VERSION=yes
+			echo %TIME%   Verifying SHA256 pack integrity, please wait...
+			echo.
+			
+			:: Calculate hash of downloaded file
+			for /f "skip=1 tokens=* delims=" %%# in ('certutil -hashfile "%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe" SHA256') do (
+				if not defined FILE_HASH set FILE_HASH=%%#
+			)
+			:: Remove spaces from hash
+			set FILE_HASH=!FILE_HASH: =!
+			
+			:: Get expected hash from sha256sums.txt
+			findstr /c:"Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe" "%TEMP%\sha256sums.txt" > "%TEMP%\expected_hash_line.txt"
+			for /f "tokens=1" %%h in ("%TEMP%\expected_hash_line.txt") do set EXPECTED_HASH=%%h
+			
+			if /i "!FILE_HASH!"=="!EXPECTED_HASH!" (
+				color 2f
+				echo %TIME%   SHA256 pack integrity verified. The new version is on your desktop.
+				echo.
+				echo %TIME%   This copy of Tron will now self-destruct.
+				echo.
+				popd
+				pause
+				echo. && ENDLOCAL DISABLEDELAYEDEXPANSION && set NUKE_OLD_VERSION=yes
+			) else (
+				color 0c
+				echo %TIME% ^^! ERROR: Download FAILED the integrity check. Recommend manually
+				echo                      downloading latest version. Will delete failed file and
+				echo                      exit.
+				echo.
+				pause
+				REM Clean up after ourselves
+				del /f /q "%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe"
+				del /f /q "%TEMP%\sha256sums.txt"
+				exit /b 1
+			)
 		) else (
 			color 0c
-			echo %TIME% ^^! ERROR: Download FAILED the integrity check. Recommend manually
-			echo                      downloading latest version. Will delete failed file and
-			echo                      exit.
+			echo %TIME% ^^! ERROR: Download failed.
 			echo.
 			pause
-			REM Clean up after ourselves
-			del /f /q "%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe"
-			del /f /q "%TEMP%\sha256sums.txt"
 			exit /b 1
 		)
 	)
@@ -146,6 +170,7 @@ if /i %TRON_VERSION:.=% LSS %REPO_TRON_VERSION:.=% (
 ENDLOCAL DISABLEDELAYEDEXPANSION
 :: Clean up after ourselves
 if exist "%TEMP%\*sums.txt" del "%TEMP%\*sums.txt"
+if exist "%TEMP%\expected_hash_line.txt" del "%TEMP%\expected_hash_line.txt"
 
 
 :: Blow away the old version if we downloaded a new version

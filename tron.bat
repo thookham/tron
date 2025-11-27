@@ -64,6 +64,19 @@ color 0f
 set SCRIPT_VERSION=1.2.3
 set SCRIPT_DATE=2024-03-09
 
+:: Check for Windows Terminal
+if defined WT_SESSION (
+    color 0c
+    echo.
+    echo  ERROR
+    echo.
+    echo  Tron does not work correctly in Windows Terminal.
+    echo  Please run this script using the legacy Command Prompt ^(cmd.exe^).
+    echo.
+    pause
+    exit /b 1
+)
+
 :: Get in the correct drive (~d0) and path (~dp0). Sometimes needed when run from a network or thumb drive.
 :: We stay in the \resources directory for the rest of the script
 %~d0 2>NUL
@@ -463,6 +476,7 @@ if /i "%SAFE_MODE%"=="yes" (
 echo stage_0_prep>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_0_prep]
 call stage_0_prep\stage_0_prep.bat
+if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 0 failed with error code %ERRORLEVEL%"
 
 
 
@@ -474,6 +488,7 @@ call stage_0_prep\stage_0_prep.bat
 echo stage_1_tempclean>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_1_tempclean]
 call stage_1_tempclean\stage_1_tempclean.bat
+if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 1 failed with error code %ERRORLEVEL%"
 
 
 
@@ -486,6 +501,7 @@ echo stage_2_de-bloat>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_2_de-bloat]
 if /i %SKIP_DEBLOAT%==no (
 	call stage_2_de-bloat\stage_2_de-bloat.bat
+	if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 2 failed with error code %ERRORLEVEL%"
 ) else (
 	call functions\log_with_date.bat "! SKIP_DEBLOAT (-sdb) set, skipping Stage 2..."
 )
@@ -501,6 +517,7 @@ echo stage_3_disinfect>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_3_disinfect]
 if /i %SKIP_ANTIVIRUS_SCANS%==no (
 	call stage_3_disinfect\stage_3_disinfect.bat
+	if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 3 failed with error code %ERRORLEVEL%"
 ) else (
 	call functions\log_with_date.bat "! SKIP_ANTIVIRUS_SCANS (-sa) set. Skipping Stage 3 (AdwCleaner, KVRT, MBAM)."
 )
@@ -518,6 +535,7 @@ call :set_cur_date
 echo stage_4_repair>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_4_repair]
 call stage_4_repair\stage_4_repair.bat
+if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 4 failed with error code %ERRORLEVEL%"
 
 :: Set current date again, since Stage 4 can take quite a while to run
 call :set_cur_date
@@ -532,6 +550,7 @@ call :set_cur_date
 echo stage_5_patch>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_5_patch]
 call stage_5_patch\stage_5_patch.bat
+if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 5 failed with error code %ERRORLEVEL%"
 
 
 
@@ -543,6 +562,7 @@ call stage_5_patch\stage_5_patch.bat
 echo stage_6_optimize>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_6_optimize]
 call stage_6_optimize\stage_6_optimize.bat
+if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 6 failed with error code %ERRORLEVEL%"
 
 
 
@@ -554,6 +574,7 @@ call stage_6_optimize\stage_6_optimize.bat
 echo stage_7_wrap-up>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_7_wrap-up]
 call stage_7_wrap-up\stage_7_wrap-up.bat
+if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 7 failed with error code %ERRORLEVEL%"
 
 
 
