@@ -298,19 +298,28 @@ if /i %TARGET_METRO%==yes (
 		if /i "%SAFE_MODE%"=="yes" %REG% add "HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\%SAFEBOOT_OPTION%\AppXSVC" /ve /t reg_sz /d Service /f >nul 2>&1
 		net start AppXSVC >nul 2>&1
 		REM Enable scripts in PowerShell
-		powershell "Set-ExecutionPolicy Unrestricted -force 2>&1 | Out-Null"
+		powershell -command "exit" >nul 2>&1
+		if %errorlevel% equ 0 (
+			powershell "Set-ExecutionPolicy Unrestricted -force 2>&1 | Out-Null"
+		)
 
 		REM Windows 8/8.1 version
 		if /i "%WIN_VER:~0,9%"=="Windows 8" (
 			REM In Windows 8/8.1 we can blast ALL AppX/Metro/"Modern App" apps because unlike in Windows 10, the "core" apps (calculator, paint, etc) aren't in the "modern" format
-			start /wait powershell "Get-AppXProvisionedPackage -online | Remove-AppxProvisionedPackage -online 2>&1 | Out-Null"
-			start /wait powershell "Get-AppxPackage -AllUsers | Remove-AppxPackage 2>&1 | Out-Null"
+			powershell -command "exit" >nul 2>&1
+			if %errorlevel% equ 0 (
+				start /wait powershell "Get-AppXProvisionedPackage -online | Remove-AppxProvisionedPackage -online 2>&1 | Out-Null"
+				start /wait powershell "Get-AppxPackage -AllUsers | Remove-AppxPackage 2>&1 | Out-Null"
+			)
 		)
 		REM Windows 10 version
 		if /i "%WIN_VER:~0,9%"=="Windows 1" (
 			REM Call the external PowerShell scripts to do removal of Microsoft and 3rd party OEM Modern Apps
-			start /wait powershell -executionpolicy bypass -file ".\stage_2_de-bloat\metro\metro_3rd_party_modern_apps_to_target_by_name.ps1"
-			start /wait powershell -executionpolicy bypass -file ".\stage_2_de-bloat\metro\metro_Microsoft_modern_apps_to_target_by_name.ps1"
+			powershell -command "exit" >nul 2>&1
+			if %errorlevel% equ 0 (
+				start /wait powershell -executionpolicy bypass -file ".\stage_2_de-bloat\metro\metro_3rd_party_modern_apps_to_target_by_name.ps1"
+				start /wait powershell -executionpolicy bypass -file ".\stage_2_de-bloat\metro\metro_Microsoft_modern_apps_to_target_by_name.ps1"
+			)
 		)
 	)
 	call functions\log_with_date.bat "   Done."

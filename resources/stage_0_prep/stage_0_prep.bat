@@ -101,14 +101,23 @@ if %WIN_VER_NUM% geq 6.0 (
 	if %WIN_VER_NUM% geq 6.1 (
 		if /i %DRY_RUN%==no (
 			%REG% add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" /t reg_dword /v SystemRestorePointCreationFrequency /d 0 /f >nul 2>&1
-			powershell "Enable-ComputerRestore -Drive "%SystemDrive%" | Out-Null" >> "%LOGPATH%\%LOGFILE%" 2>&1
+			:: Check if PowerShell is available before running
+			powershell -command "exit" >nul 2>&1
+			if %errorlevel% equ 0 (
+				powershell "Enable-ComputerRestore -Drive "%SystemDrive%" | Out-Null" >> "%LOGPATH%\%LOGFILE%" 2>&1
+			)
 		)
 	)
 
 	REM Create the restore point
 	echo "%WIN_VER%" | findstr /i /c:"server" >NUL || (
 		call functions\log_with_date.bat "   Creating pre-run Restore Point..."
-		if /i %DRY_RUN%==no powershell "Checkpoint-Computer -Description 'TRON v%TRON_VERSION%: Pre-run checkpoint' | Out-Null" >> "%LOGPATH%\%LOGFILE%" 2>&1
+		if /i %DRY_RUN%==no (
+			powershell -command "exit" >nul 2>&1
+			if %errorlevel% equ 0 (
+				powershell "Checkpoint-Computer -Description 'TRON v%TRON_VERSION%: Pre-run checkpoint' | Out-Null" >> "%LOGPATH%\%LOGFILE%" 2>&1
+			)
+		)
 	)
 call functions\log_with_date.bat "   OK."
 )

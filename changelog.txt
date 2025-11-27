@@ -15,6 +15,17 @@ Version legend:
 
 
 #########################
+# v13.1.0 // 2025-11-27 #
+#########################
+  * XP Support & Batch Purity
+     + Added Windows XP support via VBScript/Ping polyfills
+     + Created resources\functions\download.bat (PowerShell/VBScript hybrid downloader)
+     + Created resources\functions\wait.bat (Timeout/Ping hybrid waiter)
+     + Refactored all PowerShell calls to be OS-aware (skipped on XP/Vista)
+     + Updated network detection to support XP
+     + Ensured codebase remains pure Batch compatible
+
+#########################
 # v13.0.0 // 2025-11-26 #
 #########################
  * Modernization Fork

@@ -3,7 +3,10 @@
 :: fetch_tools.bat
 :: Hybrid Batch/PowerShell script to download missing internal Tron tools.
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((Get-Content '%~f0') -join [Environment]::NewLine); Invoke-FetchTools"
+:: This script is now a wrapper for individual tool downloads
+:: For now, we'll just echo a warning that this legacy script is deprecated
+echo  ! This script is deprecated. Tools are now fetched on-demand or pre-bundled.
+exit /b 0
 goto :eof
 #>
 

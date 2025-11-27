@@ -11,7 +11,8 @@
 
 This modernized version includes several key improvements:
 
--   **🛠️ No External Dependencies**: `wget` and `hashdeep` have been replaced with native PowerShell and `certutil` commands, reducing the risk of broken downloads or compatibility issues.
+-   **🛠️ No External Dependencies**: `wget` and `hashdeep` have been replaced with native PowerShell, VBScript, and `certutil` commands, reducing the risk of broken downloads or compatibility issues.
+-   **👴 Legacy Support**: Full support for **Windows XP** through **Windows 11**. Scripts automatically detect the OS and use appropriate methods (PowerShell for modern, VBScript/Batch for legacy).
 -   **🌐 Improved Detection**: Network and OS detection logic has been updated to be more reliable on modern Windows versions (10/11) and non-English systems.
 -   **🛡️ Safety Checks**: Added explicit checks to prevent running in incompatible environments (e.g., Windows Terminal), ensuring a safer execution flow.
 

@@ -4,7 +4,12 @@
 :: Hybrid Batch/PowerShell script to download, run, and delete a tool.
 :: Usage: fetch_external_tool.bat -Url "..." -ToolName "..." [-Args "..."]
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((Get-Content '%~f0') -join [Environment]::NewLine); Invoke-ExternalTool %*"
+call "%~dp0download.bat" "%URL%" "%TOOL_PATH%"
+if %errorlevel% neq 0 (
+    echo  ^! Download failed.
+    exit /b 1
+)
+call "%TOOL_PATH%" %*
 goto :eof
 #>
 

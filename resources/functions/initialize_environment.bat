@@ -6,7 +6,7 @@
 @echo off
 
 :: Tron Project version and date. These two variables determine the overall project version and date
-set TRON_VERSION=13.0.0
+set TRON_VERSION=13.1.0
 set TRON_DATE=2025-11-26
 
 :: Set window title
@@ -139,8 +139,15 @@ set NETWORK_AVAILABLE=yes
 ping -n 1 8.8.8.8 >nul 2>&1
 if /i not %ERRORLEVEL%==0 (
     :: Fallback to checking for any active network adapter via PowerShell if ping fails (e.g. firewall)
-    powershell -NoProfile -Command "if ((Get-NetAdapter | Where-Object { $_.Status -eq 'Up' }).Count -eq 0) { exit 1 }" >nul 2>&1
-    if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+    :: Only run this check if PowerShell is available (Vista+)
+    powershell -command "exit" >nul 2>&1
+    if %errorlevel% equ 0 (
+        powershell -NoProfile -Command "if ((Get-NetAdapter | Where-Object { $_.Status -eq 'Up' }).Count -eq 0) { exit 1 }" >nul 2>&1
+        if /i not %errorlevel%==0 set NETWORK_AVAILABLE=no
+    ) else (
+        :: On XP, if ping failed, we assume no network
+        set NETWORK_AVAILABLE=no
+    )
 )
 
 

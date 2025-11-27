@@ -56,7 +56,8 @@ if /i "%LOGFILE%"=="" (
 
 :: wget sha256sums.txt from the repo
 :: Download sha256sums.txt using PowerShell
-powershell -NoProfile -Command "try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '%REPO_URL%/sha256sums.txt' -OutFile '%TEMP%\sha256sums.txt' -UserAgent 'Tron-Update-Checker/%TRON_VERSION% (%WIN_VER%)' -ErrorAction Stop } catch { exit 1 }"
+:: Download sha256sums.txt using download.bat polyfill
+call "%~dp0..\..\functions\download.bat" "%REPO_URL%/sha256sums.txt" "%TEMP%\sha256sums.txt"
 
 :: Assuming there was no error, go ahead and extract version number into REPO_TRON_VERSION, and release date into REPO_TRON_DATE
 :: We use usebackq here to allow us to quote-wrap the path to sha256sums.txt to properly handle usernames with special characters ( c:\users\rose&emma\appdata\.. etc )
@@ -116,7 +117,7 @@ if /i %TRON_VERSION:.=% LSS %REPO_TRON_VERSION:.=% (
 		echo.
 		echo %TIME%   Downloading new version to the desktop, please wait...
 		echo.
-		powershell -NoProfile -Command "try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '%REPO_URL%/Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe' -OutFile '%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe' -UserAgent 'Tron-Update-Downloader/%TRON_VERSION% (%WIN_VER%)' -ErrorAction Stop } catch { exit 1 }"
+		call "%~dp0..\..\functions\download.bat" "%REPO_URL%/Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe" "%USERPROFILES%\%USERNAME%\Desktop\Tron v%REPO_TRON_VERSION% (%REPO_TRON_DATE%).exe"
 		
 		if !ERRORLEVEL!==0 (
 			echo.
