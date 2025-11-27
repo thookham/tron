@@ -3,6 +3,12 @@
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (`vocatus.gate@gmail`) // PGP: [0x07d1490f82a211a2](http://pool.sks-keyservers.net:11371/pks/lookup?op=get&search=0x07D1490F82A211A2) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
+# MODERNIZATION FORK
+This fork of Tron has been modernized to improve robustness and reduce external dependencies.
+- **No External Dependencies**: `wget` and `hashdeep` have been replaced with native PowerShell and `certutil` commands.
+- **Improved Detection**: Network and OS detection logic has been updated to be more reliable on modern Windows versions (10/11) and non-English systems.
+- **Safety Checks**: Added explicit checks to prevent running in incompatible environments (e.g., Windows Terminal).
+
 # DO NOT DOWNLOAD TRON FROM GITHUB, IT WILL NOT WORK!! YOU NEED THE ENTIRE PACKAGE FROM [r/TronScript](https://old.reddit.com/r/TronScript)
 
 I got tired of running these utilities manually and decided to just script everything. Tron is a glorified collection of batch files that automate the process of cleaning up and disinfecting Windows machines ([Common Questions](https://www.reddit.com/r/TronScript/wiki/index#wiki_cq_.28common_questions.29)). It is built with heavy reliance on community input, and updated regularly.
@@ -44,6 +50,9 @@ I got tired of running these utilities manually and decided to just script every
 2. Tron can be run with Windows in either Safe Mode or Regular mode. Regular mode is generally recommended unless the system is severely infected.
 
 3. Right-click `tron.bat` and select "**Run as Administrator**"
+
+    > [!WARNING]
+    > **DO NOT RUN IN WINDOWS TERMINAL**. Tron is a legacy Batch script and is known to crash or fail when run inside the modern Windows Terminal. You **MUST** run it in the legacy Command Prompt (`conhost.exe`). If you launch it and it opens in Windows Terminal, please launch `cmd.exe` manually as Administrator and run Tron from there.
 
 4. Wait anywhere from **3-10 hours** (it really takes that long; do **not** cancel it in the middle of running)
 
