@@ -1,47 +1,40 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v1.2 (2014-07-07)                                                                          |
+| VERSION    | v1.3 (2014-07-10)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv1.2).**
+> **This is an archived version of Tron (vv1.3).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv1.2
+# ðŸ“‹ CHANGELOG FOR vv1.3
 
 
 
 
 ######################
-# v1.2 // 2014-07-07 #
+# v1.3 // 2014-07-10 #
 ######################
-tron.bat                           v1.2
- + stage_5_optimize:  Add detection of SSD drives. If drive is detected, post-run defrag is skipped. Thanks u/you_drown_now for help with this function.
- * stage_3_de-bloat:  Improve logic, logging, and robustness for WMIC removal section
- * tron.bat:          Improve overall logging, appearance and commenting. Add clarification screens for various Safe Mode states
- / Intro screen:      Adjust runtime estimates based on user feedback
- / tron.bat:          Disable post-run auto-reboot by default. Change "REBOOT_DELAY" variable if you wish to auto-reboot
- - tron.bat:          Remove section asking user if we want to do a post-run defrag (replaced by auto-detect)
- - stage_1_tempclean: Remove TempFileCleanup job (CCleaner and BleachBit cover this requirement)
- - stage_4_patch:     Remove /r switch on wuauclt command
+tron.bat                           v1.3
+ + tron.bat:      Add additional checks for SSD drives on /dev/sdb and /dev/sdc
+ * stage_4_patch: Update links for Adobe Flash and Notepad++ to reflect new versions
 
 STAGE 0: Prep
- . Rkill                           v2.6.7
+ . Rkill                           v2.6.7.0
 
 STAGE 1: Tempclean
- - TempFileCleanup                 REMOVED
  . CCleaner                        v4.15.4725
- * BleachBit                       v1.2
+ - BleachBit                       v1.2
 
 STAGE 2: Disinfect
  . Malwarebytes Anti-malware       v2.0.2.1012
- . Sophos Virus Removal Tool       v2.5 (2014-07-06)
+ . Sophos Virus Removal Tool       v2.5 2014-07-10
  . Vipre Rescue Scanner            v7.0.7.8
 
 STAGE 3: De-bloat target keywords (%% = any number of characters wildcard)
@@ -76,10 +69,10 @@ These are specified in: \resources\stage_3_de-bloat\programs_to_target.txt
 
 STAGE 4: Patch
  . 7-Zip                           v9.20
- . Adobe Flash Player              v14.0.0.125
+ . Adobe Flash Player              v14.0.0.145
  . Adobe Reader                    v11.0.07
  . Java Runtime Environment        8u5
- . Notepad++                       v6.6.4
+ . Notepad++                       v6.6.7
  . Windows updates                 <pulled down live>
 
 STAGE 5: Optimize
@@ -89,11 +82,12 @@ STAGE 5: Optimize
 STAGE 6: Manual tools
  . ADSSpy                          v1.11.0.0
  + AdwCleaner                      v3.2.1.4
- . autoruns                        v11.70
- * ComboFix                        v14.7.3.1
+ + aswMBR                          v1.0.1.2041
+ * autoruns                        v12.0
+ . ComboFix                        v14.7.3.1
  . gmer                            v2.1.19357
- . HiJackThis                      v2.0.4
- . Panda Cloud Security Scanner  updated 2014-07-03
+ - HiJackThis                      REMOVED, functionality replaced by autoruns.exe
+ - Panda Cloud Security Scanner    REMOVED
  . TempFileCleaner                 v3.1.9.0
  . VirusTotal uploader tool        v2.2
 
