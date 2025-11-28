@@ -1,25 +1,25 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v10.2.1 (2017-07-22)                                                                          |
+| VERSION    | v10.2.2 (2017-08-29)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv10.2.1).**
+> **This is an archived version of Tron (vv10.2.2).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv10.2.1
+# ðŸ“‹ CHANGELOG FOR vv10.2.2
 
 
 
 
 #########################
-# v10.2.1 // 2017-07-22 #
+# v10.2.2 // 2017-08-29 #
 #########################
  . tron.bat                        v1.0.3
 
@@ -32,10 +32,10 @@ Stage 0: Prep
  . stage_0_prep.bat                v1.1.8
  . check_update.bat                v1.0.7
  . check_update_debloat_lists.bat  v1.1.0
- . rkill                           v2.8.4.0
+ * rkill                           v2.9.1.0
  . ProcessKiller                   v2.0.0-TRON
  . TDSS Killer                     v3.1.0.12
- . McAfee Stinger                  v12.1.0.2435
+ * McAfee Stinger                  v12.1.0.2469
  . erunt                           v1.1j
  . caffeine                        v1.6.2.0
  . wget                            v1.19.1
@@ -43,7 +43,7 @@ Stage 0: Prep
 
 Stage 1: Tempclean
  . stage_1_tempclean.bat           v1.1.9
- . CCleaner                        v5.31.6105
+ * CCleaner                        v5.33.6162
  . BleachBit                       v1.12
  . finddupe.exe                    v1.23
  . TempFileCleanup                 v1.1.4-TRON
@@ -54,30 +54,30 @@ Stage 2: De-bloat
  . programs_to_target_by_GUID.txt
  . toolbars_BHOs_to_target_by_GUID.txt
  . programs_to_target_by_name.txt
- * metro_3rd_party_modern_apps_to_target_by_name.ps1
- * metro_Microsoft_modern_apps_to_target_by_name.ps1
+ . metro_3rd_party_modern_apps_to_target_by_name.ps1
+ . metro_Microsoft_modern_apps_to_target_by_name.ps1
 
 Stage 3: Disinfect
  . stage_3_disinfect.bat           v1.1.8
- . Sophos Virus Removal Tool       v2.5.6
+ * Sophos Virus Removal Tool       v2.6.1
  . Kaspersky Virus Removal Tool    v15.0.19.0
  . Malwarebytes Anti-Malware       v2.2.1.1043
- . Malwarebytes included defs:     2017-07-20
+ * Malwarebytes included defs:     2017-08-24
 
 Stage 4: Repair
  . stage_4_repair.bat              v1.2.3
  . purge_windows_7-8-81_telemetry.bat
  . purge_windows_10_telemetry.bat
  . Spybot Anti-Beacon              v1.5.0.35
- . O&O ShutUp10                    v1.4.1387
+ . O&O ShutUp10                    v1.5.1390
  . Repair file extensions          v1.0.0
 
 Stage 5: Patch
  . stage_5_patch.bat               v1.2.0
  . 7-Zip                           v16.04        (multi-language)
- * Adobe Flash Player              v26.0.0.137   (language ignored)
+ * Adobe Flash Player              v26.0.0.151   (language ignored)
  . Adobe Acrobat Reader DC         v15.023.20053 (English-only; replace with your language version if necessary)
- . Java Runtime Environment        8u141         (language ignored)
+ * Java Runtime Environment        8u144         (language ignored)
  . Windows updates                 Pulled down live using: 'wuauclt /detectnow /updatenow'
 
 Stage 6: Optimize
@@ -94,11 +94,11 @@ Stage 8: Custom Scripts
 Stage 9: Manual tools
  . .NET Repair Tool                v4.5.52207.36207
  . ADSSpy                          v1.11.0.0
- * AdwCleaner                      v7.0.0.0
+ * AdwCleaner                      v7.0.1.0
  . Autoruns                        v13.71
  . BlueScreenView                  v1.55
- * ComboFix                        v17.7.7.1
- * Junkware Removal Tool           v8.1.4.0
+ * ComboFix                        v17.8.4.1
+ . Junkware Removal Tool           v8.1.4.0
  . Net Adapter Repair              v1.2
  . PC Hunter                       v1.51 x64
  . PC Hunter                       v1.51 x86
