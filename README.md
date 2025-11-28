@@ -1,40 +1,41 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v1.1 (2014-07-06)                                                                          |
+| VERSION    | v1.2 (2014-07-07)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv1.1).**
+> **This is an archived version of Tron (vv1.2).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv1.1
+# ðŸ“‹ CHANGELOG FOR vv1.2
 
 
 
 
 ######################
-# v1.1 // 2014-07-06 #
+# v1.2 // 2014-07-07 #
 ######################
-tron.bat                           v1.1
- * tron.bat:          Comment, log and syntax cleanup
- + tron.bat:          Add section to ask if we want to do a post-run defrag, and skip the defrag if the user says no
- * tron.bat:          Remove hard requirement to run in safe mode and add code to detect various Safe Mode states
- * stage_3_de-bloat:  Convert section to read from a text list located in resource\stage_3_de-bloat\programs_to_target.txt
- + stage_3_de-bloat:  Add additional programs to find and remove
- + stage_3_de-bloat:  Add line to remove Adobe Shockwave (not in wide use anymore)
- - stage_4_patch:     Remove installation of Adobe Shockwave
+tron.bat                           v1.2
+ + stage_5_optimize:  Add detection of SSD drives. If drive is detected, post-run defrag is skipped. Thanks u/you_drown_now for help with this function.
+ * stage_3_de-bloat:  Improve logic, logging, and robustness for WMIC removal section
+ * tron.bat:          Improve overall logging, appearance and commenting. Add clarification screens for various Safe Mode states
+ / Intro screen:      Adjust runtime estimates based on user feedback
+ / tron.bat:          Disable post-run auto-reboot by default. Change "REBOOT_DELAY" variable if you wish to auto-reboot
+ - tron.bat:          Remove section asking user if we want to do a post-run defrag (replaced by auto-detect)
+ - stage_1_tempclean: Remove TempFileCleanup job (CCleaner and BleachBit cover this requirement)
+ - stage_4_patch:     Remove /r switch on wuauclt command
 
 STAGE 0: Prep
  . Rkill                           v2.6.7
 
 STAGE 1: Tempclean
- . TempFileCleanup                 v3.1
+ - TempFileCleanup                 REMOVED
  . CCleaner                        v4.15.4725
  * BleachBit                       v1.2
 
@@ -77,12 +78,12 @@ STAGE 4: Patch
  . 7-Zip                           v9.20
  . Adobe Flash Player              v14.0.0.125
  . Adobe Reader                    v11.0.07
- - Adobe Shockwave                 v12.1.2.152 -- REMOVED
  . Java Runtime Environment        8u5
  . Notepad++                       v6.6.4
  . Windows updates                 <pulled down live>
 
 STAGE 5: Optimize
+ + smartctl                        v6.2 2013-07-26 r3841
  * Defraggler                      v2.18.945
 
 STAGE 6: Manual tools
