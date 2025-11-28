@@ -1,28 +1,30 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v1.6 (2014-07-16)                                                                          |
+| VERSION    | v1.7.0 (2014-07-21)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv1.6).**
+> **This is an archived version of Tron (vv1.7.0).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv1.6
+# ðŸ“‹ CHANGELOG FOR vv1.7.0
 
 
 
-######################
-# v1.6 // 2014-07-16 #
-######################
-tron.bat                           v1.6
- + stage_2_disinfect: Add System File Checker scan to repair broken Windows core files. Skipped on XP and Server 2003 since these require an original install disk to function. Thanks u/cyr4n0
- + stage_0_prep:      Add code to detect and repair broken WMI configurations
+
+########################
+# v1.7.0 // 2014-07-21 #
+########################
+tron.bat                           v1.7
+ + prep and checks:   Add check for Administrator rights. Thanks u/apcomputerworks
+ + stage_2_disinfect: Add Emsisoft Commandline Scanner. "smart" scan + NTFS alternate data streams scan. Uses Direct Disk Access mode. Deletes detected malware immediately (/delete switch)
+ / tron.bat:          Move user-configurable variables to the top of the script, above Check and Preps section
 
 STAGE 0: Prep
  . Rkill                           v2.6.7.0
@@ -32,13 +34,14 @@ STAGE 1: Tempclean
  . BleachBit                       v1.2
 
 STAGE 2: Disinfect
+ * Sophos Virus Removal Tool       v2.5
+ * Vipre Rescue Scanner            v7.0.7.8
+ + Emsisoft Commandline Scanner    v9.0.0.4183
  . Malwarebytes Anti-Malware       v2.0.2.1012.exe
- * Sophos Virus Removal Tool       v2.5 2014-07-16
- * Vipre Rescue Scanner            v7.0.7.8 2014-07-16
 
 STAGE 3: De-bloat
 Specified in: \resources\stage_3_de-bloat\programs_to_target.txt
- + 3vix%%
+ . 3vix%%
  . Acer%%
  . Adobe Shockwave%%
  . Advanced%%FX Engine
@@ -46,7 +49,7 @@ Specified in: \resources\stage_3_de-bloat\programs_to_target.txt
  . Amazon Browser%%
  . Bing%%
  . Bonjour%%
- + BlueStack%%
+ . BlueStack%%
  . Catalina Savings%%
  . Cyberlink%%
  . Dell Getting Started Guide%%
@@ -65,8 +68,8 @@ Specified in: \resources\stage_3_de-bloat\programs_to_target.txt
  . Roxio%%
  . Sonic CinePlayer%%
  . %%Toolbar%%
- + Toshiba%%
- + %%Trial%%
+ . Toshiba%%
+ . %%Trial%%
  . UserGuide%%
  . WildTangent%%
  . Yahoo! Browser%%
@@ -76,6 +79,7 @@ STAGE 4: Patch
  . Adobe Flash Player              v14.0.0.145
  . Adobe Reader                    v11.0.07
  . Java Runtime Environment        8u5
+
  . Notepad++                       v6.6.7
  . Windows updates                 <pulled down live>
 
@@ -85,12 +89,13 @@ STAGE 5: Optimize
 
 STAGE 6: Manual tools
  . ADSSpy                          v1.11.0.0
- . AdwCleaner                      v3.2.1.5
+ * AdwCleaner                      v3.2.1.6
  . aswMBR                          v1.0.1.2041
  . autoruns                        v12.0
- * ComboFix                        v14.7.16.2
+ * ComboFix                        v14.7.21.1
  . gmer                            v2.1.19357
  . Junkware Removal Tool           v6.1.4
+ + TDSSKiller                      v3.0.0.40
  . TempFileCleaner                 v3.1.9.0
  . VirusTotal uploader tool        v2.2
 
