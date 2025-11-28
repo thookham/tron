@@ -1,71 +1,75 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v1.3 (2014-07-10)                                                                          |
+| VERSION    | v1.4 (2014-07-14)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv1.3).**
+> **This is an archived version of Tron (vv1.4).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv1.3
+# ðŸ“‹ CHANGELOG FOR vv1.4
 
 
 
 
 ######################
-# v1.3 // 2014-07-10 #
+# v1.4 // 2014-07-14 #
 ######################
-tron.bat                           v1.3
- + tron.bat:      Add additional checks for SSD drives on /dev/sdb and /dev/sdc
- * stage_4_patch: Update links for Adobe Flash and Notepad++ to reflect new versions
+tron.bat                           v1.4
+ + tron.bat:          Add SKIP_DEFRAG variable to force defrag to always skip
+ * tron.bat:          Improve SSD detection. Thanks u/bdm800
+ * tron.bat:          Clean up welcome screen and various comments
+ * tron.bat:          Reduce time spent waiting for rkill from 110 seconds to 90 seconds
+ * stage_2_disinfect: Switch Sophos and Vipre to log to console instead of log file. This way you can see which file they're on, and prevents people from thinking the scanner is stalled.
 
 STAGE 0: Prep
  . Rkill                           v2.6.7.0
 
 STAGE 1: Tempclean
  . CCleaner                        v4.15.4725
- - BleachBit                       v1.2
+ * BleachBit                       v1.2
+    * Updated to target more locations, including Firefox, Thunderbird, and Chrome temp files
 
 STAGE 2: Disinfect
- . Malwarebytes Anti-malware       v2.0.2.1012
- . Sophos Virus Removal Tool       v2.5 2014-07-10
+ . Malwarebytes Anti-malware       v2.0.2.1012.exe
+ . Sophos Virus Removal Tool       v2.5 2014-07-14
  . Vipre Rescue Scanner            v7.0.7.8
 
 STAGE 3: De-bloat target keywords (%% = any number of characters wildcard)
 These are specified in: \resources\stage_3_de-bloat\programs_to_target.txt
  . Acer%%
- + Adobe Shockwave%%
- + Advanced%%FX Engine
- + Akamai%%
- + Amazon Browser%%
+ . Adobe Shockwave%%
+ . Advanced%%FX Engine
+ . Akamai%%
+ . Amazon Browser%%
  . Bing%%
- + Bonjour%%
- + Catalina Savings%%
+ . Bonjour%%
+ . Catalina Savings%%
  . Cyberlink%%
- + Dell Getting Started Guide%%
- + Dell Video%%
+ . Dell Getting Started Guide%%
+ . Dell Video%%
  . eBay%%
  . eMachines%%
  . Free Download Manager%%
- + HP Deskjet%%Help
+ . HP Deskjet%%Help
  . Launch Manager%%
- + Lenovo%%
- + Live! Cam Avatar%%
- + Move Media%%
- + My HP%%
- + PowerDVD%%
- + RenWeb%%
- + Roxio%%
- + Sonic CinePlayer%%
- + %%Toolbar%%
- + UserGuide%%
- + Yahoo! Browser%%
+ . Lenovo%%
+ . Live! Cam Avatar%%
+ . Move Media%%
+ . My HP%%
+ . PowerDVD%%
+ . RenWeb%%
+ . Roxio%%
+ . Sonic CinePlayer%%
+ . %%Toolbar%%
+ . UserGuide%%
+ . Yahoo! Browser%%
 
 STAGE 4: Patch
  . 7-Zip                           v9.20
@@ -76,18 +80,17 @@ STAGE 4: Patch
  . Windows updates                 <pulled down live>
 
 STAGE 5: Optimize
- + smartctl                        v6.2 2013-07-26 r3841
- * Defraggler                      v2.18.945
+ . smartctl                        v6.2 2013-07-26 r3841
+ . Defraggler                      v2.18.945
 
 STAGE 6: Manual tools
  . ADSSpy                          v1.11.0.0
- + AdwCleaner                      v3.2.1.4
- + aswMBR                          v1.0.1.2041
- * autoruns                        v12.0
+ . AdwCleaner                      v3.2.1.4
+ . aswMBR                          v1.0.1.2041
+ . autoruns                        v12.0
  . ComboFix                        v14.7.3.1
  . gmer                            v2.1.19357
- - HiJackThis                      REMOVED, functionality replaced by autoruns.exe
- - Panda Cloud Security Scanner    REMOVED
+ + Junkware Removal Tool           v6.1.4
  . TempFileCleaner                 v3.1.9.0
  . VirusTotal uploader tool        v2.2
 
