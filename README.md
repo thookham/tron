@@ -1,30 +1,30 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v10.2.4 (2017-09-25)                                                                          |
+| VERSION    | v10.2.5 (2017-10-17)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv10.2.4).**
+> **This is an archived version of Tron (vv10.2.5).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv10.2.4
+# ðŸ“‹ CHANGELOG FOR vv10.2.5
 
 
 
 
 #########################
-# v10.2.4 // 2017-09-25 #
+# v10.2.5 // 2017-10-17 #
 #########################
- . tron.bat                        v1.0.4
+ . tron.bat                        v1.0.3
 
 functions
- . initialize_environment.bat      v10.2.4
+ . initialize_environment.bat      v10.2.5
  . prerun_checks_and_tasks.bat     v1.0.0
  . tron_settings.bat               v1.0.0
 
@@ -35,7 +35,7 @@ Stage 0: Prep
  . rkill                           v2.9.1.0
  . ProcessKiller                   v2.0.0-TRON
  . TDSS Killer                     v3.1.0.12
- * McAfee Stinger                  v12.1.0.2505
+ * McAfee Stinger                  v12.1.0.2522
  . erunt                           v1.1j
  . caffeine                        v1.6.2.0
  . wget                            v1.19.1
@@ -43,7 +43,7 @@ Stage 0: Prep
 
 Stage 1: Tempclean
  . stage_1_tempclean.bat           v1.1.9
- * CCleaner                        v5.35.6210
+ . CCleaner                        v5.35.6210
  . BleachBit                       v1.12
  . finddupe.exe                    v1.23
  . TempFileCleanup                 v1.1.4-TRON
@@ -51,7 +51,7 @@ Stage 1: Tempclean
 
 Stage 2: De-bloat
  . stage_2_de-bloat.bat            v1.3.2
- * programs_to_target_by_GUID.txt
+ . programs_to_target_by_GUID.txt
  . toolbars_BHOs_to_target_by_GUID.txt
  . programs_to_target_by_name.txt
  . metro_3rd_party_modern_apps_to_target_by_name.ps1
@@ -62,22 +62,22 @@ Stage 3: Disinfect
  . Sophos Virus Removal Tool       v2.6.1
  . Kaspersky Virus Removal Tool    v15.0.19.0
  . Malwarebytes Anti-Malware       v2.2.1.1043
- * Malwarebytes included defs:     2017-09-21
+ * Malwarebytes included defs:     2017-10-05
 
 Stage 4: Repair
  . stage_4_repair.bat              v1.2.3
  . purge_windows_7-8-81_telemetry.bat
  . purge_windows_10_telemetry.bat
  . Spybot Anti-Beacon              v1.5.0.35
- . O&O ShutUp10                    v1.5.1390
+ * O&O ShutUp10                    v1.6.1391
  . Repair file extensions          v1.0.0
 
 Stage 5: Patch
  . stage_5_patch.bat               v1.2.0
  . 7-Zip                           v16.04        (multi-language)
- . Adobe Flash Player              v27.0.0.130   (language ignored)
+ * Adobe Flash Player              v27.0.0.170   (language ignored)
  . Adobe Acrobat Reader DC         v15.023.20053 (English-only; replace with your language version if necessary)
- . Java Runtime Environment        8u144         (language ignored)
+ * Java Runtime Environment        8u152         (language ignored)
  . Windows updates                 Pulled down live using: 'wuauclt /detectnow /updatenow'
 
 Stage 6: Optimize
@@ -93,10 +93,10 @@ Stage 8: Custom Scripts
 
 Stage 9: Manual tools
  . ADSSpy                          v1.11.0.0
- . AdwCleaner                      v7.0.2.1
+ * AdwCleaner                      v7.0.3.1
  . Autoruns                        v13.80
  . BlueScreenView                  v1.55
- . ComboFix                        v17.9.14.1
+ * ComboFix                        v17.10.17.1
  . Junkware Removal Tool           v8.1.4.0
  . Net Adapter Repair              v1.2
  . PC Hunter                       v1.51 x64
