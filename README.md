@@ -1,31 +1,28 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v1.5 (2014-07-15)                                                                          |
+| VERSION    | v1.6 (2014-07-16)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv1.5).**
+> **This is an archived version of Tron (vv1.6).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv1.5
-
+# ðŸ“‹ CHANGELOG FOR vv1.6
 
 
 
 ######################
-# v1.5 // 2014-07-15 #
+# v1.6 // 2014-07-16 #
 ######################
-tron.bat                           v1.5
- + tron.bat:      Add "-auto" switch to support silent/scripted execution. Run the script and pass "-auto" as the first argument and Tron will run silently while still using all settings configured in the VARIABLES section
- * tron.bat:      Set power mode to "Always On/High Performance" at start of script, then reset power settings to Windows defaults when finished
- * tron.bat:      General cleanup of many conditional tests; should slightly speed script up
- * stage_4_patch: Remove all existing JRE versions prior to installing latest JRE
+tron.bat                           v1.6
+ + stage_2_disinfect: Add System File Checker scan to repair broken Windows core files. Skipped on XP and Server 2003 since these require an original install disk to function. Thanks u/cyr4n0
+ + stage_0_prep:      Add code to detect and repair broken WMI configurations
 
 STAGE 0: Prep
  . Rkill                           v2.6.7.0
@@ -36,11 +33,12 @@ STAGE 1: Tempclean
 
 STAGE 2: Disinfect
  . Malwarebytes Anti-Malware       v2.0.2.1012.exe
- . Sophos Virus Removal Tool       v2.5 2014-07-15
- . Vipre Rescue Scanner            v7.0.7.8
+ * Sophos Virus Removal Tool       v2.5 2014-07-16
+ * Vipre Rescue Scanner            v7.0.7.8 2014-07-16
 
-STAGE 3: De-bloat target keywords (%% = any number of characters wildcard)
+STAGE 3: De-bloat
 Specified in: \resources\stage_3_de-bloat\programs_to_target.txt
+ + 3vix%%
  . Acer%%
  . Adobe Shockwave%%
  . Advanced%%FX Engine
@@ -48,6 +46,7 @@ Specified in: \resources\stage_3_de-bloat\programs_to_target.txt
  . Amazon Browser%%
  . Bing%%
  . Bonjour%%
+ + BlueStack%%
  . Catalina Savings%%
  . Cyberlink%%
  . Dell Getting Started Guide%%
@@ -66,8 +65,10 @@ Specified in: \resources\stage_3_de-bloat\programs_to_target.txt
  . Roxio%%
  . Sonic CinePlayer%%
  . %%Toolbar%%
+ + Toshiba%%
+ + %%Trial%%
  . UserGuide%%
- + WildTangent%%
+ . WildTangent%%
  . Yahoo! Browser%%
 
 STAGE 4: Patch
@@ -84,12 +85,12 @@ STAGE 5: Optimize
 
 STAGE 6: Manual tools
  . ADSSpy                          v1.11.0.0
- * AdwCleaner                      v3.2.1.5
+ . AdwCleaner                      v3.2.1.5
  . aswMBR                          v1.0.1.2041
  . autoruns                        v12.0
- * ComboFix                        v14.7.15.4
+ * ComboFix                        v14.7.16.2
  . gmer                            v2.1.19357
- + Junkware Removal Tool           v6.1.4
+ . Junkware Removal Tool           v6.1.4
  . TempFileCleaner                 v3.1.9.0
  . VirusTotal uploader tool        v2.2
 
