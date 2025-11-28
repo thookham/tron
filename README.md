@@ -1,57 +1,56 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v10.0.1 (2017-03-07)                                                                          |
+| VERSION    | v10.0.2 (2017-03-20)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv10.0.1).**
+> **This is an archived version of Tron (vv10.0.2).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv10.0.1
+# ðŸ“‹ CHANGELOG FOR vv10.0.2
 
 
 
 
 #########################
-# v10.0.1 // 2017-03-07 #
+# v10.0.2 // 2017-03-20 #
 #########################
- * tron.bat                        v1.0.1
-    * Update date/time logging functions to use new log_with_date.bat. No functionality change but should help with code readability. Thanks to u/DudeManFoo
+ . tron.bat                        v1.0.1
 
 functions
- . initialize_environment.bat      v10.0.1
+ . initialize_environment.bat      v10.0.2
  . prerun_checks_and_tasks.bat     v1.0.0
  . tron_settings.bat               v1.0.0
 
 Stage 0: Prep
- * stage_0_prep.bat                v1.1.7
+ . stage_0_prep.bat                v1.1.7
  . check_update.bat                v1.0.7
  . check_update_debloat_lists.bat  v1.1.0
  . rkill                           v2.8.4.0
  . ProcessKiller                   v2.0.0-TRON
  . TDSS Killer                     v3.1.0.11
- * McAfee Stinger                  v12.1.0.2275
+ * McAfee Stinger                  v12.1.0.2303
  . erunt                           v1.1j
  . caffeine                        v1.6.2.0
  . wget                            v1.18
  . nircmdc                         v2.81
 
 Stage 1: Tempclean
- * stage_1_tempclean.bat           v1.1.8
- * CCleaner                        v5.27.5976
+ . stage_1_tempclean.bat           v1.1.8
+ * CCleaner                        v5.28.6005
  . BleachBit                       v1.12
  . finddupe.exe                    v1.23
  . TempFileCleanup                 v1.1.4-TRON
  . USB Device Cleanup              v1.2.0
 
 Stage 2: De-bloat
- * stage_2_de-bloat.bat            v1.2.8
+ . stage_2_de-bloat.bat            v1.2.8
  . programs_to_target_by_GUID.txt
  . toolbars_BHOs_to_target_by_GUID.txt
  . programs_to_target_by_name.txt
@@ -59,32 +58,30 @@ Stage 2: De-bloat
  . metro_Microsoft_modern_apps_to_target_by_name.ps1
 
 Stage 3: Disinfect
- * stage_3_disinfect.bat           v1.1.8
+ . stage_3_disinfect.bat           v1.1.8
  . Sophos Virus Removal Tool       v2.5.6
  . Kaspersky Virus Removal Tool    v15.0.19.0
  . Malwarebytes Anti-Malware       v2.2.1.1043
- * Malwarebytes included defs:     2017-02-23
+ * Malwarebytes included defs:     2017-03-16
 
 Stage 4: Repair
- * stage_4_repair.bat              v1.2.3
+ . stage_4_repair.bat              v1.2.3
  . purge_windows_7-8-81_telemetry.bat
  . purge_windows_10_telemetry.bat
  . Spybot Anti-Beacon              v1.5.0.35
- . O&O ShutUp10                    v1.4.1386
+ * O&O ShutUp10                    v1.4.1387
  . Repair file extensions          v1.0.0
 
 Stage 5: Patch
- ! stage_5_patch.bat               v1.1.8
-    ! Fix bug in WSUS Offline update code due to unused variable. Thanks to u/gayuha
-
+ ! stage_5_patch.bat               v1.1.9
  . 7-Zip                           v16.04        (multi-language)
- * Adobe Flash Player              v24.0.0.221   (language ignored)
+ * Adobe Flash Player              v25.0.0.127   (language ignored)
  . Adobe Acrobat Reader DC         v15.023.20053 (English-only; replace with your language version if necessary)
  . Java Runtime Environment        8u121         (language ignored)
  . Windows updates                 Pulled down live using: 'wuauclt /detectnow /updatenow'
 
 Stage 6: Optimize
- * stage_6_optimize.bat            v1.0.5
+ . stage_6_optimize.bat            v1.0.5
  . smartctl                        v6.5.0.4318 2016-05-07 r4318
  . Defraggler                      v2.21.0.993
 
@@ -97,11 +94,11 @@ Stage 8: Custom Scripts
 Stage 9: Manual tools
  . .NET Repair Tool                v4.5.52207.36207
  . ADSSpy                          v1.11.0.0
- * AdwCleaner                      v6.0.4.4
- * Autoruns                        v13.7
+ . AdwCleaner                      v6.0.4.4
+ . Autoruns                        v13.7
  . BlueScreenView                  v1.55
- * ComboFix                        v17.2.24.1
- * Junkware Removal Tool           v8.1.1.0
+ * ComboFix                        v17.3.15.1
+ . Junkware Removal Tool           v8.1.2.0
  . Net Adapter Repair              v1.2
  . PC Hunter                       v1.35 x64
  . PC Hunter                       v1.35 x86
