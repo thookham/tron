@@ -1,73 +1,72 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v10.0.5 (2017-04-29)                                                                          |
+| VERSION    | v10.1.0 (2017-06-10)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv10.0.5).**
+> **This is an archived version of Tron (vv10.1.0).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv10.0.5
+# ðŸ“‹ CHANGELOG FOR vv10.1.0
 
 
 
 
 #########################
-# v10.0.5 // 2017-04-29 #
+# v10.1.0 // 2017-06-10 #
 #########################
- . tron.bat                        v1.0.1
+
+ * PROJECT-WIDE: Preface WMIC calls with null input to ensure the pipe is closed, fixes issue with WMI hanging on WinXP machines. Thanks to github:salsifis
+   Relevant pull: https://github.com/bmrf/tron/pull/108
+
+ * tron.bat                        v1.0.2
 
 functions
- . initialize_environment.bat      v10.0.2
+ * initialize_environment.bat      v10.1.1
  . prerun_checks_and_tasks.bat     v1.0.0
  . tron_settings.bat               v1.0.0
 
 Stage 0: Prep
- . stage_0_prep.bat                v1.1.7
+ * stage_0_prep.bat                v1.1.8
  . check_update.bat                v1.0.7
  . check_update_debloat_lists.bat  v1.1.0
  . rkill                           v2.8.4.0
  . ProcessKiller                   v2.0.0-TRON
  . TDSS Killer                     v3.1.0.12
- * McAfee Stinger                  v12.1.0.2351
+ . McAfee Stinger                  v12.1.0.2399
  . erunt                           v1.1j
  . caffeine                        v1.6.2.0
  . wget                            v1.19.1
  . nircmdc                         v2.81
 
 Stage 1: Tempclean
- . stage_1_tempclean.bat           v1.1.8
- . CCleaner                        v5.29.6033
+ * stage_1_tempclean.bat           v1.1.9
+ . CCleaner                        v5.30.6065
  . BleachBit                       v1.12
  . finddupe.exe                    v1.23
  . TempFileCleanup                 v1.1.4-TRON
  . USB Device Cleanup              v1.2.0
 
 Stage 2: De-bloat
- * stage_2_de-bloat.bat            v1.3.0
-    * Add new tick counter during GUID debloat that dumps progress to a log in the RAW_LOGS folder.
-      This way if the script hangs we can see which entry it hung on. Thanks to u/madbomb122
-    - Comment out the lines sent to console that explain where the de-bloat files are located
-      Just cluttered up the screen and people who really want to customize Tron will be reading the readme/instructions anyway
-
- * programs_to_target_by_GUID.txt
- * toolbars_BHOs_to_target_by_GUID.txt
- * programs_to_target_by_name.txt
- * metro_3rd_party_modern_apps_to_target_by_name.ps1
- * metro_Microsoft_modern_apps_to_target_by_name.ps1
+ * stage_2_de-bloat.bat            v1.3.1
+ . programs_to_target_by_GUID.txt
+ . toolbars_BHOs_to_target_by_GUID.txt
+ . programs_to_target_by_name.txt
+ . metro_3rd_party_modern_apps_to_target_by_name.ps1
+ . metro_Microsoft_modern_apps_to_target_by_name.ps1
 
 Stage 3: Disinfect
  . stage_3_disinfect.bat           v1.1.8
  . Sophos Virus Removal Tool       v2.5.6
  . Kaspersky Virus Removal Tool    v15.0.19.0
  . Malwarebytes Anti-Malware       v2.2.1.1043
- * Malwarebytes included defs:     2017-04-27
+ . Malwarebytes included defs:     2017-06-08
 
 Stage 4: Repair
  . stage_4_repair.bat              v1.2.3
@@ -78,15 +77,15 @@ Stage 4: Repair
  . Repair file extensions          v1.0.0
 
 Stage 5: Patch
- . stage_5_patch.bat               v1.1.9
+ * stage_5_patch.bat               v1.2.0
  . 7-Zip                           v16.04        (multi-language)
- . Adobe Flash Player              v25.0.0.148   (language ignored)
+ . Adobe Flash Player              v25.0.0.171   (language ignored)
  . Adobe Acrobat Reader DC         v15.023.20053 (English-only; replace with your language version if necessary)
  . Java Runtime Environment        8u131         (language ignored)
  . Windows updates                 Pulled down live using: 'wuauclt /detectnow /updatenow'
 
 Stage 6: Optimize
- . stage_6_optimize.bat            v1.0.5
+ * stage_6_optimize.bat            v1.0.6
  . smartctl                        v6.5.0.4318 2016-05-07 r4318
  . Defraggler                      v2.21.0.993
 
@@ -99,10 +98,10 @@ Stage 8: Custom Scripts
 Stage 9: Manual tools
  . .NET Repair Tool                v4.5.52207.36207
  . ADSSpy                          v1.11.0.0
- . AdwCleaner                      v6.0.4.5
- . Autoruns                        v13.7
+ . AdwCleaner                      v6.0.4.7
+ . Autoruns                        v13.71
  . BlueScreenView                  v1.55
- . ComboFix                        v17.4.16.1
+ . ComboFix                        v17.5.16.1
  . Junkware Removal Tool           v8.1.3.0
  . Net Adapter Repair              v1.2
  . PC Hunter                       v1.51 x64
