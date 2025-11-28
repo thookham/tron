@@ -1,31 +1,30 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v1.7.2 (2014-07-22)                                                                          |
+| VERSION    | v1.7.3 (2014-07-22)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv1.7.2).**
+> **This is an archived version of Tron (vv1.7.3).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv1.7.2
+# ðŸ“‹ CHANGELOG FOR vv1.7.3
 
 
 
 
 ########################
-# v1.7.2 // 2014-07-22 #
+# v1.7.3 // 2014-07-22 #
 ########################
-tron.bat                           v1.7.2
- * tron.bat:        Add "--auto" and "-a" switches for automatic unattended execution
- / tron.bat:        Move all but most recent changelog entries to the changelog file, to avoid cluttering up script header
- + prep and checks: Re-add check for Administrator rights using a 100% reliable method for Windows 2000 through Windows 8. Thanks to stackoverflow.com/users/3198799/and31415 for fix
- * prep and checks: Revert SSD check to something more reliable
+tron.bat                           v1.7.3
+ ! prep and checks: Fix SSD detection (possibly). Please test and report if it fails on your drive
+
+ * prep and checks: Rename all instances of REBOOT_DELAY to AUTO_REBOOT_DELAY
 
 
 ---
