@@ -1,25 +1,25 @@
 ﻿| NAME       | Tron, an automated PC cleanup script                                                        |
 | :--------- | :------------------------------------------------------------------------------------------ |
-| VERSION    | v10.0.4 (2017-04-21)                                                                          |
+| VERSION    | v10.0.5 (2017-04-29)                                                                          |
 | AUTHOR     | vocatus on [old.reddit.com/r/TronScript](https://old.reddit.com/r/tronscript) (ocatus.gate@gmail) |
 | BACKGROUND | Why the name? Tron "Fights for the User"                                               |
 
 # ðŸ›ï¸ ARCHIVED RELEASE
 
 > [!WARNING]
-> **This is an archived version of Tron (vv10.0.4).**
+> **This is an archived version of Tron (vv10.0.5).**
 > It is preserved for historical purposes.
 > **Edits powered by Google Gemini Antigravity.**
 
 ---
 
-# ðŸ“‹ CHANGELOG FOR vv10.0.4
+# ðŸ“‹ CHANGELOG FOR vv10.0.5
 
 
 
 
 #########################
-# v10.0.4 // 2017-04-21 #
+# v10.0.5 // 2017-04-29 #
 #########################
  . tron.bat                        v1.0.1
 
@@ -35,7 +35,7 @@ Stage 0: Prep
  . rkill                           v2.8.4.0
  . ProcessKiller                   v2.0.0-TRON
  . TDSS Killer                     v3.1.0.12
- * McAfee Stinger                  v12.1.0.2345
+ * McAfee Stinger                  v12.1.0.2351
  . erunt                           v1.1j
  . caffeine                        v1.6.2.0
  . wget                            v1.19.1
@@ -43,26 +43,31 @@ Stage 0: Prep
 
 Stage 1: Tempclean
  . stage_1_tempclean.bat           v1.1.8
- * CCleaner                        v5.29.6033
+ . CCleaner                        v5.29.6033
  . BleachBit                       v1.12
  . finddupe.exe                    v1.23
  . TempFileCleanup                 v1.1.4-TRON
  . USB Device Cleanup              v1.2.0
 
 Stage 2: De-bloat
- . stage_2_de-bloat.bat            v1.2.8
+ * stage_2_de-bloat.bat            v1.3.0
+    * Add new tick counter during GUID debloat that dumps progress to a log in the RAW_LOGS folder.
+      This way if the script hangs we can see which entry it hung on. Thanks to u/madbomb122
+    - Comment out the lines sent to console that explain where the de-bloat files are located
+      Just cluttered up the screen and people who really want to customize Tron will be reading the readme/instructions anyway
+
  * programs_to_target_by_GUID.txt
  * toolbars_BHOs_to_target_by_GUID.txt
- . programs_to_target_by_name.txt
- . metro_3rd_party_modern_apps_to_target_by_name.ps1
- . metro_Microsoft_modern_apps_to_target_by_name.ps1
+ * programs_to_target_by_name.txt
+ * metro_3rd_party_modern_apps_to_target_by_name.ps1
+ * metro_Microsoft_modern_apps_to_target_by_name.ps1
 
 Stage 3: Disinfect
  . stage_3_disinfect.bat           v1.1.8
  . Sophos Virus Removal Tool       v2.5.6
  . Kaspersky Virus Removal Tool    v15.0.19.0
  . Malwarebytes Anti-Malware       v2.2.1.1043
- * Malwarebytes included defs:     2017-04-20
+ * Malwarebytes included defs:     2017-04-27
 
 Stage 4: Repair
  . stage_4_repair.bat              v1.2.3
@@ -75,9 +80,9 @@ Stage 4: Repair
 Stage 5: Patch
  . stage_5_patch.bat               v1.1.9
  . 7-Zip                           v16.04        (multi-language)
- * Adobe Flash Player              v25.0.0.148   (language ignored)
+ . Adobe Flash Player              v25.0.0.148   (language ignored)
  . Adobe Acrobat Reader DC         v15.023.20053 (English-only; replace with your language version if necessary)
- * Java Runtime Environment        8u131         (language ignored)
+ . Java Runtime Environment        8u131         (language ignored)
  . Windows updates                 Pulled down live using: 'wuauclt /detectnow /updatenow'
 
 Stage 6: Optimize
@@ -97,8 +102,8 @@ Stage 9: Manual tools
  . AdwCleaner                      v6.0.4.5
  . Autoruns                        v13.7
  . BlueScreenView                  v1.55
- * ComboFix                        v17.4.16.1
- * Junkware Removal Tool           v8.1.3.0
+ . ComboFix                        v17.4.16.1
+ . Junkware Removal Tool           v8.1.3.0
  . Net Adapter Repair              v1.2
  . PC Hunter                       v1.51 x64
  . PC Hunter                       v1.51 x86
