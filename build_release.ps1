@@ -4,7 +4,50 @@
 .DESCRIPTION
     This script creates a 'releases' directory and packages the current Tron version
     into a .zip file and, if 7-Zip is available, a self-extracting .exe.
+.PARAMETER AIO
+    Build All-In-One package with pre-downloaded tools (calls build_release_aio.ps1)
+.PARAMETER ToolSelection
+    (AIO only) Tool selection mode: Full, Essential, Interactive, NoDrivers
+.PARAMETER IncludeDrivers
+    (AIO only) Include Snappy Driver Installer (~2GB)
+.EXAMPLE
+    .\build_release.ps1
+    # Creates standard lightweight release
+.EXAMPLE
+    .\build_release.ps1 -AIO
+    # Creates AIO package with all tools (no drivers)
+.EXAMPLE
+    .\build_release.ps1 -AIO -IncludeDrivers
+    # Creates full AIO with driver installer included
 #>
+
+param(
+    [switch]$AIO,
+    [ValidateSet("Full", "Essential", "Interactive", "NoDrivers")]
+    [string]$ToolSelection = "NoDrivers",
+    [switch]$IncludeDrivers
+)
+
+# If AIO flag is set, delegate to build_release_aio.ps1
+if ($AIO) {
+    Write-Host "AIO mode detected - delegating to build_release_aio.ps1..." -ForegroundColor Yellow
+    
+    $aioScript = Join-Path $PSScriptRoot "build_release_aio.ps1"
+    
+    if (Test-Path $aioScript) {
+        $params = @{}
+        if ($ ToolSelection) { $params['ToolSelection'] = $ToolSelection }
+        if ($IncludeDrivers) { $params['IncludeDrivers'] = $true }
+        
+        & $aioScript @params
+    }
+    else {
+        Write-Error "build_release_aio.ps1 not found! Please ensure it exists in the same directory."
+        exit 1
+    }
+    
+    exit 0
+}
 
 $Version = "13.2.0"
 $ReleaseDate = "2025-11-29"

@@ -1,7 +1,7 @@
-﻿# Tron 🛡️
+# Tron 🛡️
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-v13.1.1-blue.svg)](https://github.com/thookham/tron/releases)
+[![Version](https://img.shields.io/badge/version-v13.2.0-blue.svg)](https://github.com/thookham/tron/releases)
 [![GitHub stars](https://img.shields.io/github/stars/thookham/tron.svg)](https://github.com/thookham/tron/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/thookham/tron.svg)](https://github.com/thookham/tron/network)
 
@@ -10,23 +10,30 @@
 An automated Windows cleanup, disinfection, and maintenance script that runs a comprehensive series of tools to clean, repair, and optimize Windows systems.
 
 > [!NOTE]
-> **Modernization Fork**
-> This is a modernized fork of the original Tron project, updated for compatibility with newer Windows versions and maintained with automated build tools.
+> **Modernized Fork with Working Releases**
+> This is a modernized fork of the original Tron project, synced with upstream `bmrf/tron` v12.0.8+ with modern Windows 10/11 support. Unlike the upstream repository, **this fork provides working pre-packaged releases** ready to use!
 > 
-> **Edits powered by Google Gemini Antigravity**
+> **Powered by Google Gemini Antigravity** 🚀
 
-> [!CAUTION]
-> **DO NOT DOWNLOAD TRON FROM GITHUB DIRECTLY!**  
-> Downloading source code from GitHub will NOT work. You need the complete packaged release from the [Releases](https://github.com/thookham/tron/releases) page.
+> [!IMPORTANT]
+> **📥 DOWNLOAD WORKING RELEASES HERE!**  
+> This fork provides **fully functional packaged releases** (both ZIP and EXE formats).
+> 
+> **Standard Release** (~4MB) - Tools downloaded on first run  
+> **AIO Release** (~327MB) - All tools pre-bundled, fully offline-capable
+> 
+> 👉 **[Get the latest release here](https://github.com/thookham/tron/releases)**
 
 ---
 
 ## 📑 Table of Contents
 
 - [Overview](#overview)
+- [Download Options](#download-options)
 - [Key Features](#key-features)
 - [System Requirements](#system-requirements)
 - [Installation \& Usage](#installation--usage)
+- [Building from Source](#building-from-source)
 - [Command-Line Options](#command-line-options)
 - [Tron Stages](#tron-stages)
   - [Stage 0: Prep](#stage-0-prep)
@@ -64,17 +71,49 @@ Tron is a glorified collection of batch scripts that automate the tedious proces
 - **Purges** Windows telemetry and tracking (7/8/8.1/10/11)
 - **Generates detailed logs** of all actions taken
 
+## Download Options
+
+This fork provides two release variants to suit different deployment scenarios:
+
+### 🔹 Standard Release (~4MB)
+
+- **What's included**: All scripts, configurations, and logic
+- **Tools**: Downloaded automatically on first run
+- **Best for**: Systems with reliable internet connection
+- **Pros**: Small download, always uses latest tool versions
+- **Cons**: Requires internet connection during execution
+
+### 🔸 All-In-One (AIO) Release (~327MB)
+
+- **What's included**: Everything + all binary tools pre-bundled
+- **Tools**: Pre-downloaded (~20 utilities)
+- **Best for**: Offline systems, air-gapped environments, consistent deployments
+- **Pros**: Fully offline-capable, consistent tool versions, faster execution
+- **Cons**: Larger download size
+
+> [!TIP]
+> **First time using Tron?** Start with the **Standard Release**.  
+> **Need offline capability?** Use the **AIO Release**.
+
+📥 **[Download from Releases Page](https://github.com/thookham/tron/releases)**
+
+---
+
 ## Key Features
 
 ✅ **Completely Automated** - Set it and forget it  
 ✅ **Comprehensive** - 9 stages covering all aspects of system maintenance  
 ✅ **Battle-Tested Tools** - Uses industry-standard utilities (Malwarebytes, Kaspersky, etc.)  
-✅ **Telemetry Removal** - Removes Windows 7/8/8.1/10/11 tracking and data collection  
+✅ **Modern Windows Support** - Windows 7/8/8.1/10/11 and Server 2003-2022  
+✅ **Massive Bloatware Database** - 16,000+ entries targeting OEM bloat and toolbars  
+✅ **Telemetry Removal** - Comprehensive Windows 7/8/8.1/10/11 tracking removal  
+✅ **Copilot Recall Blocking** - Disables Windows 11 screenshot/keyboard recording  
 ✅ **Detailed Logging** - Complete logs of all actions and results  
 ✅ **Safe Mode Support** - Can run in Safe Mode for stubborn infections  
 ✅ **Email Reports** - Optionally email results when complete  
 ✅ **Custom Scripts** - Execute your own scripts at completion  
 ✅ **Resume Support** - Can resume if interrupted  
+✅ **AIO Packages** - Offline-capable releases with all tools pre-bundled  
 
 ## System Requirements
 
@@ -89,9 +128,10 @@ Tron is a glorified collection of batch scripts that automate the tedious proces
 ### Basic Usage
 
 1. **Download** the complete Tron pack from the [Releases](https://github.com/thookham/tron/releases) page.
-   - **Do NOT** clone or download source code - it won't work without all bundled tools
+   - Choose **Standard** (~4MB) or **AIO** (~327MB) variant
+   - **Do NOT** clone or download source code - use packaged releases
 
-2. **Extract** the entire package to a location (e.g., `C:\tron`)
+2. **Extract** the entire package to your Desktop or a permanent location
 
 3. **Run as Administrator**:
    - Right-click `tron.bat`
@@ -434,12 +474,21 @@ On next run, Tron will ask if you want to resume from where it left off.
 
 ## Changelog
 
-### v13.1.1 // 2025-11-29
+### v13.2.0 // 2025-11-29
 
-**Documentation**:
-- Comprehensive README overhaul
-- Updated tool versions and descriptions
-- Added detailed usage instructions
+**Major Upstream Sync**:
+- Synced with `bmrf/tron` v12.0.8+ (6+ years of updates)
+- Added modern Windows 10/11 support
+- **16,000+ new bloatware/toolbar entries**
+- Copilot Recall blocking (O&O ShutUp10 v1.9.1442)
+- Comprehensive telemetry removal (953 lines of code)
+- Updated all core scripts and tools
+
+**Build System**:
+- New AIO (All-In-One) package builder
+- Offline-capable releases with pre-bundled tools
+- Interactive and preset build modes
+- Maintained working release packaging
 
 See [changelog.txt](changelog.txt) for complete version history.
 
