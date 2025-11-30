@@ -15,6 +15,15 @@ Version legend:
 
 
 #########################
+# v13.1.1 // 2025-11-29 #
+#########################
+  * Documentation Overhaul
+     + Comprehensive README rewrite with detailed usage instructions
+     + Updated tool versions and descriptions in documentation
+     + Added badges and improved formatting
+     + Clarified archived vs active status
+
+#########################
 # v13.1.0 // 2025-11-27 #
 #########################
   * XP Support & Batch Purity

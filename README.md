@@ -1,8 +1,7 @@
 ﻿# Tron 🛡️
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-v10.3.0-blue.svg)]( https://github.com/thookham/tron/releases)
-[![Status](https://img.shields.io/badge/status-archived-orange.svg)](https://github.com/bmrf/tron)
+[![Version](https://img.shields.io/badge/version-v13.1.1-blue.svg)](https://github.com/thookham/tron/releases)
 [![GitHub stars](https://img.shields.io/github/stars/thookham/tron.svg)](https://github.com/thookham/tron/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/thookham/tron.svg)](https://github.com/thookham/tron/network)
 
@@ -10,18 +9,15 @@
 
 An automated Windows cleanup, disinfection, and maintenance script that runs a comprehensive series of tools to clean, repair, and optimize Windows systems.
 
-> [!WARNING]
-> **This is an archived version of Tron (v10.3.0 from 2017-11-06).**
-> 
-> This repository is preserved for historical purposes and reference. For the **latest active development** and current features, please visit:
-> - **[bmrf/tron](https://github.com/bmrf/tron)** - Official upstream repository (latest: v13.1.0)
-> - **[r/TronScript](https://old.reddit.com/r/TronScript)** - Official subreddit for downloads and support
+> [!NOTE]
+> **Modernization Fork**
+> This is a modernized fork of the original Tron project, updated for compatibility with newer Windows versions and maintained with automated build tools.
 > 
 > **Edits powered by Google Gemini Antigravity**
 
 > [!CAUTION]
 > **DO NOT DOWNLOAD TRON FROM GITHUB DIRECTLY!**  
-> Downloading source code from GitHub will NOT work. You need the complete packaged release from [r/TronScript](https://old.reddit.com/r/TronScript).
+> Downloading source code from GitHub will NOT work. You need the complete packaged release from the [Releases](https://github.com/thookham/tron/releases) page.
 
 ---
 
@@ -65,7 +61,7 @@ Tron is a glorified collection of batch scripts that automate the tedious proces
 - **Repairs** system files and Windows components
 - **Patches** Windows and common software (7-Zip, Adobe products, Java)
 - **Optimizes** disk defragmentation and system settings
-- **Purges** Windows telemetry and tracking (7/8/8.1/10)
+- **Purges** Windows telemetry and tracking (7/8/8.1/10/11)
 - **Generates detailed logs** of all actions taken
 
 ## Key Features
@@ -73,7 +69,7 @@ Tron is a glorified collection of batch scripts that automate the tedious proces
 ✅ **Completely Automated** - Set it and forget it  
 ✅ **Comprehensive** - 9 stages covering all aspects of system maintenance  
 ✅ **Battle-Tested Tools** - Uses industry-standard utilities (Malwarebytes, Kaspersky, etc.)  
-✅ **Telemetry Removal** - Removes Windows 7/8/8.1/10 tracking and data collection  
+✅ **Telemetry Removal** - Removes Windows 7/8/8.1/10/11 tracking and data collection  
 ✅ **Detailed Logging** - Complete logs of all actions and results  
 ✅ **Safe Mode Support** - Can run in Safe Mode for stubborn infections  
 ✅ **Email Reports** - Optionally email results when complete  
@@ -82,8 +78,8 @@ Tron is a glorified collection of batch scripts that automate the tedious proces
 
 ## System Requirements
 
-- **OS**: Windows XP, Vista, 7, 8, 8.1, 10, Server 2003-2016
-- **Disk Space**: ~1 GB free space recommended
+- **OS**: Windows XP, Vista, 7, 8, 8.1, 10, 11, Server 2003-2022
+- **Disk Space**: ~2 GB free space recommended
 - **Time**: 3-10 hours depending on system state
 - **Permissions**: Must run as Administrator
 - **Network**: Internet connection for updates and definitions
@@ -92,8 +88,8 @@ Tron is a glorified collection of batch scripts that automate the tedious proces
 
 ### Basic Usage
 
-1. **Download** the complete Tron pack from [r/TronScript](https://old.reddit.com/r/TronScript)
-   - **Do NOT** clone or download from GitHub - it won't work without all bundled tools
+1. **Download** the complete Tron pack from the [Releases](https://github.com/thookham/tron/releases) page.
+   - **Do NOT** clone or download source code - it won't work without all bundled tools
 
 2. **Extract** the entire package to a location (e.g., `C:\tron`)
 
@@ -131,10 +127,10 @@ Tron supports various command-line flags for customization:
 | `-c` | Config dump: Display current settings and exit |
 | `-d` | Dry run: Run through script but don't execute jobs |
 | `-dev` | Override OS detection (allow running on unsupported OS) |
-| `- e` | Email: Send email report upon completion |
+| `-e` | Email: Send email report upon completion |
 | `-er` | Email (error): Send email only on script error |
 | `-m` | Preserve default Metro apps (don't remove them) |
-| `-np` | Skip  patches (Stage 5) |
+| `-np` | Skip patches (Stage 5) |
 | `-o` | Power options: Leave power settings at default |
 | `-p` | Preserve power settings (don't reset to "High Performance") |
 | `-r` | Reboot: Reboot automatically 30 seconds after script completion |
@@ -180,11 +176,11 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 | rkill | v2.9.1.0 | Kills known malware processes |
 | ProcessKiller | v2.0.0-TRON | Additional malware process termination |
 | TDSS Killer | v3.1.0.12 | Rootkit detection and removal |
-| McAfee Stinger | v12.1.0.2565 | Standalone anti-virus scanner |
+| TrelliX Stinger | v13.0.0.254 | Standalone anti-virus scanner |
 | ERUNT | v1.1j | Emergency Recovery Utility NT (registry backup) |
 | Caffeine | v1.6.2.0 | Prevents system sleep during execution |
-| wget | v1.19.1 | Downloads updated definitions |
-| nircmdc | v2.81 | Command-line utilities |
+| wget | v1.21.4 | Downloads updated definitions |
+| nircmdc | v2.87 | Command-line utilities |
 
 **Actions**:
 - Create system restore point
@@ -199,11 +195,11 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 
 | Tool | Version | Description |
 |------|---------|-------------|
-| CCleaner | v5.36.6278 | System cleaner |
+| CCleaner | v6.24.11060 | System cleaner |
 | BleachBit | v1.12 | Open-source system cleaner |
-| finddupe | v1.23 | Duplicate file finder |
-| TempFileCleanup | v1.1.4-TRON | Custom temp file cleanup |
-| USB Device Cleanup | v1.2.0 | Remove ghost USB devices |
+| finddupe | v1.25 | Duplicate file finder |
+| TempFileCleanup | v1.2.2-TRON | Custom temp file cleanup |
+| USB Device Cleanup | v1.6.5 | Remove ghost USB devices |
 
 **Cleaned Locations**:
 - `%TEMP%` and `C:\Windows\Temp`
@@ -221,7 +217,7 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 **Removal Methods**:
 - Remove by GUID (global unique identifier)
 - Remove by program name
-- Remove Metro/Modern/Universal apps (Windows 8/10)
+- Remove Metro/Modern/Universal apps (Windows 8/10/11)
 - Remove toolbars and browser helper objects (BHOs)
 
 **Target Lists**:
@@ -240,17 +236,15 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 
 | Tool | Version | Description |
 |------|---------|-------------|
-| Sophos Virus Removal Tool | v2.6.1 | Enterprise-grade virus scanner |
-| Kaspersky Virus Removal Tool | v15.0.19.0 | Kaspersky's standalone scanner |
-| Malwarebytes Anti-Malware | v2.2.1.1043 | Industry-standard anti-malware |
+| Malwarebytes AdwCleaner | v8.4.2 | Adware removal tool |
+| Kaspersky Virus Removal Tool | v20.0.12.0 | Kaspersky's standalone scanner |
+| Malwarebytes Anti-Malware | v3.6.1 | Industry-standard anti-malware |
 
 **Process**:
 1. Update virus definitions
 2. Run full system scans
 3. Quarantine/remove detected threats
 4. Log all findings
-
-**MBAM Definitions**: 2017-10-19 (included)
 
 ### Stage 4: Repair
 
@@ -260,12 +254,12 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 |------|---------|-------------|
 | SFC (System File Checker) | Built-in | Repair corrupted system files |
 | DISM | Built-in | Repair Windows image |
-| Spybot Anti-Beacon | v1.5.0.35 | Block telemetry/tracking |
-| O&O ShutUp10 | v1.6.1393 | Privacy configuration tool |
+| Spybot Anti-Beacon | v1.7.0.47 | Block telemetry/tracking |
+| O&O ShutUp10 | v1.9.1442 | Privacy configuration tool |
 
 **Telemetry Removal**:
 - `purge_windows_7-8-81_telemetry.bat` - Remove Win 7/8/8.1 tracking
-- `purge_windows_10_telemetry.bat` - Remove Win 10 tracking and Cortana data collection
+- `purge_windows_10_telemetry.bat` - Remove Win 10/11 tracking and Cortana data collection
 
 **Registry Fixes**:
 - Disable AllowCortanaAboveLock
@@ -279,13 +273,8 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 
 | Software | Version | Notes |
 |----------|---------|-------|
-| 7-Zip | v16.04 | Multi-language |
-| Adobe Flash Player | v27.0.0.183 | All languages |
-| Adobe Acrobat Reader DC | v15.023.20053 | English only* |
-| Java Runtime Environment | 8u152 | All languages |
+| 7-Zip | v24.09 | Multi-language |
 | Windows Updates | Live | Via `wuauclt /detectnow /updatenow` |
-
-\* *Replace with your language version if needed*
 
 **Process**:
 1. Update Windows Defender definitions
@@ -299,9 +288,9 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 
 | Tool | Version | Description |
 |------|---------|-------------|
-| smartctl | v6.6.0.4594 | S.M.A.R.T. disk analysis |
-| drivedb.h | 2017-11-06 | Drive database |
-| Defraggler | v2.21.0.993 | Disk defragmentation |
+| smartctl | v7.4.1 | S.M.A.R.T. disk analysis |
+| drivedb.h | 2025-01-09 | Drive database |
+| Defraggler | v2.22.995 | Disk defragmentation |
 
 **Actions**:
 - Check S.M.A.R.T. status of all drives
@@ -315,7 +304,7 @@ Tron executes in sequential stages. Each stage has a specific purpose and can be
 
 | Tool | Version | Description |
 |------|---------|-------------|
-| SwithMail | v2.1.8.0 | Email report sender |
+| SwithMail | v2.2.4.0 | Email report sender |
 
 **Actions**:
 - Collect all logs into summary report
@@ -343,16 +332,13 @@ These tools are included but NOT run automatically. They're available for manual
 | Tool | Version | Description |
 |------|---------|-------------|
 | ADSSpy | v1.11.0.0 | Alternate Data Stream scanner |
-| AdwCleaner | v7.0.4.0 | Adware removal tool |
-| Autoruns | v13.80 | Startup program manager |
+| Autoruns | v14.11 | Startup program manager |
 | BlueScreenView | v1.55 | BSOD crash dump analyzer |
-| ComboFix | v17.10.17.1 | Malware removal tool (use with caution!) |
-| Junkware Removal Tool | v8.1.4.0 | Junkware cleaner |
 | Net Adapter Repair | v1.2 | Network adapter reset tool |
-| PC Hunter | v1.51 (x86/x64) | Advanced system information |
 | Remote Support Reboot Config | v1.0.0 | Configure reboot behavior |
 | Safe Mode Boot Selector | v1.0.0 | Easy Safe Mode boot |
 | ServicesRepair | v1.0.0.3 | Repair Windows services |
+| Snappy Driver Installer | R2309 | Driver installer |
 | Tron Reset Tool | v1.0.0 | Reset Tron to run again |
 
 **Location**: `\tron\resources\stage_9_manual_tools\`
@@ -425,7 +411,7 @@ To run Tron in Safe Mode with Networking:
 
 1. **Boot to Safe Mode**:
    - Windows 7: Press F8 during boot
-   - Windows 8/10: Use shift+restart → Troubleshoot → Advanced
+   - Windows 8/10/11: Use shift+restart → Troubleshoot → Advanced
    
 2. **Run Tron**:
    ```batch
@@ -448,45 +434,24 @@ On next run, Tron will ask if you want to resume from where it left off.
 
 ## Changelog
 
-### v10.3.0 // 2017-11-06
+### v13.1.1 // 2025-11-29
 
-**Stage 2 Updates**:
-- Add reg entry to disable "How-to Tips" on Windows 8+
+**Documentation**:
+- Comprehensive README overhaul
+- Updated tool versions and descriptions
+- Added detailed usage instructions
 
-**Stage 4 Updates**:
-- Add disabling of registry keys `AllowCortanaAboveLock` and `AllowSearchToUseLocation`
-
-**Stage 5 Updates**:
-- Update Windows Defender prior to Windows Update (fixes update bug)
-
-**Tool Updates**:
-- McAfee Stinger: v12.1.0.2565
-- CCleaner: v5.36.6278
-- Adobe Flash Player: v27.0.0.183
-- O&O ShutUp10: v1.6.1393
-- AdwCleaner: v7.0.4.0
-- smartctl/drivedb: Updated
-
-See [changelog.txt](changelog.txt) for complete version history (14,981 lines, 15 years of development!).
+See [changelog.txt](changelog.txt) for complete version history.
 
 ## Support
 
-### For This Archived Version
-
-This is an archived release. For historical reference only.
-
-### For Current Tron
-
-- **Subreddit**: [r/TronScript](https://old.reddit.com/r/TronScript)
-- **Official Repo**: [bmrf/tron](https://github.com/bmrf/tron)
-- **Issues**: Use the official repo for bug reports
-- **Common Questions**: [Tron FAQ](https://www.reddit.com/r/TronScript/wiki/index#wiki_cq_.28common_questions.29)
+- **Issues**: Please file issues in this repository for bugs related to this fork.
+- **Upstream**: [bmrf/tron](https://github.com/bmrf/tron)
 
 ## Related Projects
 
 Part of the Tron ecosystem:
 
-- **[bmrf/tron](https://github.com/bmrf/tron)** - Official upstream repository (active development)
 - **[tron_standalone_scripts](https://github.com/thookham/tron_standalone_scripts)** - Individual Tron utilities
 - **[tron_PowerShell](https://github.com/thookham/tron_PowerShell)** - PowerShell-based Tron tools
 
@@ -494,7 +459,7 @@ Part of the Tron ecosystem:
 
 **MIT License**
 
-Copyright (c) 2014 Vocatus Gate
+Copyright (c) 2014-2025 Vocatus Gate
 
 Tron and any included subscripts and `.reg` files are free to use, redistribute, and modify under the MIT license.
 
@@ -502,22 +467,12 @@ See [LICENSE](LICENSE) for details.
 
 ---
 
-## Acknowledgments
-
-- **Vocatus Gate (bmrf)** - Original creator and maintainer
-- **r/TronScript Community** - Continuous feedback and contributions
-- **Tool Authors** - All the amazing developers who created the bundled utilities
-- **Contributors** - 40+ GitHub contributors over the years
-
----
-
 **⚠️ Important Reminders**
 
-1. **Always get the FULL PACKAGE** from [r/TronScript](https://old.reddit.com/r/TronScript) - GitHub code alone won't work
-2. **This is an ARCHIVED version** - Use [bmrf/tron](https://github.com/bmrf/tron) for latest features
-3. **Backup your data** before running - though Tron creates restore points
-4. **Allow 3-10 hours** for completion - don't interrupt unnecessarily
-5. **Test in a VM first** if you're unfamiliar with what Tron does
+1. **Always get the FULL PACKAGE** from Releases - GitHub code alone won't work
+2. **Backup your data** before running - though Tron creates restore points
+3. **Allow 3-10 hours** for completion - don't interrupt unnecessarily
+4. **Test in a VM first** if you're unfamiliar with what Tron does
 
 ---
 

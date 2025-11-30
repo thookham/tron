@@ -6,8 +6,8 @@
     into a .zip file and, if 7-Zip is available, a self-extracting .exe.
 #>
 
-$Version = "13.1.0"
-$ReleaseDate = "2025-11-27"
+$Version = "13.1.1"
+$ReleaseDate = "2025-11-29"
 $OutputDir = Join-Path $PSScriptRoot "releases"
 $SourceFiles = @("tron.bat", "resources", "README.md", "LICENSE", "changelog.txt")
 
