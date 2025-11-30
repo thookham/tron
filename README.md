@@ -508,8 +508,6 @@ Part of the Tron ecosystem:
 
 **MIT License**
 
-Copyright (c) 2014-2025 Vocatus Gate
-
 Tron and any included subscripts and `.reg` files are free to use, redistribute, and modify under the MIT license.
 
 See [LICENSE](LICENSE) for details.
