@@ -4,7 +4,11 @@
  * Home page of code is: https://www.smartmontools.org
  *
  * Copyright (C) 2003-11 Philip Williams, Bruce Allen
+<<<<<<< HEAD
  * Copyright (C) 2008-25 Christian Franke
+=======
+ * Copyright (C) 2008-24 Christian Franke
+>>>>>>> upstream/master
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -68,7 +72,11 @@
 /*
 const drive_settings builtin_knowndrives[] = {
  */
+<<<<<<< HEAD
   { "VERSION: 7.2/6014 2025-11-23 17:50:44 +0000 f14fcb7ff036",
+=======
+  { "VERSION: 7.2/5577 2024-01-12 18:07:33 $Id$",
+>>>>>>> upstream/master
     "-", "-",
     "Version information",
     ""
@@ -89,11 +97,15 @@ const drive_settings builtin_knowndrives[] = {
     "-v 11,raw48,Calibration_Retry_Count,HDD "
     "-v 12,raw48,Power_Cycle_Count "
     "-v 13,raw48,Read_Soft_Error_Rate "
+<<<<<<< HEAD
     //  14-21 Unknown_Attribute
     "-v 22,raw48,Helium_Level,HDD " // WDC (HGST)
     "-v 23,raw48,Helium_Condition_Lower,HDD " // ] Toshiba
     "-v 24,raw48,Helium_Condition_Upper,HDD " // ]
     //  25-174 Unknown_Attribute
+=======
+    //  14-174 Unknown_Attribute
+>>>>>>> upstream/master
     "-v 175,raw48,Program_Fail_Count_Chip,SSD "
     "-v 176,raw48,Erase_Fail_Count_Chip,SSD "
     "-v 177,raw48,Wear_Leveling_Count,SSD "
@@ -118,7 +130,11 @@ const drive_settings builtin_knowndrives[] = {
     "-v 197,raw48,Current_Pending_Sector "
     "-v 198,raw48,Offline_Uncorrectable "
     "-v 199,raw48,UDMA_CRC_Error_Count "
+<<<<<<< HEAD
     "-v 200,raw48,Multi_Zone_Error_Rate,HDD " // Seagate Helium HDDs: "Pressure_Limit"
+=======
+    "-v 200,raw48,Multi_Zone_Error_Rate,HDD "
+>>>>>>> upstream/master
     "-v 201,raw48,Soft_Read_Error_Rate,HDD "
     "-v 202,raw48,Data_Address_Mark_Errs,HDD "
     "-v 203,raw48,Run_Out_Cancel "
@@ -153,7 +169,11 @@ const drive_settings builtin_knowndrives[] = {
     "-v 254,raw48,Free_Fall_Sensor,HDD"
   },
   { "Swissbit C440 Industrial CompactFlash Card",
+<<<<<<< HEAD
     // spec v1.23 found at https://www.farnell.com/datasheets/1821167.pdf
+=======
+    // spec v1.23 found at http://www.farnell.com/datasheets/1821167.pdf
+>>>>>>> upstream/master
     // tested with SFCF4096H2BU4TO-I-MS-527-STD
     "SFCF(2048|4096|8192|16GB|32GB|64GB)H[0-9]BU[24]TO-(C|I)-(MS|QT|NU)-5[0-9]7-STD",
     "", "",
@@ -200,6 +220,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 248,raw48,Perc_Rated_Life_Remain "
     "-v 249,raw48,Spares_Remaining_Perc "
   },
+<<<<<<< HEAD
   { "Swissbit X-7x Family SATA SSD", // tested with
       // SFSA060GM2AK1TO-C-6B-536-STD/SBR11007, SFSA020GU2AK1TO-I-6B-22P-STD/SBR15004,
       // SFSA160GM2AK1TA-I-8C-11P-STD/SBR15103, SFSA320GM2AK2TA-I-8C-21P-STD/SBR15103
@@ -262,6 +283,8 @@ const drive_settings builtin_knowndrives[] = {
     "-v 242,raw48,Total_Host_LBA_Read "
     "-v 248,raw48,Remaining_Life "
   },
+=======
+>>>>>>> upstream/master
   { "Apacer SDM4 Series SSD Module",
     "(2|4|8|16|32|64)GB SATA Flash Drive", // tested with APSDM002G15AN-CT/SFDDA01C and SFI2101D
     "SF(DDA01C|I2101D)",
@@ -525,7 +548,11 @@ const drive_settings builtin_knowndrives[] = {
     "This drive may hang after 5184 hours of power-on time:\n"
     "https://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html\n"
     "See the following web page for firmware updates:\n"
+<<<<<<< HEAD
     "https://www.crucial.com/usa/en/support-ssd",
+=======
+    "http://www.crucial.com/usa/en/support-ssd",
+>>>>>>> upstream/master
     "-v 170,raw48,Grown_Failing_Block_Ct "
     "-v 171,raw48,Program_Fail_Count "
     "-v 172,raw48,Erase_Fail_Count "
@@ -554,6 +581,7 @@ const drive_settings builtin_knowndrives[] = {
       // Crucial_CT1024M550SSD1/MU01, Crucial_CT128M550SSD4/MU02
     "CT(120|240|480)BX300SSD1|" // Silicon Motion SM2258, same attributes as Marvell-based Crucial SSDs,
       // tested with CT240BX300SSD1/M2CR010
+<<<<<<< HEAD
     "CT(120|240|480|960|[124]000)BX500SSD1|" // Silicon Motion SM2258XTSM2259XT2, tested with CT120BX500SSD1/M6CR013,
       // CT480BX500SSD1/M6CR041, CT1000BX500SSD1/M6CR030, CT1000BX500SSD1/M6CR061, CT2000BX500SSD1/M6CR030,
       // CT4000BX500SSD1/M6CR082
@@ -561,6 +589,14 @@ const drive_settings builtin_knowndrives[] = {
       // CT500MX500SSD1/M3CR010, CT1000MX500SSD1/M3CR010, CT2000MX500SSD1/M3CR010, CT500MX500SSD1/M3CR020,
       // CT250MX500SSD4/M3CR022, CT500MX500SSD1/M3CR022, CT500MX500SSD1/M3CR023, CT1000MX500SSD1/M3CR032,
       // CT4000MX500SSD1/M3CR044, CT500MX500SSD1N/M3CR023
+=======
+    "CT(120|240|480|960|[12]000)BX500SSD1|" // Silicon Motion SM2258XT, tested with CT120BX500SSD1/M6CR013,
+      // CT1000BX500SSD1/M6CR030, CT2000BX500SSD1/M6CR030
+    "CT(250|500|[124]000)MX500SSD[14]|" // Silicon Motion SM2258, tested with CT250MX500SSD1/M3CR010
+      // CT500MX500SSD1/M3CR010, CT1000MX500SSD1/M3CR010, CT2000MX500SSD1/M3CR010,
+      // CT500MX500SSD1/M3CR020, CT250MX500SSD4/M3CR022, CT500MX500SSD1/M3CR022,
+      // CT500MX500SSD1/M3CR023, CT1000MX500SSD1/M3CR032, CT4000MX500SSD1/M3CR044
+>>>>>>> upstream/master
     "Micron_M500_MTFDDA[KTV](120|240|480|960)MAV|"// tested with Micron_M500_MTFDDAK960MAV/MU05
     "Micron_M500DC_(EE|MT)FDDA[AK](120|240|480|800)MBB|" // tested with Micron_M500DC_EEFDDAA120MBB/129,
       // Micron_M500DC_MTFDDAK800MBB/0129
@@ -598,6 +634,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 202,raw48,Percent_Lifetime_Remain " // norm = max(100-raw,0); raw = percent_lifetime_used
     "-v 206,raw48,Write_Error_Rate "
     "-v 210,raw48,Success_RAIN_Recov_Cnt "
+<<<<<<< HEAD
     "-v 223,raw48,Tot_Bg_Scan_ECC_Fail_Ct "
     "-v 246,raw48,Total_LBAs_Written "
     "-v 247,raw48,Host_Program_Page_Count "
@@ -636,11 +673,40 @@ const drive_settings builtin_knowndrives[] = {
     "-v 172,raw48,Erase_Fail_Cnt "
     "-v 173,raw16,Erase_Cnt "
     "-v 174,raw48,Unknown_Maxio_Attribute " // FW SN07373, SN08979
+=======
+    "-v 223,raw48,Unkn_CrucialMicron_Attr " // M6CR030
+    "-v 246,raw48,Total_LBAs_Written "
+    "-v 247,raw48,Host_Program_Page_Count "
+    "-v 248,raw48,FTL_Program_Page_Count "
+    "-v 249,raw48,Unkn_CrucialMicron_Attr " // M6CR030
+  //"-v 250,raw48,Read_Error_Retry_Rate "   // M6CR030
+    "-v 251,raw48,Unkn_CrucialMicron_Attr " // M6CR030
+    "-v 252,raw48,Unkn_CrucialMicron_Attr " // M6CR030
+    "-v 253,raw48,Unkn_CrucialMicron_Attr " // M6CR030
+    "-v 254,raw48,Unkn_CrucialMicron_Attr"  // M6CR030
+  },
+  { "Lexar 128GB SSD", // for other Lexar drives see ticket #1529
+    "Lexar 128GB SSD", // Lexar 128GB SSD/H190117D
+    "", "",
+    "-v 5,raw48,New_Bad_Blk_Cnt "
+  //"-v 9,raw24(raw8),Power_On_Hours "
+  //"-v 12,raw48,Power_Cycle_Count "
+    "-v 167,raw48,SSD_Protect_mode "
+    "-v 168,raw48,SATA_PHY_Error_Cnt "
+    "-v 169,raw48,Bad_Block_Cnt "
+    "-v 171,raw48,Program_Fail_Cnt "
+    "-v 172,raw48,Erase_Fail_Cnt "
+    "-v 173,raw48,Erase_Cnt "
+>>>>>>> upstream/master
     "-v 175,raw48,Bad_Cluster_Cnt "
     "-v 177,raw48,Read_Retry_Cnt "
     "-v 180,raw48,Spare_Blk_Cnt_Left "
   //"-v 187,raw48,Reported_Uncorrect "
+<<<<<<< HEAD
     "-v 192,raw48,Unexpect_Power_Loss_Ct "
+=======
+  //"-v 192,raw48,Power-Off_Retract_Count "
+>>>>>>> upstream/master
   //"-v 194,tempminmax,Temperature_Celsius "
   //"-v 199,raw48,UDMA_CRC_Error_Count "
     "-v 206,raw48,Min_Erase_Cnt "
@@ -650,6 +716,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 210,raw48,SLC_Max_Erase_Cnt "
     "-v 211,raw48,SLC_Avg_Erase_Cnt "
     "-v 231,raw48,SSD_Life_Left "
+<<<<<<< HEAD
     "-v 241,raw48,Lifetime_Writes_GiB "
     "-v 242,raw48,Lifetime_Reads_GiB "
     "-v 243,raw48,Unknown_Maxio_Attribute " // FW SN07373
@@ -704,6 +771,23 @@ const drive_settings builtin_knowndrives[] = {
     "(Micron_5400_)?(EE|MT)FDDA[KV](240|480|960|1T9|3T8|7T6)TG[ABC](_SED)?|" // tested with
       // Micron_5400_MTFDDAK1T9TGB/D4MU001, Micron_5400_MTFDDAK960TGA_SED/D4CS001
     "VK001920G(WSXK|XAWN)", // HPE OEM, tested with VK001920GWSXK/HPG3 (5200?), VK001920GXAWN/HPG1 (5300?)
+=======
+  //"-v 241,raw48,Total_LBAs_Written "
+  //"-v 242,raw48,Total_LBAs_Read "
+    "-v 245,raw48,Bit_Error_Cnt "
+  },
+  // Reference: https://www.micron.com/resource-details/feec878a-265e-49a7-8086-15137c5f9011
+  // TN-FD-34: 5100 SSD SMART Implementation
+  { "Micron 5100 / 52x0 / 5300 / 5400 SSDs",
+    "(Micron_5100_)?(EE|MT)FDDA[KV](240|480|960|1T9|3T8|7T6)T(BY|CB|CC)|" // Matches both stock and Dell OEM
+      // tested with Micron_5100_MTFDDAK3T8TCB/D0MU410, MTFDDAK3T8TCB/D0MU410
+    "(Micron_5200_)?MTFDDAK(240|480|960|1T9|3T8|7T6)TD(C|D|N)|" // tested with Micron_5200_MTFDDAK240TDN/D1MU005,
+      // Micron_5200_MTFDDAK3T8TDD/D1MU505
+    "Micron_5210_MTFDDAK(480|960|1T9|3T8|7T6)QDE|" // tested with Micron_5210_MTFDDAK7T6QDE/D2MU804
+    "Micron_5300(HC)?_MTFDDA[KV](240|480|960|1T9|3T8|7T6)TD[STU]|" // tested with Micron_5300_MTFDDAK1T9TDS/D3MU001
+      // Micron_5300HC_MTFDDAK960TDS/D3MN010
+    "(Micron_5400_)?(EE|MT)FDDA[KV](240|480|960|1T9|3T8|7T6)TG[ABC]", // tested with Micron_5400_MTFDDAK1T9TGB/D4MU001,
+>>>>>>> upstream/master
     "", "",
   //"-v 1,raw48,Raw_Read_Error_Rate "
   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
@@ -768,7 +852,12 @@ const drive_settings builtin_knowndrives[] = {
     "S9FM01\\.8",
     "A firmware update is available for this drive.\n"
     "It is HIGHLY RECOMMENDED for drives with specific serial numbers.\n"
+<<<<<<< HEAD
     "See the following web page for details:\n"
+=======
+    "See the following web pages for details:\n"
+    "https://www.corsair.com/en-us/force-series-ls-60gb-sata-3-6gb-s-ssd\n"
+>>>>>>> upstream/master
     "https://www.smartmontools.org/ticket/628",
     "-v 1,raw24/raw32,Raw_Read_Error_Rate "
     "-v 5,raw48,Retired_Block_Count "
@@ -791,7 +880,11 @@ const drive_settings builtin_knowndrives[] = {
   },
   { "SandForce Driven SSDs",
     "SanDisk SDSSDA(120|240|480)G|" // SanDisk SSD Plus, tested with SanDisk SDSSDA240G/U21010RL
+<<<<<<< HEAD
     "SanDisk SD8S[BFN]AT128G1(00|12)2", // SanDisk Z400s, tested with
+=======
+    "SanDisk SD8S[BFN]AT128G1(00|12)2", // SanDisk Z400s, tested with 
+>>>>>>> upstream/master
       // SanDisk SD8SFAT128G1122/Z2333000, SanDisk SD8SNAT128G1002/Z2317002
       // SanDisk SD8SBAT128G1002/Z2317002
     "", "",
@@ -837,7 +930,10 @@ const drive_settings builtin_knowndrives[] = {
       // FM-25S2S-240GBP2/4.2
     "FTM(06|12|24|48)CT25H|" // Supertalent TeraDrive CT, tested with
       // FTM24CT25H/STTMP2P1
+<<<<<<< HEAD
     "KINGSTON RBU-SC400S37(64|128|256)G|" // tested with KINGSTON RBU-SC400S37256G/KD1ABBF0
+=======
+>>>>>>> upstream/master
     "KINGSTON SE50S37?(100|240|480)G|" // tested with KINGSTON SE50S3100G/KE1ABBF0,
       // KINGSTON SE50S37100G/61AABBF0 (E50)
     "KINGSTON SH10[03]S3(90|120|240|480)G|" // HyperX (3K), SF-2281, tested with
@@ -869,8 +965,13 @@ const drive_settings builtin_knowndrives[] = {
       // OCZ VERTEX2-PRO/1.10 (Bogus thresholds for attribute 232 and 235)
     "D2[CR]STK251...-....(\\.C)?|" // OCZ Deneva 2 C/R, SF-22xx/25xx,
       // tested with D2CSTK251M11-0240/2.08, D2CSTK251A10-0240/2.15, D2RSTK251M11-0100.C/3.22
+<<<<<<< HEAD
     "OCZ-(AGILITY3|SOLID3|VERTEX3(\\.20| LT| MI)?)|" // SF-2200, tested with OCZ-VERTEX3/2.02,
       // OCZ-AGILITY3/2.11, OCZ-SOLID3/2.15, OCZ-VERTEX3 MI/2.15, OCZ-VERTEX3 LT/2.22, OCZ-VERTEX3.20/2.60
+=======
+    "OCZ-(AGILITY3|SOLID3|VERTEX3( LT| MI)?)|"  // SF-2200, tested with OCZ-VERTEX3/2.02,
+      // OCZ-AGILITY3/2.11, OCZ-SOLID3/2.15, OCZ-VERTEX3 MI/2.15, OCZ-VERTEX3 LT/2.22
+>>>>>>> upstream/master
     "OCZ Z-DRIVE R4 [CR]M8[48]|" // PCIe, SF-2282/2582, tested with OCZ Z-DRIVE R4 CM84/2.13
       // (Bogus attributes under Linux)
     "OCZ Z-DRIVE 4500|"
@@ -938,7 +1039,11 @@ const drive_settings builtin_knowndrives[] = {
     "-v 242,raw48,Lifetime_Reads_GiB"
   },
   { "StorFly CFast SATA 6Gbps SSDs",
+<<<<<<< HEAD
     // https://datasheet.octopart.com/VSFCS2CC060G-100-Virtium-datasheet-82287733.pdf
+=======
+    // http://datasheet.octopart.com/VSFCS2CC060G-100-Virtium-datasheet-82287733.pdf
+>>>>>>> upstream/master
     // tested with StorFly VSFCS2CC060G-100/0409-000
     "StorFly VSFCS2C[CI](016|030|060|120|240)G-...",
     // C - commercial, I industrial
@@ -957,7 +1062,10 @@ const drive_settings builtin_knowndrives[] = {
     "BP4 mSATA SSD|" // MyDigital BP4, tested with BP4 mSATA SSD/S8FM06.9
     "Corsair Force LE(200)? SSD|" // tested with Corsair Force LE SSD/SAFC11.0,
       // Corsair Force LE200 SSD/SBFM10, .../SBFM60.9
+<<<<<<< HEAD
     "DGSR2(128|256|512)GP13T|"  // tested with DGSR2512GP13T/SBFM61.5
+=======
+>>>>>>> upstream/master
     "GIGABYTE GP-GSTFS31((120|240|256|480)G|100T)NTD|" // tested with GIGABYTE GP-GSTFS31120GNTD/SBFM61.3
     "GOODRAM IRIDIUM PRO|" // tested with GOODRAM IRIDIUM PRO/SAFM01.5
     "IRP?-SSDPR-S25[AC]-(120|240|256|480|512|960|0[12]T)|" // Goodram IRIDM (PRO), tested with
@@ -970,12 +1078,20 @@ const drive_settings builtin_knowndrives[] = {
       // KINGSTON RBUSNS4180S3256GJ/SBFK61D1, KINGSTON RBUSNS8180S3512GJ/SBFK61D1
     "KINGSTON SEDC400S37(400|480|800|960|1600|1800)G|" // DC400, tested with
       // KINGSTON SEDC400S37480G/SAFM02.[GH], KINGSTON SEDC400S37960G/SAFM32.I
+<<<<<<< HEAD
     "KINGSTON SEDC(450R|500[MR]|600ME?)(480|960|1920|3840|7680)G|" // DC450R, DC500M/R, DC600M, tested with
       // KINGSTON SEDC450R480G/SCEKH3. KINGSTON SEDC500M1920G/SCEKJ2.3,
       // KINGSTON SEDC500R480G/SCEKJ2.3, KINGSTON SEDC450R7680G/SCEKH3.4,
       // KINGSTON SEDC600M7680G/SCEKH5.1, KINGSTON SEDC600ME960G/SCEKH5L5
     "KINGSTON SM2280S3G2(120|240|480)G|" // KINGSTON SM2280S3G2120G/SAFM01.R,
       // KINGSTON SM2280S3G2240G/SAFM01.W
+=======
+    "KINGSTON SEDC(450R|500[MR]|600M)(480|960|1920|3840|7680)G|" // DC450R, DC500M/R, DC600M, tested with
+      // KINGSTON SEDC450R480G/SCEKH3. KINGSTON SEDC500M1920G/SCEKJ2.3,
+      // KINGSTON SEDC500R480G/SCEKJ2.3, KINGSTON SEDC450R7680G/SCEKH3.4,
+      // KINGSTON SEDC600M7680G/SCEKH5.1
+    "KINGSTON SM2280S3G2(120)G|" // KINGSTON SM2280S3G2120G/SAFM01.R
+>>>>>>> upstream/master
     "KINGSTON SUV300S37A(120|240|480)G|" // UV300 SSD, tested with KINGSTON SUV300S37A120G/SAFM11.K
     "KINGSTON SKC310S3B?7A960G|" // SSDNow KC310, KINGSTON SKC310S37A960G/SAFM00.r
     "KINGSTON SKC400S37(128G|256G|512G|1T)|" // SSDNow KC400, KINGSTON SKC400S37128G
@@ -986,11 +1102,15 @@ const drive_settings builtin_knowndrives[] = {
       // Silicon Motion controller (see ticket #801), tested with
       // KINGSTON SA400S37240G/SBFK10D7, KINGSTON SA400S37120G/SBFK71E0, */SBFKB1D1
       // KINGSTON  SA400S37480G/SBFK10D7 (two spaces), KINGSTON SA400M8240G/SBFK61E1
+<<<<<<< HEAD
     "KIOXIA-EXCERIA SATA SSD|" // KIOXIA-EXCERIA SATA SSD/SBFA18.1 (480GB)
+=======
+>>>>>>> upstream/master
     "Patriot (Blast|Blaze|Flare|Ignite)|" // tested with Patriot Blast/SAFM11.3,
       // Patriot Blaze/S9FM02, Patriot Flare/SBFM91.2, Patriot Ignite/SAFM01.7
     "Patriot Burst( (120|240|480|960)GB)?|" // tested with Patriot Burst/SBFM11.2,
       // Patriot Burst 480GB/SBFMLA.5
+<<<<<<< HEAD
     "PNY CS(900|1311|2211) ((12|24|48|50|96)0G|[12]T)B SSD|" // tested with PNY CS900 120GB SSD/CS900612,
       // PNY CS900 240GB SSD/CS900613, PNY CS900 500GB SSD/CS900LA5, PNY CS900 500GB SSD/CS900Y13,
       // PNY CS900 1TB SSD/CS900615, PNY CS1311 120GB SSD/CS131122, PNY CS2211 240GB SSD/CS221016
@@ -1000,6 +1120,15 @@ const drive_settings builtin_knowndrives[] = {
       // SSD Smartbuy 240GB/SBFM91.1, SSD Smartbuy 64GB/SBFM21.1
     "SSD PHISON (128|256)GB PS3110-S10C|" // tested with SSD PHISON 128GB PS3110-S10C/SAFM12.2,
       // SSD PHISON 256GB PS3110-S10C/SAFM12.2
+=======
+    "PNY CS(900|1311|2211) (120|240|480|500|960)GB SSD|" // tested with PNY CS900 120GB SSD/CS900612,
+      // PNY CS900 240GB SSD/CS900613, PNY CS900 500GB SSD/CS900Y13, PNY CS1311 120GB SSD/CS131122,
+      // PNY CS2211 240GB SSD/CS221016 (CS900 1TB has different attribute set)
+    "PNY ELITE PSSD|" // tested with PNY ELITE PSSD/CS105P13 (240G)
+    "SSD Smartbuy (60|64|120|128|240|256|480|512|960|1024|2000)GB|" // PS3111-S11, tested with
+      // SSD Smartbuy 240GB/SBFM91.1, SSD Smartbuy 64GB/SBFM21.1
+    "SSD PHISON 256GB PS3110-S10C|" // tested with SSD PHISON 256GB PS3110-S10C/SAFM12.2
+>>>>>>> upstream/master
     "SSDPR-CX400-(128|256|512|1024)|" // Goodram CX400, tested with SSDPR-CX400-512/SBFM61.3
     "TEAM L3 EVO SSD (120|240|480|960)GB|" // TEAM L3 EVO SSD 120GB/SBFM11.0
     "SSM28(128|256|512)GPTCB3B-S11[24]61[123]|" // tested with SSM28256GPTCB3B-S112612/SBFM61.2
@@ -1038,7 +1167,11 @@ const drive_settings builtin_knowndrives[] = {
     "-v 232,raw48,Read_Fail_Count "
     "-v 233,raw48,Flash_Writes_GiB "
     "-v 240,raw48,Not_In_Use "
+<<<<<<< HEAD
     "-v 241,raw48,Lifetime_Writes_GiB " // KIOXIA-EXCERIA SATA SSD/SBFA18.1: 32MiB ?
+=======
+    "-v 241,raw48,Lifetime_Writes_GiB "
+>>>>>>> upstream/master
     "-v 242,raw48,Lifetime_Reads_GiB "
     "-v 244,raw48,Average_Erase_Count "
     "-v 245,raw48,Max_Erase_Count "
@@ -1047,7 +1180,10 @@ const drive_settings builtin_knowndrives[] = {
   // this is a copy of the Phison bases record for the OEM drives with a very
   // weak information in the model. Detection is based on Firmware.
   { "Phison Driven OEM SSDs", // see MKP_521_Phison_SMART_attribute.pdf
+<<<<<<< HEAD
     "Gigastone SSD|" // tested with GSTB512G (Gigastone SSD/SHFM20.2)
+=======
+>>>>>>> upstream/master
     "GOODRAM|" // tested with GOODRAM CX200 (GOODRAM/SAFM12.2)
     "Hoodisk SSD|" // tested with Hoodisk SSD/SBFM01.3, Hoodisk SSD/SBFMJ1.3
     "INTENSO|" // tested with Intenso SSD SATA III Top (INTENSO/S9FM02.6, .../SAFM01.6)
@@ -1055,11 +1191,17 @@ const drive_settings builtin_knowndrives[] = {
     "Kingmax SATA SSD (120|240|480|960)GB|" // tested with Kingmax SATA SSD 240GB/SBFMY1.3
     "SATA SSD|" // tested with Supermicro SSD-DM032-PHI (SATA SSD/S9FM02.1),
       // PC Engines msata16d (SATA SSD/S9FM02.3), FoxLine flssd240x4s(SATA SSD/SBFM10.5)
+<<<<<<< HEAD
     "SPCC Solid State Disk|" // Silicon Power, tested with SPCC Solid State Disk/SBFD00.3,
       // SPCC Solid State Disk/SBFM61.2, SPCC Solid State Disk/SBFMT1.3
     "SSDPR-CX400-(128|256|512|1024|2028)-G2", // Goodram CX400 G2, tested with
       // SSDPR-CX400-512-G2/SBFMLA.5 (SSDPR-CX400-128-G2/SN07373 differs, see ticket #1689)
     "S[89ABH]F[DM][0-9JLTY][0-9A]\\.[0-9]",
+=======
+    "SPCC Solid State Disk", // Silicon Power, tested with SPCC Solid State Disk/SBFD00.3,
+      // SPCC Solid State Disk/SBFM61.2, SPCC Solid State Disk/SBFMT1.3
+    "S[89AB]F[DM][0-9JTY][0-9]\\.[0-9]",
+>>>>>>> upstream/master
     "",
   //"-v 1,raw48,Raw_Read_Error_Rate "
     "-v 2,raw48,Not_In_Use "
@@ -1460,7 +1602,12 @@ const drive_settings builtin_knowndrives[] = {
     "INTEL SSDSA[12]M(040|080|120|160)G2.*",
     "",
     "This drive may require a firmware update to\n"
+<<<<<<< HEAD
     "fix possible drive hangs when reading SMART self-test log.",
+=======
+    "fix possible drive hangs when reading SMART self-test log:\n"
+    "https://downloadcenter.intel.com/download/26491",
+>>>>>>> upstream/master
     "-v 192,raw48,Unsafe_Shutdown_Count "
     "-v 225,raw48,Host_Writes_32MiB "
     "-v 226,raw48,Workld_Media_Wear_Indic "
@@ -1660,6 +1807,11 @@ const drive_settings builtin_knowndrives[] = {
     "-v 242,raw48,Host_Reads_32MiB "
     "-v 249,raw48,NAND_Writes_1GiB"
   },
+<<<<<<< HEAD
+=======
+  // https://www.intel.com/content/www/us/en/solid-state-drives/ssd-540s-series-spec.html
+  // https://www.intel.com/content/www/us/en/solid-state-drives/ssd-540s-series-m2-spec.html
+>>>>>>> upstream/master
   { "Intel 540 Series SSDs", // INTEL SSDSC2KW120H6/LSF036C, INTEL SSDSC2KW480H6/LSF036C
     "INTEL SSDSC[K2]KW(120H|180H|240H|360H|480H|010X)6",
     "", "",
@@ -1710,9 +1862,14 @@ const drive_settings builtin_knowndrives[] = {
   { "Intel 730 and DC S35x0/3610/3700 Series SSDs", // tested with INTEL SSDSC2BP480G4, SSDSC2BB120G4/D2010355,
       // INTEL SSDSC2BB800G4T, SSDSC2BA200G3/5DV10250, SSDSC2BB080G6/G2010130,  SSDSC2BX200G4/G2010110,
       // INTEL SSDSC2BB016T6/G2010140, SSDSC2BX016T4/G2010140, SSDSC2BB150G7/N2010101,
+<<<<<<< HEAD
       // INTEL SSDSC2BB480H4/D2010380, INTEL SSDSC2BB240G4C/D201FJ14, INTEL SSDSC2BA800G3E/5DV10250,
       // INTEL SSDSC1BG400G4/G2010150
     "INTEL SSDSC(1N|[12]B)[ABGPX]((080|100|120|150|160|200|240|300|400|480|600|800)[GH][3467][CERT]?|(012|016)T[46])|"
+=======
+      // INTEL SSDSC2BB480H4/D2010380, INTEL SSDSC2BB240G4C/D201FJ14, INTEL SSDSC2BA800G3E/5DV10250
+    "INTEL SSDSC(1N|2B)[ABPX]((080|100|120|150|160|200|240|300|400|480|600|800)[GH][3467][CERT]?|(012|016)T[46])|"
+>>>>>>> upstream/master
       // A = S3700, B*4 = S3500, B*6 = S3510, P = 730, X = S3610
       // Dell ships drives with model of the form SSDSC2BB120G4R
     "VK000(120|240|480)GWSXF", // tested with VK000480GWSXF/HPG2 (HPE INTEL SSDSC2BB480G4)
@@ -1749,9 +1906,16 @@ const drive_settings builtin_knowndrives[] = {
     "-v 243,raw48,NAND_Writes_32MiB " // S3510/3610
     "-F xerrorlba" // tested with SSDSC2BB600G4/D2010355
   },
+<<<<<<< HEAD
   { "Intel SSD Pro 5400s Series", // Tested with SSDSC2KF480H6/LSF036P,
       // INTEL SSDSC2KF256H6 SATA 256GB/LBFD16N
     "INTEL SSDSC[2K]KF((120|180|240|256|360|480|512)H|010X)6( .*)?",
+=======
+  // https://www.intel.com/content/www/us/en/solid-state-drives/ssd-pro-5400s-series-spec.html
+  // https://www.intel.com/content/www/us/en/solid-state-drives/ssd-pro-5400s-series-m2-spec.html
+  { "Intel SSD Pro 5400s Series", // Tested with SSDSC2KF480H6/LSF036P
+    "INTEL SSDSC[2K]KF(120H|180H|240H|360H|480H|010X)6",
+>>>>>>> upstream/master
     "", "",
     "-v 170,raw48,Available_Reservd_Space "
     "-v 171,raw48,Program_Fail_Count "
@@ -1858,12 +2022,20 @@ const drive_settings builtin_knowndrives[] = {
     "-v 234,raw24/raw32:04321,Thermal_Throttle_Status "
     "-v 245,raw48,Percent_Life_Remaining"
   },
+<<<<<<< HEAD
   { "Intel/Solidigm S46x0/S45x0 Series SSDs", // INTEL SSDSC2KB480G7/SCV10100,
       // INTEL SSDSC2KB960G7/SCV10100, INTEL SSDSC2KB038T7/SCV10100,
       // INTEL SSDSC2KB038T7/SCV10121, INTEL SSDSC2KG240G7/SCV10100,
       // INTEL SSDSC2KB480GZ/7CV10100, INTEL SSDSC2KB076T8/XCV10132,
       // SOLIDIGM SSDSC2KB960GZ/7CV10130
     "(INTEL|SOLIDIGM) SSDSC(2K|KK)(B|G)(240G|480G|960G|019T|038T|076T)[78Z].?",
+=======
+  { "Intel S4510/S4610/S4500/S4600 Series SSDs", // INTEL SSDSC2KB480G7/SCV10100,
+      // INTEL SSDSC2KB960G7/SCV10100, INTEL SSDSC2KB038T7/SCV10100,
+      // INTEL SSDSC2KB038T7/SCV10121, INTEL SSDSC2KG240G7/SCV10100,
+      // INTEL SSDSC2KB480GZ/7CV10100, INTEL SSDSC2KB076T8/XCV10132
+    "INTEL SSDSC(2K|KK)(B|G)(240G|480G|960G|019T|038T|076T)[78Z].?",
+>>>>>>> upstream/master
     "", "",
   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
   //"-v 9,raw24(raw8),Power_On_Hours "
@@ -2003,8 +2175,12 @@ const drive_settings builtin_knowndrives[] = {
     "KINGSTON SVP?100S2B?(64|96|128|256|512)G|"  // SSDNow V100/V+100 Series,
       // tested with KINGSTON SVP100S296G/CJR10202, KINGSTON SV100S2256G/D110225a
     "KINGSTON SV200S3(64|128|256)G|" // SSDNow V200 Series, tested with KINGSTON SV200S3128G/E120506a
+<<<<<<< HEAD
     "[MN]T-(64|128|256|512|[124]TB?)( 22..)?|" // KingSpec MT/NT, MAS0902A-B2C or CS1802A-B2C, tested with
       // MT-512/SN12574, NT-512/T191212, NT-1TB 2242/SN12574
+=======
+    "NT-(64|128|256|512|[12]T)|" // KingSpec NT, MAS0902A-B2C or CS1802A-B2C, tested with NT-512/T191212
+>>>>>>> upstream/master
     "TOSHIBA THNS128GG4BBAA|"  // Toshiba / Super Talent UltraDrive DX,
                                // tested with Toshiba 128GB 2.5" SSD (built in MacBooks)
     "TOSHIBA THNSNC128GMLJ|" // tested with THNSNC128GMLJ/CJTA0202 (built in Toshiba Protege/Dynabook)
@@ -2041,14 +2217,23 @@ const drive_settings builtin_knowndrives[] = {
   //"-v 241,raw48,Total_LBAs_Written "    // FW SVN423b
   //"-v 242,raw48,Total_LBAs_Read "       // FW SVN423b
   },
+<<<<<<< HEAD
   { "Plextor M3/M5/M6/M7/S2G Series SSDs", // Marvell 88SS9174 (M3, M5S), 88SS9187 (M5P, M5Pro), 88SS9188 (M6M/S),
+=======
+  { "Plextor M3/M5/M6/M7 Series SSDs", // Marvell 88SS9174 (M3, M5S), 88SS9187 (M5P, M5Pro), 88SS9188 (M6M/S),
+>>>>>>> upstream/master
       // tested with PLEXTOR PX-128M3/1.01, PX-128M3P/1.04, PX-256M3/1.05, PX-128M5S/1.02, PX-256M5S/1.03,
       // PX-128M5M/1.05, PX-128M5S/1.05, PX-128M5Pro/1.05, PX-512M5Pro/1.06, PX-256M5P/1.01, PX-128M6S/1.03
       // (1.04/5 Firmware self-test log lifetime unit is bogus, possibly 1/256 hours)
       // PLEXTOR PX-256M6S+/1.00, PLEXTOR  PX-128M3/1.00, PLEXTOR PX-128M3/1.07, PLEXTOR PX-128M6V/1.04,
+<<<<<<< HEAD
       // PLEXTOR PX-128M6G-2242/1.01, PLEXTOR PX-512M7VC/1.05, PLEXTOR PX-512M8VC +/1.00,
       // PLEXTOR PX-512S2G/1.02 (Silicon Motion SM2258 ?)
     "PLEXTOR  ?PX-(64|128|256|512|768)(M(3P?|5[MPS]|5Pro|6[GMSV]|[78]VC)|S2G)(\\+|-.*| )?",
+=======
+      // PLEXTOR PX-128M6G-2242/1.01, PLEXTOR PX-512M7VC/1.05, PLEXTOR PX-512M8VC +/1.00
+    "PLEXTOR  ?PX-(64|128|256|512|768)M(3P?|5[MPS]|5Pro|6[GMSV]|[78]VC)(\\+|-.*| )?",
+>>>>>>> upstream/master
     "", "",
   //"-v 1,raw48,Raw_Read_Error_Rate "
   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
@@ -2118,8 +2303,12 @@ const drive_settings builtin_knowndrives[] = {
     "Samsung SSD 845DC EVO .*|" // Samsung SSD 845DC EVO 960GB/EXT03X3Q
     "SAMSUNG MZ7PA256HMDR-.*|" // PM810 (470 Series), tested with SAMSUNG MZ7PA256HMDR-010H1/AXM07H1Q
     "SAMSUNG MZ[7M]PC(032|064|128|256|512)HBCD-.*|" // PM830, tested with SAMSUNG MZMPC032HBCD-000L1/CXM12L1Q
+<<<<<<< HEAD
     "SAMSUNG MZ7[TP]D(128|256|512)H(AFV|CGM)-.*|" // 840 / 840 Pro (T/P), tested with
       // SAMSUNG MZ7TD256HAFV-000L7/DXT06L6Q, SAMSUNG MZ7PD256HCGM-000H7/DXM06H6Q
+=======
+    "SAMSUNG MZ7TD(128|256)HAFV-.*|" // 840 Series, tested with SAMSUNG MZ7TD256HAFV-000L7/DXT06L6Q
+>>>>>>> upstream/master
     "SAMSUNG MZ[7M]TD(128|256|512)HA[GF][LMV]-.*|" // PM841, tested with SAMSUNG MZMTD512HAGL-00000/DXT4200Q,
       // SAMSUNG MZ7TD512HAGM-000L1/DXT06L0Q, SAMSUNG MZMTD128HAFV-000L1/DXT43L0Q
     "SAMSUNG MZ7WD((120|240)H[AC]FV|480H[AC]GM|960H[AC]GP)-.*|" // SM843T(N?) Series, tested with
@@ -2143,8 +2332,13 @@ const drive_settings builtin_knowndrives[] = {
     "SAMSUNG MZ7L3(240|480|960|1T9|3T8|7T6)H(B[LN][AT]|CHQ|CJR)-.*|" // PM893/897, tested with
       // SAMSUNG MZ7L3240HCHQ-00A07/JXTC104Q, SAMSUNG MZ7L3480HCHQ-00A07/JXTC104Q,
       // SAMSUNG MZ7L3480HBLT-00A07/JXTE004Q, SAMSUNG MZ7L33T8HBLT-00A07/JXTC104Q
+<<<<<<< HEAD
     "MK000(240|480|960)G(WCEV|ZXR[AB])|" // MK000960GZXRB/HPG0 (HPE MZ7L3960HBLT-00AH3),
       // MK000480GZXRA/HPG0 (HPE P18432-B21), MK000480GWCEV/HPG3 (HPE)
+=======
+    "MK000(240|480|960)GZXR[AB]|" // MK000960GZXRB/HPG0 (HPE MZ7L3960HBLT-00AH3)
+      // MK000480GZXRA/HPG0 (HPE P18432-B21)
+>>>>>>> upstream/master
     "SAMSUNG MZ7KH(240|480|960|1T9|3T8)HA(HQ|JR|LS)-.*|" //SM883
     "SAMSUNG MZ[7N](LF|TY)(128|192|256)H[CD](GS|HP)-.*|" // CM871/871a, tested with SAMSUNG MZNLF128HCHP-000H1/FXT21H1Q,
       // SAMSUNG MZNTY256HDHP-000/MAT21K0Q, SAMSUNG MZ7LF192HCGS-000L1/FXT03L1Q
@@ -2220,17 +2414,27 @@ const drive_settings builtin_knowndrives[] = {
     "SanDisk (SDSSDHII|Ultra II )[0-9]*GB?|" // Ultra II (88SS9190/88SS9189), tested with
       // SanDisk SDSSDHII120G/X31200RL, SanDisk Ultra II 960GB/X41100RL
     "SanDisk SDSSDH2(128|256)G|" // SanDisk SDSSDH2128G/X211200
+<<<<<<< HEAD
     "SanDisk SDSSDH3 ?((250|500|512|1000|1024|2000)G|[124]T00)|" // Ultra 3D, tested with SanDisk SDSSDH3250G/X61170RL,
       // SanDisk SDSSDH3 250G/401120RL, SanDisk SDSSDH3500G/X61110RL, SanDisk SDSSDH3 512G/40101000,
       // SanDisk SDSSDH31024G/X6107000, SanDisk SDSSDH3 1T00/415020RL, SanDisk SDSSDH3 2T00/411040RL,
       // SanDisk SDSSDH3 4T00/411040RL
+=======
+    "SanDisk SDSSDH3((250|500| 512|1000|1024|2000)G| [124]T00)|" // Ultra 3D, tested with SanDisk SDSSDH3250G/X61170RL,
+      // SanDisk SDSSDH3500G/X61110RL, SanDisk SDSSDH31024G/X6107000, SanDisk SDSSDH3 2T00/411040RL,
+      // SanDisk SDSSDH3 4T00/411040RL, SanDisk SDSSDH3 1T00/415020RL,
+      // SanDisk SDSSDH3 512G/40101000
+>>>>>>> upstream/master
     "SanDisk SDSSDXPS?[0-9]*G|" // Extreme II/Pro (88SS9187), tested with SanDisk SDSSDXP480G/R1311,
       // SanDisk SDSSDXPS480G/X21200RL
     "SanDisk SSD G5 BICS4|" // WD Blue SSD WDS100T2B0A (#1378), tested with SanDisk SSD G5 BICS4/415000WD
     "SanDisk SSD PLUS (120|240|480|[12]000) ?GB|" // Plus (88SS1074), tested with SanDisk SSD PLUS 120 GB/UE3000RL,
       // SanDisk SSD PLUS 120 GB/UE4500RL, SanDisk SSD PLUS 1000GB/UH4400RL
       // SanDisk SSD PLUS 2000GB/UP4504RL
+<<<<<<< HEAD
     "SD Ultra 3D [124]TB|" // tested with SD Ultra 3D 4TB/530500WD
+=======
+>>>>>>> upstream/master
     "SSD SATAIII 16GB", // SSD SATAIII 16GB/i221100 (see #923)
     "", "",
   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
@@ -2352,18 +2556,26 @@ const drive_settings builtin_knowndrives[] = {
       // ADATA SU650/S0212B0, ADATA SU650/V8X01c45, ADATA SU650/V8X21c64, ADATA SU650NS38/P191202a,
       // ADATA SU655/V8X01c55, ADATA SU800/Q0913A, ADATA SU800/R0427A, ADATA SU800/R0918B, ADATA SU900/Q0125A,
       // ADATA SU900/Q0710B
+<<<<<<< HEAD
     "AMD R5SL512G|"// tested with AMD R5SL512G/V0929A0
     "CORSAIR FORCE LX SSD|" // tested with CORSAIR FORCE LX SSD/N0307A
     "CHN (25SATA01M|mSATAM3) (060|128|256|512)|" // Zheino A1/M3 tested with CHN 25SATA01M 060/20150529,
       // CHN mSATAM3 128/Q1124A0,
+=======
+    "CORSAIR FORCE LX SSD|" // tested with CORSAIR FORCE LX SSD/N0307A
+    "CHN mSATAM3 (128|256|512)|" // Zheino M3, tested with CHN mSATAM3 128/Q1124A0
+>>>>>>> upstream/master
     "CIS 2S M305 (16|32|64|128|256)GB|" // Ceroz M305, tested with CIS 2S M305 64GB/P0316B
     "CT(120|250|500|1000)BX100SSD1|" // Crucial BX100, tested with CT250BX100SSD1/MU02,
       // CT500BX100SSD1/MU02, CT1000BX100SSD1/MU02
     "CT(240|480|960)BX200SSD1|" // Crucial BX200 Solid State Drive, tested with CT480BX200SSD1/MU02.6
     "DREVO X1 SSD|" // tested with DREVO X1 SSD/Q0111A
     "Drevo X1 pro (64|128|256)G|" // tested with Drevo X1 pro 64G/Q0303B
+<<<<<<< HEAD
     "DEXP SSD C100 (128|256|512)Gb|" // tested with DEXP SSD C100 256Gb/V0218A0
     "HP SSD S700 ((128|256|512)G|1T)B|" // tested with HP SSD S700 1TB/V0823A0
+=======
+>>>>>>> upstream/master
     "JAJS[56]00M((12[08]|240|256|480|512|960)C|1TB)(-1)?|" // J&A LEVEN JS500/600 (Intenso TOP), tested with
       // JAJS500M120C-1/P0614D, JAJS600M1TB/T0529A0, JAJS600M256C/U0803A0
     "KingDian S100 (32|64)GB|" // SM2244LT, tested with KingDian S100 32GB/0311A
@@ -2378,7 +2590,10 @@ const drive_settings builtin_knowndrives[] = {
       // MKNSSDRE250GB-LT/O1026A
     "MKNSSD(S2|TR)(12[08]|2[45]0|480|500)GB(-(3DL|LT))?|" // Mushkin, tested with MKNSSDS2500GB/T0818A0,
       // MKNSSDTR500GB/O1126A, MKNSSDTR128GB-3DL/Q0616B0
+<<<<<<< HEAD
     "N900-(256|512)|" // tested with Wicgtyp N900-512/W0825A0
+=======
+>>>>>>> upstream/master
     "NFN025SA31T-.*|" // Neo Forza (?), from HP Laptop, tested with NFN025SA31T-6000000/S0628A0
     "NFORCE (256|512)25 - SSZS13|" // Nextron NForce, tested with NFORCE 25625 - SSZS13/V0915A0
     "ONDA S-12 64GB|" // tested with ONDA S-12 64GB/U0401A0
@@ -2389,6 +2604,7 @@ const drive_settings builtin_knowndrives[] = {
     "Ramsta SSD S800 (120|240|480)GB|" // SM2258G, tested with Ramsta SSD S800 480GB/RS81V0
     "SED2QII-LP SATA SSD ((64|128|256|512)GB|[12]TB)|" // ACPI SED2QII-LP, tested with
       // SED2QII-LP SATA SSD 64GB/S0410A
+<<<<<<< HEAD
     "SH00M(120|240|480)GB|" // Yucun R580, tested with SH00M120GB/R0817A0
     "T60|" // KingSpec T60, tested with T60/20151120
     "TCSUNBOW [MX]3 (60|120|240|480)GB|" // TC-Sunbow M3/X3, tested with TCSUNBOW M3 240GB/R0327B0,
@@ -2396,6 +2612,13 @@ const drive_settings builtin_knowndrives[] = {
     "TEAM( T253(TD|X6)?|L5Lite3D)((120|240|256|480|512)G|[12]TB?)|" // TEAMGROUP, tested with
       // TEAML5Lite3D240G/R0302A0 (L5Lite 3D), TEAM T253TD480G/Q0410A, TEAM T253X6256G/U1014A0 (CX2)
       // TEAM T2532TB/SN14546
+=======
+    "T60|" // KingSpec T60, tested with T60/20151120
+    "TCSUNBOW [MX]3 (60|120|240)GB|" // TC-Sunbow M3/X3, tested with TCSUNBOW M3 240GB/R0327B0,
+      // TCSUNBOW X3 120GB/R1211A0
+    "TEAM( T253(TD|X6)|L5Lite3D)((120|240|256|480|512)G|[12]T)|" // TEAMGROUP, tested with
+      // TEAML5Lite3D240G/R0302A0 (L5Lite 3D), TEAM T253TD480G/Q0410A, TEAM T253X6256G/U1014A0 (CX2)
+>>>>>>> upstream/master
     "TS((16|32|64|128|256|512)G|1T)(SSD|MS[AM])(230S?|3[67]0[SI]?|420[IK]?)|" // Transcend SSD230/360/370/420
       // SATA/mSATA, TS6500, tested with TS128GMSA230S/02J0S86A, TS32GMSA370/20140402,
       // mSATA MSM360 mini SSD, tested with TS32GMSM360/Q0407A
@@ -2404,8 +2627,12 @@ const drive_settings builtin_knowndrives[] = {
       // TS512GSSD370S/N1114H, TS32GSSD420I/N1114H, TS32GSSD420K/P1225CE
     "TS(16|32|64|128|512|256)GMTS4[03]0S?|" // TS256GMTS400, TS256GMTS430S/S0423A
     "TS(120|240)GMTS420S?|" // Transcend MTS420, tested with TS120GMTS420S/R0510A0
+<<<<<<< HEAD
     "TS[1248]GSSD25H-S|" // tested with TS2GSSD25H-S/20121012
     "TS(128G|256G|512G|1T|2T|4T)SSD230S|" // TS128GSSD230S/P1025F8, TS2TSSD230S/22Z4W14J
+=======
+    "TS(128G|256G|512G|1T)SSD230S|" // TS128GSSD230S/P1025F8
+>>>>>>> upstream/master
     "TS(120|240|480|960)GSSD220S|" // TS480GSSD220S/P0520AA
     "TS((64|128|256|512)G|[12]T)SSD452K|"// Transcend 452K, tested with TS128GSSD452K/02J0S86A
     "TS(16G|32G|64G|128G|256G|512G|1T)MTS800S?|" // MTS800, tested with TS1TMTS800/O1225H1
@@ -2431,7 +2658,11 @@ const drive_settings builtin_knowndrives[] = {
     "-v 159,raw48,DRAM_1_Bit_Error_Count " // KINGSTON SKC600256G/S4500105
     "-v 160,raw48,Uncorrectable_Error_Cnt "
     "-v 161,raw48,Valid_Spare_Block_Cnt "
+<<<<<<< HEAD
     "-v 162,raw48,Cache_Block_Count " // Transcend MSM360
+=======
+    "-v 162,raw48,Cache_Block_Count " // Transcend MSM360 
+>>>>>>> upstream/master
     "-v 163,raw48,Initial_Bad_Block_Count "
     "-v 164,raw48,Total_Erase_Count "
     "-v 165,raw48,Max_Erase_Count "
@@ -2465,6 +2696,110 @@ const drive_settings builtin_knowndrives[] = {
     "-v 249,raw48,Unkn_SiliconMotion_Attr " // ADATA SU650/V8X01c45
   //"-v 250,raw48,Read_Error_Retry_Rate " // ADATA SU800/Q0913A
     "-v 251,raw48,Unkn_SiliconMotion_Attr" // ADATA SU800/Q0913A
+<<<<<<< HEAD
+=======
+  },
+  // Supermicro SSD-DM032-SMCMVN1, tested with SuperMicro SSD/SOB20R, see (#1380)
+  { "Supermicro SATA DOM (SuperDOM)",
+    "SuperMicro SSD",
+    "", "",
+    "-v 1,raw48,Raw_Read_Error_Rate "
+    "-v 15,raw48,User_Cpcty_Sector_Cnt "
+    "-v 160,raw48,Not_In_Use "
+    "-v 161,raw48,Not_In_Use "
+    "-v 163,raw48,Not_In_Use "
+    "-v 164,raw48,Not_In_Use "
+    "-v 165,raw48,Not_In_Use "
+    "-v 166,raw48,Minimum_PE_Cycles_TLC "
+    "-v 167,raw48,Not_In_Use "
+    "-v 168,raw48,Maximum_PE_Cycles_TLC "
+    "-v 231,raw48,SSD_Life_Left "
+    "-v 233,raw48,NAND_Writes_1GiB "
+    "-v 241,raw48,Lifetime_Writes_GiB "
+    "-v 242,raw48,Lifetime_Reads_GiB "
+  },
+  { "Silicon Motion based OEM SSDs", // Like 'Silicon Motion based SSDs' but with FW detection
+    "240GB|" // from Lenovo T430 Thinkpad, tested with 240GB/P0510E
+    "Dogfish SSD (128|256|512)GB|" // tested with Dogfish SSD 128GB/S1211A0
+    "GIM(16|32|64|128|256|512)|"// GUDGA GIM, tested with GIM128/U0401A0
+    "INTENSO( SSD)?|" // tested with INTENSO/S1211A0 (Portable SSD 256GB premium edition),
+      // INTENSO/V0609A0, INTENSO SSD/V0823A0, INTENSO/V0718B0 
+    "Intenso  ?SSD( S(ata|ATA) ?III)?|" // tested with Intenso SSD/Q1107A0, Intenso  SSD Sata III/P0510E,
+      // Intenso SSD Sata III/R0817B0, Intenso SSD Sata III/V0303B0, Intenso SSD SATAIII/W0825A0
+    "KingFast|" // tested with KingFast/P0725A (F6M), KingFast/S0424A0 (120GB), KingFast/S1128B0 (512GB)
+    "KSM512|" // KingSpec, tested with KSM512/S0509A0
+    "LDLC|" // tested with LDLC/KFS03005
+    "Netac MobileDataStar|" // tested with Netac MobileDataStar/HPS2227I (0x0dd8:0x0562)
+    "ORTIAL SSD|" // tested with ORTIAL SSD/U0202A0 (128GB)
+    "RX7 (240|256|512)G|" // tested with RX7 240G/T0910A0
+    "SATA3 ((12[08]|240|256|480)G|[12]T)B SSD|" // TCSUNBOW X3, tested with SATA3 240GB SSD/S0618A0,
+      // SATA3 1TB SSD/S1230A0,
+      // KingDian S370, tested with SATA3 128GB SSD/T0311A0, SATA3 256GB SSD/S1127B0
+      // KingDian S280, tested with SATA3 240GB SSD/T0519A0
+    "SPCC M\\.2 SSD|" // Silicon Power A/M55, tested with SPCC M.2 SSD/Q0627A0, SPCC M.2 SSD/U0506A0
+    "T-FORCE (128|256|512)GB|" // tested with T-FORCE 512GB/T0910A0
+    "Verbatim Vi550 S3", // may also exist with different controller (tickets #1626 <> #1629),
+      // tested with Verbatim Vi550 S3/U1124A0 (128GB)
+    "HPS2227I|KFS03005|P0510E|P0725A|Q(0627|1107)A0|R0817B0|S(0424|0509|0618|1211|1230)A0|"
+    "S112[78]B0|T0(311|519|910)A0|U(0202|0401|0506|1124)A0|V0((609|823)A|(303|718)B)0|V1027A0|W0825A0",
+    "",
+    "-v 148,raw48,Total_SLC_Erase_Ct "
+    "-v 149,raw48,Max_SLC_Erase_Ct "
+    "-v 150,raw48,Min_SLC_Erase_Ct "
+    "-v 151,raw48,Average_SLC_Erase_Ct "
+    "-v 159,raw48,Unkn_SiliconMotion_Attr "
+    "-v 160,raw48,Uncorrectable_Error_Cnt "
+    "-v 161,raw48,Valid_Spare_Block_Cnt "
+    "-v 163,raw48,Initial_Bad_Block_Count "
+    "-v 164,raw48,Total_Erase_Count "
+    "-v 165,raw48,Max_Erase_Count "
+    "-v 166,raw48,Min_Erase_Count "
+    "-v 167,raw48,Average_Erase_Count "
+    "-v 168,raw48,Max_Erase_Count_of_Spec "
+    "-v 169,raw48,Remaining_Lifetime_Perc "
+    "-v 178,raw48,Runtime_Invalid_Blk_Cnt "
+    "-v 225,raw48,Host_Writes_32MiB "
+    "-v 241,raw48,Host_Writes_32MiB "
+    "-v 242,raw48,Host_Reads_32MiB "
+    "-v 245,raw48,TLC_Writes_32MiB "
+    "-v 246,raw48,SLC_Writes_32MiB "
+    "-v 247,raw48,Raid_Recoverty_Ct "
+    "-v 248,raw48,Unkn_SiliconMotion_Attr "
+    "-v 251,raw48,Unkn_SiliconMotion_Attr"
+  },
+  { "SMART Modular Technologies mSATA XL+ SLC SSDs", // tested with SH9MST6D16GJSI01
+    "SH9MST6D[0-9]*GJSI?[0-9]*", // based on http://www.smartm.com/salesLiterature/embedded/mSATA_overview.pdf
+    "", "", // attributes info from http://www.mouser.com/ds/2/723/smartmodular_09302015_SH9MST6DxxxGJSxxx_rA[1]-770719.pdf
+    "-v 1,raw48,Uncorrectable_ECC_Cnt "
+  //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
+    "-v 9,raw48,Power_On_Hours " // override default raw24(raw8) format
+  //"-v 12,raw48,Power_Cycle_Count "
+    "-v 14,raw48,Device_Capacity_LBAs "
+    "-v 15,raw48,User_Capacity_LBAs " // spec DecID is wrong, HexID is right
+    "-v 16,raw48,Init_Spare_Blocks_Avail " // spec DecID is wrong, HexID is right
+    "-v 17,raw48,Spare_Blocks_Remaining " // spec DecID is wrong, HexID is right
+    "-v 100,raw48,Total_Erase_Count "
+    "-v 168,raw48,SATA_PHY_Err_Ct "
+    "-v 170,raw48,Initial_Bad_Block_Count "
+    "-v 172,raw48,Erase_Fail_Count "
+    "-v 173,raw48,Max_Erase_Count "
+    "-v 174,raw48,Unexpect_Power_Loss_Ct "
+    "-v 175,raw48,Average_Erase_Count "
+  //"-v 181,raw48,Program_Fail_Cnt_Total "
+  //"-v 187,raw48,Reported_Uncorrect "
+  //"-v 194,tempminmax,Temperature_Celsius "
+    "-v 197,raw48,Not_In_Use "
+    "-v 198,raw48,Not_In_Use "
+    "-v 199,raw48,SATA_CRC_Error_Count "
+    "-v 202,raw48,Perc_Rated_Life_Used "
+    "-v 231,raw48,Perc_Rated_Life_Remain "
+    "-v 232,raw48,Read_Fail_Count "
+    "-v 234,raw48,Flash_Reads_LBAs "
+    "-v 235,raw48,Flash_Writes_LBAs "
+  //"-v 241,raw48,Total_LBAs_Written "
+  //"-v 242,raw48,Total_LBAs_Read "
+    //  247-248 Missing in specification from April 2015
+>>>>>>> upstream/master
   },
   // Supermicro SSD-DM032-SMCMVN1, tested with SuperMicro SSD/SOB20R, see (#1380)
   { "Supermicro SATA DOM (SuperDOM)",
@@ -2629,11 +2964,17 @@ const drive_settings builtin_knowndrives[] = {
   //"-v 194,tempminmax,Temperature_Celsius"
   },
   { "SSSTC ERX GD/CD Series SSDs", // Marvel DEAN 2.1
+<<<<<<< HEAD
     "(SSSTC|SATA) ER[2-9]-[CG]D(240|480|960|1920|3840|7680|15360)A?|" // tested with
       // SSSTC ER3-GD240/F2MRD0F, SSSTC ER2-GD480/E4N23021, SSSTC ER3-CD960A/F3MRD0Y,
       // SSSTC ER2-CD1920A/E5MN401, SSSTC ER4-CD7680A/G62RD14
     "AF[2-9]MA31DT[ED]LT(240|480|960|1920|3840|7680|15360)A?", // tested with
       // AF2MA31DTDLT240A/F2M96T0, AF3MA31DTELT240A/F2M9601
+=======
+    "(SSSTC|SATA) ER[2-9]-[CG]D(240|480|960|1920)A?|" // tested with SSSTC ER2-GD480/E4N23021,
+      // SSSTC ER2-CD1920A/E5MN401, SSSTC ER3-GD240/F2MRD0F, SSSTC ER3-CD960A/F3MRD0Y
+    "AF[2-9]MA31DT[ED]LT(240|480|960|1920)A?", // tested with AF2MA31DTDLT240A/F2M96T0
+>>>>>>> upstream/master
     "","",
   //"-v 1,raw48,Raw_Read_Error_Rate "
   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
@@ -2645,21 +2986,33 @@ const drive_settings builtin_knowndrives[] = {
     "-v 172,raw48,Erase_Fail_Count "
     "-v 173,raw48,Average_PE_Count "
     "-v 174,raw48,Unexpect_Power_Loss_Ct "
+<<<<<<< HEAD
     "-v 175,raw48,PLP_Failure "
+=======
+    "-v 175,raw48,PwrLoss_ProtectionFail "
+>>>>>>> upstream/master
   //"-v 176,raw48,Erase_Fail_Count_Chip "
   //"-v 177,raw48,Wear_Leveling_Count "
   //"-v 178,raw48,Used_Rsvd_Blk_Cnt_Chip "
   //"-v 179,raw48,Used_Rsvd_Blk_Cnt_Tot "
     "-v 180,raw48,Over-Provisioning_Rate "
+<<<<<<< HEAD
     "-v 181,raw48,Sys_Percent_Life_Remain "
     "-v 182,raw48,Heavy_GC_Log "
+=======
+  //"-v 181,raw48,Program_Fail_Cnt_Total "
+  //"-v 182,raw48,Erase_Fail_Count_Total "
+>>>>>>> upstream/master
     "-v 183,raw48,SATA_Iface_Downshift "
   //"-v 184,raw48,End-to-End_Error "
   //"-v 187,raw48,Reported_Uncorrect "
   //"-v 188,raw48,Command_Timeout "
+<<<<<<< HEAD
     "-v 189,raw48,Maximum_Erase_Count "
   //"-v 190,tempminmax,Airflow_Temperature_Cel "
     "-v 191,raw48,Mininum_Erase_Count "
+=======
+>>>>>>> upstream/master
   //"-v 194,tempminmax,Temperature_Celsius "
   //"-v 195,raw48,Hardware_ECC_Recovered "
   //"-v 198,raw48,Offline_Uncorrectable "
@@ -2667,6 +3020,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 202,raw48,Percent_Lifetime_Remain "
     "-v 210,raw48,Raid_Success_Recover_Ct "
     "-v 229,raw48,PLP_Failure "
+<<<<<<< HEAD
     "-v 231,raw48,Percent_Lifetime_Remain "
   //"-v 232,raw48,Available_Reservd_Space "
     "-v 233,raw48,Percent_Lifetime_Remain "
@@ -2680,6 +3034,15 @@ const drive_settings builtin_knowndrives[] = {
     "-v 247,raw48,NOR_Health "
     "-v 248,raw48,Cross_Temp_Duration "
     "-v 249,raw48,SSD_Health"
+=======
+    "-v 231,raw48,Remaining_Lifetime_Perc "
+  //"-v 232,raw48,Available_Reservd_Space "
+  //"-v 233,raw48,Media_Wearout_Indicator "
+    "-v 234,raw48,Thermal_Throttle_Status "
+  //"-v 241,raw48,Total_LBAs_Written "
+  //"-v 242,raw48,Total_LBAs_Read "
+    "-v 243,raw48,NAND_Writes_GiB "
+>>>>>>> upstream/master
   },
   { "STEC Mach2 CompactFlash Cards", // tested with STEC M2P CF 1.0.0/K1385MS
     "STEC M2P CF 1.0.0",
@@ -2701,6 +3064,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 7,raw48,Unknown_Attribute "
     "-v 8,raw48,Unknown_Attribute"
   },
+<<<<<<< HEAD
   { "XITC SSDs", // tested with XITC SS6000SES327-7680G/F6600002, XITC SS6000SES3N6-240GB/F6600002,
       // XITC SS6000SES327-3840G/F6600002, XITC SS6000SES327-1920G/F6600002
     "XITC SS6000SES3(27|N6)-(24|48|96|192|384|768)0GB?",
@@ -2736,6 +3100,8 @@ const drive_settings builtin_knowndrives[] = {
     "-v 242,raw48,Host_Reads_32MiB "
     "-v 250,raw16,SATA_Downshift_Cnt "
   },
+=======
+>>>>>>> upstream/master
   { "Xmore Industrial SATA SSDs", // tested with M2CA032GXAIMS-003Z/XP01.1GB
     "(CFAST|M2[AC]A|MSATA|SSD)[0-9]{3}[GT]XA[CEI][MT][MST]-[0-9]{3}[TZ]",
     "", "",
@@ -3041,7 +3407,12 @@ const drive_settings builtin_knowndrives[] = {
     "drive may result in data loss due to a firmware bug.\n"
     "****** THIS DRIVE MAY OR MAY NOT BE AFFECTED! ******\n"
     "Buggy and fixed firmware report same version number!\n"
+<<<<<<< HEAD
     "See the following web page for details:\n"
+=======
+    "See the following web pages for details:\n"
+    "http://knowledge.seagate.com/articles/en_US/FAQ/223571en\n"
+>>>>>>> upstream/master
     "https://www.smartmontools.org/wiki/SamsungF4EGBadBlocks",
     ""
   },
@@ -3163,19 +3534,28 @@ const drive_settings builtin_knowndrives[] = {
     "ST(250|320|500|640|750|1000)LM0[012][3459] HN-M[0-9]*ABB",
     "", "", ""
   },
+  { "Seagate Barracuda Pro Compute", // tested with ST1000LM049-2GH172/SDM1
+    "ST(1000LM049|500LM034)-.*",
+    "", "", ""
+  },
   { "Seagate Samsung SpinPoint M9T", // tested with ST2000LM003 HN-M201RAD/2BC10003
       // (Seagate Expansion Portable)
     "ST(1500|2000)LM0(03|04|06|07|10) HN-M[0-9]*RAD",
     "", "", ""
   },
   { "Seagate Mobile HDD", // tested with ST1000LM035-1RK172/ACM1,
+<<<<<<< HEAD
      // ST1000LM035-1RK172/ACM2, ST1000LM035-1RK172/EB01 (0x1005:0xc004),
      // ST2000LM007-1R8174/SBK2
+=======
+     // ST1000LM035-1RK172/ACM2, ST2000LM007-1R8174/SBK2
+>>>>>>> upstream/master
     "ST(2000LM0(07|09|10)|1000LM03[578])-.*",
     "", "", ""
   },
   // Flash accelerated, no SMART info in the specs
   // ST1000LX015-1U7172/SDM1
+<<<<<<< HEAD
   { "Seagate FireCuda 2.5 SSHD",
     "ST(500|1000|2000)LX0(01|15|25)-.*",
     "", "", "-v 240,msec24hour32 "
@@ -3191,6 +3571,16 @@ const drive_settings builtin_knowndrives[] = {
     "-v 18,raw48,Head_Health "
     "-v 240,msec24hour32"
   },
+=======
+  { "Seagate FireCuda 2.5",
+    "ST(500|1000|2000)LX0(01|15|25)-.*",
+    "", "", "-v 240,msec24hour32 "
+  },
+  { "Seagate FireCuda 3.5", // ST2000DX002-2DV164/CC41
+    "ST[12]000DX002-.*",
+    "", "", "-v 240,msec24hour32 "
+  },
+>>>>>>> upstream/master
   { "Seagate Samsung SpinPoint M9TU (USB)", // tested with ST1500LM008 HN-M151AAD/2BC10001
       // (0x04e8:0x61b5), ST2000LM005 HN-M201AAD2BC10001 (0x04e8:0x61b4)
     "ST(1500|2000)LM00[58] HN-M[0-9]*AAD",
@@ -3243,7 +3633,10 @@ const drive_settings builtin_knowndrives[] = {
     "HFS(128|256|512)G39TND-N210A|" // SC308, tested with HFS128G39TND-N210A/30001P10
     "HFS(120|250|500)G32TND-N1A2A|" // SL308, tested with HFS500G32TND-N1A2A/30000P10
     "HFS(128|256|512)G32TNF-N3A0A|" // SC313, tested with HFS256G32TNF-N3A0A/70000P10
+<<<<<<< HEAD
     // HFS480G32FEH-BA10A/DD02 (Dell)
+=======
+>>>>>>> upstream/master
     "SHGS31-(250|500|1000)GS-2", // S31, tested with SHGS31-1000GS-2/90000Q00
     "", "",
   //"-v 1,raw48,Raw_Read_Error_Rate "
@@ -3289,6 +3682,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 250,raw48,Read_Retry_Count "
   },
   { "SK hynix SATA SSDs",
+<<<<<<< HEAD
     "HFS(480|960|1T9|3T8)G3[2E]FEH-[7B][4A]10A|" // tested with HFS480G32FEH-7410A/90037Q00,
       // HFS480G32FEH-BA10A/DD02 (Dell), HFS1T9G32FEH-BA10A/DD02 (Dell)
     "HFS(480|960|1T9|3T8)G3H2X069N|" // tested with HFS480G3H2X069N/DZ00 (Dell)
@@ -3297,10 +3691,14 @@ const drive_settings builtin_knowndrives[] = {
       // SK HYNIX SE5110 960GB ZIRCON LITE 3DTLC/410A5Z00
       // SK HYNIX SE5110 1920GB ZIRCON LITE 3DTLC/410A5Z00
       // SK HYNIX SE5110 3840GB ZIRCON LITE 3DTLC/410A5Z00
+=======
+    "HFS(480|960|1T9|3T8)G3[2E]FEH-7[4A]10A", // tested with HFS480G32FEH-7410A/90037Q00
+>>>>>>> upstream/master
     "", "",
   //"-v 1,raw48,Raw_Read_Error_Rate "
     "-v 5,raw48,Retired_Block_Count "
   //"-v 9,raw24(raw8),Power_On_Hours "
+<<<<<<< HEAD
   //"-v 12,raw48,Power_Cycle_Count "
   //"-v 13,raw48,Read_Soft_Error_Rate "
     "-v 171,raw48,Program_Fail_Count "
@@ -3309,13 +3707,27 @@ const drive_settings builtin_knowndrives[] = {
     "-v 174,raw48,Unexpected_Pwr_Loss_Cnt "
     "-v 175,raw48,Program_Fail_Count "
     "-v 176,raw48,Erase_Fail_Count "
+=======
+    "-v 12,raw48,Device_Power_Cycle_Cnt "
+    "-v 171,raw48,Program_Fail_Cnt "
+    "-v 172,raw48,Erase_Fail_Cnt "
+    "-v 174,raw48,Unexpected_Pwr_Loss_Cnt "
+    "-v 175,raw48,Program_Fail_Cnt "
+    "-v 176,raw48,Erase_Fail_Cnt "
+>>>>>>> upstream/master
     "-v 177,raw48,Endurance_Limit_Met "
     "-v 178,raw48,Used_Rsrvd_Blk_Cnt_Wrst "
     "-v 179,raw48,Used_Rsrvd_Blk_Cnt_Tot "
     "-v 180,raw48,E2E_Error_Det_Corr_Rate "
+<<<<<<< HEAD
     "-v 181,raw48,Program_Fail_Count "
     "-v 182,raw48,Erase_Fail_Count "
     "-v 183,raw48,SATA_Downshift_Count "
+=======
+    "-v 181,raw48,Program_Fail_Cnt "
+    "-v 182,raw48,Erase_Fail_Cnt "
+    "-v 183,raw48,SATA_Downshift_Cnt "
+>>>>>>> upstream/master
   //"-v 184,raw48,End-to-End_Error "
   //"-v 187,raw48,Reported_Uncorrect "
   //"-v 188,raw48,Command_Timeout "
@@ -3323,12 +3735,19 @@ const drive_settings builtin_knowndrives[] = {
     "-v 195,raw48,ECC_on_the_Fly_Rate "
   //"-v 199,raw48,UDMA_CRC_Error_Count "
     "-v 201,raw48,Uncorr_Soft_Read_Err_Rt "
+<<<<<<< HEAD
     "-v 202,raw48,Exception_Mode_Status "
     "-v 204,raw48,Soft_ECC_Correction_Rt "
     "-v 231,raw48,SSD_Life_Left "
     "-v 234,raw48,Lifetime_NAND_Prg_GiB " // ?
     "-v 235,raw48,Lifetime_Writes_GiB "
     "-v 241,raw48,Lifetime_NAND_Prg_GiB "
+=======
+    "-v 204,raw48,Soft_ECC_Correction_Rt "
+    "-v 231,raw48,SSD_Life_Left "
+    "-v 234,raw48,Lifetime_NAND_Prg_GiB "
+    "-v 241,raw48,Lifetime_Writes_GiB "
+>>>>>>> upstream/master
     "-v 242,raw48,Lifetime_Reads_GiB "
     "-v 245,raw48,SSD_Life_Left "
     "-v 250,raw48,Read_Retry_Count "
@@ -3912,8 +4331,13 @@ const drive_settings builtin_knowndrives[] = {
       // HGST HDN726040ALE614/APGNW7JH, HGST HDN726060ALE614/K1HE594D
       // HGST HDN728080ALE604/A4GNW91X
     "HGST HDN72(40[34]|60[456]|808)0ALE6(04|1[04]|40)",
+<<<<<<< HEAD
     "", "", ""
   //"-v 22,raw48,Helium_Level" // HDN728080ALE604
+=======
+    "", "",
+    "-v 22,raw48,Helium_Level" // HDN728080ALE604
+>>>>>>> upstream/master
   },
   { "Hitachi/HGST Ultrastar 5K3000", // tested with Hitachi HUA5C3030ALA640/MEAOA800
     "(Hitachi |HGST )?HUA5C30(20|30)ALA64[01]",
@@ -3938,9 +4362,14 @@ const drive_settings builtin_knowndrives[] = {
   },
   { "Hitachi/HGST Ultrastar 7K4000", // tested with Hitachi HUS724040ALE640/MJAOA3B0,
       // HGST HUS724040ALE640/MJAOA580, HGST HUS724020ALA640/MF6OAA70,
+<<<<<<< HEAD
       // HUS724030ALA640/MF8OAAZ0, HITACHI HUS724040ALE640/MJAONS04,
       // HGST HUS724045ALE640/MJBOA5G0
     "(Hitachi |HITACHI |HGST )?HUS7240([234]0|45)AL[AE]64[01]",
+=======
+      // HUS724030ALA640/MF8OAAZ0
+    "(Hitachi |HGST )?HUS7240(20|30|40)AL[AE]64[01]",
+>>>>>>> upstream/master
     "", "", ""
   },
   { "Hitachi/HGST Ultrastar 7K2",
@@ -3957,11 +4386,14 @@ const drive_settings builtin_knowndrives[] = {
     "HGST HUS72(6T[46]|8T8)TAL[AE]6L[14]",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Western Digital Ultrastar DC HC330", // tested with WUS721010ALE6L4/VXGAW9C0,
         // WDC  WUS721010ALE6L4/VXGNW9G0,
     "(WDC  )?WUS721010ALE6L[14]",
     "", "", ""
   },
+=======
+>>>>>>> upstream/master
   { "HGST Ultrastar He6", // tested with HGST HUS726060ALA640/AHGNT1E2
     "HGST HUS726060ALA64[01]",
     "", "", ""
@@ -4041,6 +4473,63 @@ const drive_settings builtin_knowndrives[] = {
     "(WDC  ?)?WSH722222[AB]L[EN]6[0L]4",
     "", "",
   //"-v 22,raw48,Helium_Level "
+    "-v 71,raw16,Milli_Micro_Actuator "
+    "-v 82,raw16,Head_Health_Score "
+    "-v 90,hex48,NAND_Master"
+  },
+  { "Western Digital Ultrastar (He10/12)", // WD white label, tested with
+      // WDC WD80EMAZ-00WJTA0/83.H0A83 (Easystore 0x1058:0x25fb),
+      // WDC WD80EZAZ-11TDBA0/83.H0A83, WDC WD100EMAZ-00WJTA0/83.H0A83,
+      // WDC WD100EZAZ-11TDBA0/83.H0A83, WDC WD120EMAZ-11BLFA0/81.00A81
+      // WDC WD140EDFZ-11A0VA0/81.00A81 (Easystore 0x1058:0x25fb)
+      // WDC WD140EDGZ-11B2DA2/85.00A85, WDC WD140EDGZ-11B1PA0/85.00A85
+      // WDC WD120EDAZ-11F3RA0/81.00A81, WDC WD80EDAZ-11TA3A0/81.00A81
+    "WDC WD(80|100|120|140)E([MZ]A|DA|DF|DG)Z-.*",
+    "", "",
+    "-v 22,raw48,Helium_Level" // not: WD80EDAZ
+  },
+  { "HGST Ultrastar DC HC520 (He12)", // tested with HGST HUH721212ALE600/LEGNT3D0
+    "HGST HUH721212AL[EN]60[014]",
+    "", "",
+    "-v 22,raw48,Helium_Level"
+  },
+  { "Western Digital Ultrastar DC HC530", // tested with
+      // WDC  WUH721414ALE604/LDAZW110, WDC  WUH721414ALE6L4/LDGNW07G
+    "WDC  ?WUH721414ALE6[0L]4",
+    "", "",
+    "-v 22,raw48,Helium_Level"
+  },
+  { "Western Digital Ultrastar DC HC550", // tested with WDC  WUH721818ALE6L4/PCGNW110,
+      // WUH721818ALE6L4/PCGAW232, WDC  WUH721818ALN6L4/PCGNW088
+    "(WDC  ?)?WUH72181[68]AL[EN]6[0L][0146]",
+    "", "",
+    "-v 22,raw48,Helium_Level"
+  },
+  { "Western Digital Ultrastar DC HC560", // tested with WDC  WUH722020ALN604/PQGNW108
+    // WDC WUH722020BLE6L4
+    "(WDC  ?)?WUH722020[AB]L[EN]6[0L][014]",
+    "", "",
+    "-v 22,raw48,Helium_Level "
+    "-v 82,raw16,Head_Health_Score "
+    "-v 90,hex48,NAND_Master"
+  },
+  { "Western Digital Ultrastar DC HC570", // tested with WUH722222ALE604
+    "(WDC  ?)?WUH722222[AB]L[EN]6[0L]4",
+    "", "",
+    "-v 22,raw48,Helium_Level "
+    "-v 71,raw16,Milli_Micro_Actuator "
+    "-v 82,raw16,Head_Health_Score "
+    "-v 90,hex48,NAND_Master"
+  },
+  { "Western Digital Ultrastar DC HC650", // tested with WDC  WSH722020ALE6L0/PCGMT421
+    "(WDC  ?)?WSH7220(20|VC)AL[EN]6[0L][0146]",
+    "", "",
+    "-v 22,raw48,Helium_Level"
+  },
+  { "Western Digital Ultrastar DC HC670", // WSH722626ALE604
+    "(WDC  ?)?WSH722222[AB]L[EN]6[0L]4",
+    "", "",
+    "-v 22,raw48,Helium_Level "
     "-v 71,raw16,Milli_Micro_Actuator "
     "-v 82,raw16,Head_Health_Score "
     "-v 90,hex48,NAND_Master"
@@ -4185,11 +4674,14 @@ const drive_settings builtin_knowndrives[] = {
     "TOSHIBA MQ03UBB(300|200|250)",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Toshiba 2.5\" HDD MQ04UBB... (USB, SMR)", // tested with TOSHIBA MQ04UBB400/JS000U,
       // TOSHIBA MQ04UBB400/JS0B0U (0x0480:0xa301) ('Device managed zones', no TRIM support)
     "TOSHIBA MQ04UBB[24]00",
     "", "", ""
   },
+=======
+>>>>>>> upstream/master
   { "Toshiba 3.5\" HDD MK.002TSKB", // tested with TOSHIBA MK1002TSKB/MT1A
     "TOSHIBA MK(10|20)02TSKB",
     "", "", ""
@@ -4218,33 +4710,54 @@ const drive_settings builtin_knowndrives[] = {
   },
   { "Toshiba MG07ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG07ACA14TE/0101
     "TOSHIBA MG07ACA1[24]T[AE]Y?",
+<<<<<<< HEAD
     "", "", ""
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper"
+=======
+    "", "",
+    "-v 23,raw48,Helium_Condition_Lower "
+    "-v 24,raw48,Helium_Condition_Upper"
+>>>>>>> upstream/master
   },
   { "Toshiba MG08ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG08ACA14TE/0102,
       // TOSHIBA MG08ACA16TE/0102
     "TOSHIBA MG08ACA1[46]T[AE]Y?",
+<<<<<<< HEAD
     "", "", ""
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper"
+=======
+    "", "",
+    "-v 23,raw48,Helium_Condition_Lower "
+    "-v 24,raw48,Helium_Condition_Upper"
+>>>>>>> upstream/master
   },
   { "Toshiba MG08ADA... Enterprise Capacity HDD", // tested with TOSHIBA MG08ADA800E/0101,
       // TOSHIBA MG08ADA800E/4303, TOSHIBA MG08ADA800E/4304
     "TOSHIBA MG08ADA[468]00[AEN]Y?",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Toshiba MG09ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG09ACA18TE/0102,
       // "MG09ACA12TE          01GV181D7A01906LEN/BB3A"
     "(TOSHIBA )?MG09ACA1[02468]T[AE]Y?( .*LEN)?",
     "", "",
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper "
+=======
+  { "Toshiba MG09ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG09ACA18TE/0102
+    "TOSHIBA MG09ACA1[68]T[AE]Y?",
+    "", "",
+    "-v 23,raw48,Helium_Condition_Lower "
+    "-v 24,raw48,Helium_Condition_Upper "
+>>>>>>> upstream/master
     "-v 27,raw48,MAMR_Health_Monitor"
   },
   { "Toshiba MG10ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG10ACA20TE/0102
     "TOSHIBA MG10ACA20T[AE]Y?",
     "", "",
+<<<<<<< HEAD
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper "
     "-v 27,raw48,MAMR_Health_Monitor"
@@ -4254,11 +4767,16 @@ const drive_settings builtin_knowndrives[] = {
     "", "",
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper "
+=======
+    "-v 23,raw48,Helium_Condition_Lower "
+    "-v 24,raw48,Helium_Condition_Upper "
+>>>>>>> upstream/master
     "-v 27,raw48,MAMR_Health_Monitor"
   },
   { "Toshiba MG10AFA... Enterprise Capacity HDD", // tested with TOSHIBA MG10AFA22TE/0102
     "TOSHIBA MG10AFA22T[AE]Y?",
     "", "",
+<<<<<<< HEAD
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper "
     "-v 27,raw48,MAMR_Health_Monitor"
@@ -4268,6 +4786,10 @@ const drive_settings builtin_knowndrives[] = {
     "", "",                                  // TEY = sanitize instant erase (SIE)
   //"-v 23,raw48,Helium_Condition_Lower "
   //"-v 24,raw48,Helium_Condition_Upper "
+=======
+    "-v 23,raw48,Helium_Condition_Lower "
+    "-v 24,raw48,Helium_Condition_Upper "
+>>>>>>> upstream/master
     "-v 27,raw48,MAMR_Health_Monitor"
   },
   { "Toshiba 3.5\" DT01ABA... Desktop HDD", // tested with TOSHIBA DT01ABA300/MZ6OABB0
@@ -4279,6 +4801,7 @@ const drive_settings builtin_knowndrives[] = {
     "TOSHIBA DT01ACA(025|032|050|075|100|150|200|300)",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Toshiba 3.5\" DT02 series Desktop HDD", // tested with TOSHIBA DT02ACA200/KS002A
     "TOSHIBA DT02A(BA[246]|CA2)00",
     "", "", ""
@@ -4293,6 +4816,17 @@ const drive_settings builtin_knowndrives[] = {
   //"-v 23,raw48,Helium_Condition_Lower " // ] >= 12TB
   //"-v 24,raw48,Helium_Condition_Upper " // ]
     "-v 27,raw48,MAMR_Health_Monitor" // HDWG51J/0104
+=======
+  { "Toshiba N300/MN NAS HDD", // tested with TOSHIBA HDWQ140/FJ1M, TOSHIBA HDWN160/FS1M,
+      // TOSHIBA HDWN180/GX2M, TOSHIBA HDWG440/0601 (4TB), TOSHIBA HDWG480/0601 (8TB),
+      // TOSHIBA HDWG11A/0603 (10TB), TOSHIBA HDWG21C/0601 (12TB), TOSHIBA HDWG21E/0601 (14TB), 
+      // TOSHIBA MN07ACA12T/0601, TOSHIBA MN08ACA14T/0601
+    "TOSHIBA HDW([GNQ]1[468]0|G(440|480|11A|21[CE]|31G))|" // 31G: 16TB
+    "TOSHIBA MN0(4ACA400|6ACA([68]00|10T)|7ACA1[24]T|8ACA1[46]T)",
+    "", "",
+    "-v 23,raw48,Helium_Condition_Lower " // ] >= 12TB
+    "-v 24,raw48,Helium_Condition_Upper"  // ]
+>>>>>>> upstream/master
   },
   { "Toshiba P300 (CMR)", // tested with TOSHIBA HDWD120/MX4OACF0
     "TOSHIBA HDWD1(05|10|20|30)",
@@ -4306,17 +4840,26 @@ const drive_settings builtin_knowndrives[] = {
     "TOSHIBA HDWT(7[24]|8[46])0",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Toshiba V300", // tested with TOSHIBA HDWU120/MZ4OACK0
     "TOSHIBA HDWU1[123]0",
     "", "", ""
   },
+=======
+>>>>>>> upstream/master
   { "Toshiba X300", // tested with TOSHIBA HDWE160/FS2A, TOSHIBA HDWF180/GX0B
       // TOSHIBA HDWR480/0601
     "TOSHIBA HDW(E1[456]0|[FR]180|R(4[468]0|11A|21[CE]|31[EG]|51J))", // 4n0:nTB, 11A:10TB,
       // 21C:12TB, 21E:14TB, 31E:14TB, 31G:16TB, 51J:18TB
+<<<<<<< HEAD
     "", "", ""
   //"-v 23,raw48,Helium_Condition_Lower " // ] >= 12TB
   //"-v 24,raw48,Helium_Condition_Upper"  // ]
+=======
+    "", "",
+    "-v 23,raw48,Helium_Condition_Lower " // ] >= 12TB
+    "-v 24,raw48,Helium_Condition_Upper"  // ]
+>>>>>>> upstream/master
   },
   { "Toshiba L200 (CMR)",
     "TOSHIBA HDW[JK]1(05|10)",
@@ -4338,19 +4881,29 @@ const drive_settings builtin_knowndrives[] = {
     "TOSHIBA MK6022GAX",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Toshiba HK4R Series SSD", // TOSHIBA THNSN8960PCSE/8EET6101,
       // TOSHIBA THNSN81Q92CSE/8ENP6101
+=======
+  { "Toshiba HK4R Series SSD", // TOSHIBA THNSN8960PCSE/8EET6101
+>>>>>>> upstream/master
     "TOSHIBA THNSN8(120P|240P|480P|960P|1Q92)CSE",
     "", "",
     "-v 167,raw48,SSD_Protect_Mode "
     "-v 168,raw48,SATA_PHY_Error_Count "
     "-v 169,raw48,Bad_Block_Count "
     "-v 173,raw48,Erase_Count "
+<<<<<<< HEAD
     "-v 241,raw48,Host_Writes_32MiB "
     "-v 242,raw48,Host_Reads_32MiB"
   },
   { "Toshiba HG6 Series SSD", // TOSHIBA THNSNJ512GCST/JTRA0102
     // https://www.farnell.com/datasheets/1852757.pdf
+=======
+  },
+  { "Toshiba HG6 Series SSD", // TOSHIBA THNSNJ512GCST/JTRA0102
+    // http://www.farnell.com/datasheets/1852757.pdf
+>>>>>>> upstream/master
     // TOSHIBA THNSFJ256GCSU/JULA1102
     // TOSHIBA THNSFJ256GDNU A/JYLA1102
     "TOSHIBA THNS[NF]J(060|128|256|512)G[BCAM8VD][SCN][TU].*",
@@ -4456,7 +5009,11 @@ const drive_settings builtin_knowndrives[] = {
     "These drives may corrupt large files,\n"
     "AND THIS FIRMWARE VERSION IS AFFECTED,\n"
     "see the following web pages for details:\n"
+<<<<<<< HEAD
     "https://knowledge.seagate.com/articles/en_US/FAQ/215451en\n"
+=======
+    "http://knowledge.seagate.com/articles/en_US/FAQ/215451en\n"
+>>>>>>> upstream/master
     "https://superuser.com/questions/313447/seagate-momentus-xt-corrupting-files-linux-and-mac",
     ""
   },
@@ -4465,7 +5022,11 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "These drives may corrupt large files,\n"
     "see the following web pages for details:\n"
+<<<<<<< HEAD
     "https://knowledge.seagate.com/articles/en_US/FAQ/215451en\n"
+=======
+    "http://knowledge.seagate.com/articles/en_US/FAQ/215451en\n"
+>>>>>>> upstream/master
     "https://superuser.com/questions/313447/seagate-momentus-xt-corrupting-files-linux-and-mac",
     ""
   },
@@ -4478,10 +5039,16 @@ const drive_settings builtin_knowndrives[] = {
     "", "", ""
   },
   { "Seagate Laptop HDD", // tested with ST500LT012-9WS142/0001SDM1,
+<<<<<<< HEAD
       // ST500LM021-1KJ152/0002LIM1, ST500LM021-1KJ152/0003LIM1, ST4000LM016-1N2170/0003
     "ST((25|32|50)0LT0(12|15|25)|(32|50)0LM0(10|21)|[34]000LM016)-.*",
     "", "",
     "-v 1,raw24/raw32 -v 7,raw24/raw32 -v 188,raw16"
+=======
+      // ST500LM021-1KJ152/0002LIM1, ST4000LM016-1N2170/0003
+    "ST((25|32|50)0LT0(12|15|25)|(32|50)0LM0(10|21)|[34]000LM016)-.*",
+    "", "", ""
+>>>>>>> upstream/master
   },
   { "Seagate Laptop SSHD", // tested with ST500LM000-1EJ162/SM11
     "ST(500|1000)LM0(00|14)-.*",
@@ -4563,12 +5130,19 @@ const drive_settings builtin_knowndrives[] = {
     "ST3(402111?|80[28]110?|120[28]1[0134]|160[28]1[012]|200827|250[68]24|300[68]22|(320|400)[68]33|500[68](32|41))AS?.*",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Seagate Barracuda 7200.10", // tested with ST3320820AS/3.AHG, GB0160EAFJE/HPG0
     "ST3((80|160)[28]15|200820|250[34]10|(250|300|320|400)[68]20|360320|500[68]30|750[68]40)AS?|"
     "GB0160EAFJE", // HP OEM
     "", "",
     "-v 7,raw24/raw32 "
     "-v 195,raw24/raw32,ECC_On_the_Fly_Count "
+=======
+  { "Seagate Barracuda 7200.10", // tested with GB0160EAFJE/HPG0
+    "ST3((80|160)[28]15|200820|250[34]10|(250|300|320|400)[68]20|360320|500[68]30|750[68]40)AS?|"
+    "GB0160EAFJE", // HP OEM
+    "", "", ""
+>>>>>>> upstream/master
   },
   { "Seagate Barracuda 7200.11", // unaffected firmware
     "ST3(160813|320[68]13|500[368]20|640[36]23|640[35]30|750[36]30|1000(333|[36]40)|1500341)AS?",
@@ -4591,8 +5165,13 @@ const drive_settings builtin_knowndrives[] = {
     "There are known problems with these drives,\n"
     "THIS DRIVE MAY OR MAY NOT BE AFFECTED,\n"
     "see the following web pages for details:\n"
+<<<<<<< HEAD
     "https://knowledge.seagate.com/articles/en_US/FAQ/207931en\n"
     "https://knowledge.seagate.com/articles/en_US/FAQ/207951en\n"
+=======
+    "http://knowledge.seagate.com/articles/en_US/FAQ/207931en\n"
+    "http://knowledge.seagate.com/articles/en_US/FAQ/207951en\n"
+>>>>>>> upstream/master
     "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=632758",
     ""
   },
@@ -4620,9 +5199,17 @@ const drive_settings builtin_knowndrives[] = {
     "https://knowledge.seagate.com/articles/en_US/FAQ/213891en",
     ""
   },
+<<<<<<< HEAD
   { "Seagate Barracuda 7200.12", // tested with ST3160316AS/JC45, ST3250312AS/JC45,
       // ST3500413AS/JC47, ST3500413AS/JC4B, ST3750525AS/JC4B, ST31000524AS/JC45,
       // ST31000524AS/JC4B
+=======
+  { "Seagate Barracuda 7200.12", // tested with ST3250312AS/JC45, ST31000524AS/JC45,
+      // ST3500413AS/JC4B, ST3750525AS/JC4B
+      // ST3160316AS/JC45
+      // Possible options: ST31000524AS, ST3500413AS, ST3250312AS ,
+      // ST3750525AS, ST3320413AS, ST3160316AS
+>>>>>>> upstream/master
     "ST3(160318|25031[128]|320418|50041[038]|750(518|52[358])|100052[348]|320413|160316)AS",
     "", "", ""
     "-v 188,raw16 -v 240,msec24hour32"
@@ -4674,14 +5261,23 @@ const drive_settings builtin_knowndrives[] = {
     "", "",
     "-v 188,raw16 -v 240,msec24hour32"
   },
+<<<<<<< HEAD
   { "Seagate BarraCuda 3.5 (CMR)", // tested with ST1000DM010-2EP102/CC43, ST3000DM008-2DM166/CC26
     "ST(500DM009|1000DM010|2000DM00[67]|3000DM00[89]|4000DM005)-.*",
+=======
+  { "Seagate BarraCuda 3.5 (CMR)", // tested with ST1000DM010-2EP102/CC43,
+      // ST3000DM008-2DM166/CC26, ST4000DM006-2G5107/DN02, ST10000DM0004-1ZC101/DN01,
+      // ST12000DM0007-2GR116/DN01
+    "ST(500DM009|1000DM010|2000DM00[67]|3000DM00[89]|4000DM006|6000DM004|"
+       "8000DM005|10000DM0004|12000DM0007)-.*",
+>>>>>>> upstream/master
     "", "",
     "-v 200,raw48,Pressure_Limit "
     "-v 188,raw16 -v 240,msec24hour32"
   },
   { "Seagate BarraCuda 3.5 (SMR)", // tested with ST2000DM008-2FR102/0001,
       // ST4000DM004-2CV104/0001 (TRIM: no), ST4000DM005-2DP166/0001, ST8000DM004-2CX188/0001
+<<<<<<< HEAD
     "ST(2000DM00[58]|3000DM007|[48]000DM004|6000DM003)-.*",
     "", "",
     "-v 1,raw24/raw32 -v 7,raw24/raw32 -v 188,raw16 "
@@ -4689,6 +5285,13 @@ const drive_settings builtin_knowndrives[] = {
     "-v 195,raw24/raw32,ECC_On_the_Fly_Count "
     "-v 200,raw48,Pressure_Limit "
     "-v 240,msec24hour32"
+=======
+    "ST(2000DM00[589]|3000DM007|4000DM00[45]|6000DM003|8000DM004)-.*",
+    "", "",
+    "-v 9,msec24hour32 " // ST4000DM004-2CV104/0001
+    "-v 200,raw48,Pressure_Limit "
+    "-v 188,raw16 -v 240,msec24hour32"
+>>>>>>> upstream/master
   },
   { "Seagate Desktop HDD.15", // tested with ST4000DM000-1CD168/CC43, ST5000DM000-1FK178/CC44,
       // ST6000DM001-1XY17Z/CC48
@@ -4734,6 +5337,7 @@ const drive_settings builtin_knowndrives[] = {
     "ST3(250[68]2|32062|40062|50063|75064)0NS",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Seagate BarraCuda 2.5", // tested with ST2000LM015-2E8174/SDM1,
       // ST4000LM024-2AN17V/0001, ST5000LM000-2AN170/0001, ST1000LM049-2GH172/SDM1
       // 7200rpm: ST500LM034, ST1000LM049
@@ -4748,6 +5352,20 @@ const drive_settings builtin_knowndrives[] = {
     "SN[01]6|"         // https://knowledge.seagate.com/articles/en_US/FAQ/207963en
     "MA(0[^7]|[^0].)",
     "",
+=======
+  // ST5000LM000, ST4000LM024, ST3000LM024, ST2000LM015, ST1000LM048, ST500LM030
+  { "Seagate Barracuda 2.5 5400", // ST2000LM015-2E8174/SDM1, ST4000LM024-2AN17V/0001
+    "ST(5000LM000|[34]000LM024|2000LM015|1000LM048|500LM030)-.*",
+    "",
+    "",
+    "-v 183,raw48,SATA_Downshift_Count "
+  },
+  { "Seagate Barracuda ES.2", // fixed firmware
+    "ST3(25031|50032|75033|100034)0NS",
+    "SN[01]6|"         // http://knowledge.seagate.com/articles/en_US/FAQ/207963en
+    "MA(0[^7]|[^0].)", // http://dellfirmware.seagate.com/dell_firmware/DellFirmwareRequest.jsp
+    "",                //        ^^^^^^^^^^^^ down (no DNS A record)
+>>>>>>> upstream/master
     "-F xerrorlba" // tested with ST31000340NS/SN06
   },
   { "Seagate Barracuda ES.2", // buggy firmware (Dell)
@@ -4853,12 +5471,15 @@ const drive_settings builtin_knowndrives[] = {
     "", "",
     "-v 9,msec24hour32 -v 188,raw16 -v 240,msec24hour32"
   },
+<<<<<<< HEAD
   { "Seagate Enterprise Capacity 3.5 HDD v7 SED", // tested with ST12000NM0127/G005
     "ST12000NM01[12]7",
     "", "",
     "-v 1,raw24/raw32 -v 7,raw24/raw32 "
     "-v 195,raw24/raw32,Hardware_ECC_Recovered "
   },
+=======
+>>>>>>> upstream/master
   { "Seagate Exos 5E8", // tested with ST8000AS0003-2HH188/0003
     "ST8000AS0003-.*",
     "", "",
@@ -4869,6 +5490,7 @@ const drive_settings builtin_knowndrives[] = {
   // ST4000NM006A, ST4000NM010A, ST4000NM012A, ST4000NM013A, ST6000NM002A,
   // ST6000NM021A, ST6000NM022A, ST6000NM025A, ST6000NM026A, ST8000NM000A,
   // ST8000NM002A, ST8000NM004A, ST8000NM008A, ST8000NM009A, ST8000NM016A
+<<<<<<< HEAD
   { "Seagate Exos 7E8", // tested with ST4000NM000A-2HZ100/TN03, ST6000NM021A-2R7101/SN02,
       // ST8000NM000A-2KE101/SN02, OOS6000G/OOS1
     "ST[123468]000NM0(0[01234689]|1[0236]|2[1256])A-.*|"
@@ -4884,6 +5506,12 @@ const drive_settings builtin_knowndrives[] = {
     "-v 1,raw24/raw32 -v 7,raw24/raw32 "
     "-v 18,raw48,Head_Health "
     "-v 188,raw16 "
+=======
+  { "Seagate Exos 7E8", // tested with ST6000NM021A-2R7101/SN02, ST8000NM000A-2KE101/SN02
+    "ST[123468]000NM0(0[01234689]|1[0236]|2[1256])A-.*",
+    "", "",
+    "-v 18,raw48,Head_Health "
+>>>>>>> upstream/master
     "-v 240,msec24hour32"
   },
   { "Seagate Exos X12", // tested with ST12000NM0007-2A1101/SN02
@@ -4900,6 +5528,7 @@ const drive_settings builtin_knowndrives[] = {
     "-v 200,raw48,Pressure_Limit "
     "-v 240,msec24hour32"
   },
+<<<<<<< HEAD
   { "Seagate Exos 2X14", // tested with ST14000NM0121/SN01
     "ST14000NM0121",
     "", "",
@@ -4953,6 +5582,13 @@ const drive_settings builtin_knowndrives[] = {
     "-v 1,raw24/raw32 -v 7,raw24/raw32 "
     "-v 18,raw48,Head_Health "
     "-v 188,raw16 "
+=======
+  { "Seagate Exos X16", // tested with ST10000NM001G-2MW103/SN02
+      // ST14000NM001G-2KJ103/SN02, ST16000NM001G-2KK103/SN02, ST16000NM001G-2KK103/SN03
+    "ST1[0246]000NM00[13]G-.*",
+    "", "",
+    "-v 18,raw48,Head_Health "
+>>>>>>> upstream/master
     "-v 200,raw48,Pressure_Limit "
     "-v 240,msec24hour32"
   },
@@ -4971,6 +5607,7 @@ const drive_settings builtin_knowndrives[] = {
     "ST(8000NE|[65432]000VN)00[01]1-.*",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Seagate IronWolf", // tested with ST2000VN003-3CW102/SC60, ST3000VN007-2E4166/SC60,
       // ST4000VN006-3CW104/SC60, ST4000VN008-2DR166/SC60, ST6000VN001-2BB186/SC60,
       // ST6000VN0033-2EE110/SC60, ST6000VN0041-2EL11C/SC61, ST8000VN0022-2EL112/SC61,
@@ -4997,6 +5634,23 @@ const drive_settings builtin_knowndrives[] = {
     "", "",
     "-v 18,raw48,Head_Health " // ST16000NE000, ST18000NT001
     "-v 188,raw16 "
+=======
+  { "Seagate IronWolf", // tested with ST3000VN007-2E4166/SC60, ST4000VN008-2DR166/SC60,
+      // ST6000VN001-2BB186/SC60, ST6000VN0033-2EE110/SC60, ST6000VN0041-2EL11C/SC61,
+      // ST8000VN0022-2EL112/SC61, ST10000VN0004-1ZD101/SC60,
+      // ST12000VN0007-2GS116/SC60, ST12000VN0008-2JH101/SC60
+    "ST(1|2|3|4|6|8|10|12)000VN00(0?[2478]|1|22|33|41)-.*",
+    "", "",
+    "-v 18,raw48,Head_Health "
+    "-v 200,raw48,Pressure_Limit "
+    "-v 240,msec24hour32"
+  },
+  { "Seagate IronWolf Pro", // tested with ST4000NE0025-2EW107/EN02,
+      // ST8000NE0004-1ZF11G/EN01, ST8000NE0021-2EN112/EN02, ST16000NE000-2RW103/EN02
+    "ST([24]000NE0025|4000NE001|6000NE0023|8000NE00(04|08|21)|(10|12|14)000NE000[478]|16000NE000)-.*",
+    "", "",
+    "-v 18,raw48,Head_Health " // ST16000NE000
+>>>>>>> upstream/master
     "-v 200,raw48,Pressure_Limit "
     "-v 240,msec24hour32"
   },
@@ -5048,6 +5702,7 @@ const drive_settings builtin_knowndrives[] = {
     "ST([1-5]000VX00[01234]1?|31000526SV|3500411SV)(-.*)?",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Seagate SkyHawk", // tested with ST2000VX017-3CV102/CV10, ST3000VX010-2H916L/CV11,
       // ST4000VX016-3CV104/CV10, ST6000VX0023-2EF110/SC60
     "ST(1000VX0(05|13)|2000VX0(08|15|17)|3000VX0(09|10|15)|4000VX0(07|13|16)|6000VX00(1|9|23)|8000VX0(04|10|022)|10000VX0004)-.*",
@@ -5055,6 +5710,12 @@ const drive_settings builtin_knowndrives[] = {
     "-v 1,raw24/raw32 -v 7,raw24/raw32 -v 188,raw16 "
     "-v 9,msec24hour32 " // CV* Firmware only?
     "-v 195,raw24/raw32,ECC_On_the_Fly_Count "
+=======
+  { "Seagate Skyhawk", // tested with ST3000VX010-2H916L/CV11, ST6000VX0023-2EF110/SC60
+    "ST(1000VX005|2000VX008|3000VX0(09|10)|4000VX007|6000VX00(1|23)|8000VX00(4|22))-.*",
+    "", "",
+    "-v 9,msec24hour32 " // CV* Firmware only?
+>>>>>>> upstream/master
     "-v 240,msec24hour32"
   },
   { "Seagate DB35", // tested with ST3250823ACE/3.03, ST3300831SCE/3.03
@@ -5094,6 +5755,7 @@ const drive_settings builtin_knowndrives[] = {
     "ST6[468]022CF",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Seagate BarraCuda series SSD", // tested with Seagate SSD/ST8S1024,
       // Seagate BarraCuda SSD ZA250CM10002/STAS1024, Seagate BarraCuda 120 SSD ZA1000CM10003/STRSD013,
       // Seagate BarraCuda 120 SSD ZA2000CM10003/STZSE014
@@ -5120,6 +5782,8 @@ const drive_settings builtin_knowndrives[] = {
     "-v 241,raw48,Host_Writes_GiB "
     "-v 242,raw48,Host_Reads_GiB "
   },
+=======
+>>>>>>> upstream/master
   { "Seagate Nytro XF1230 SATA SSD", // tested with XF1230-1A0480/ST200354
     "XF1230-1A(0240|0480|0960|1920)",
     "", "",
@@ -5165,8 +5829,13 @@ const drive_settings builtin_knowndrives[] = {
     "-v 242,raw48,Lifetime_Rds_Frm_Hst_GB "
     "-v 243,hex56,Free_Space "
   },
+<<<<<<< HEAD
   { "Seagate IronWolf (Pro) 125 SSDs", // IronWolf_Pro_125_SSD_Product_Manual_100866982_A.pdf
                                        // IronWolf_125_SSD_Product_Manual_100866980_C.pdf
+=======
+  { "Seagate IronWolf (Pro) 125 SSDs", // IronWolf_Pro_125_SSD_Product_Manual_100866982_A.pdf 
+				       // IronWolf_125_SSD_Product_Manual_100866980_C.pdf
+>>>>>>> upstream/master
     "Seagate IronWolf ZA(250|500|1000|2000|4000)NM10002-.*|" // tested with
       // Seagate IronWolf ZA500NM10002-2ZG101/SU3SC013
     "Seagate IronWolfPro ZA(240|480|960|1920|3840)NX10001-.*", // tested with
@@ -5235,6 +5904,7 @@ const drive_settings builtin_knowndrives[] = {
       // WDC WDBNCE2500PNC/X61130WD, WDC WDBNCE0010PNC-WRSN/X41110WD,
       // WDC  WDS200T1R0A-68A4W0/411000WR, WDC  WDS400T1R0A-68A4W0/411000WR
     "WDC WDBNCE(250|500|00[124])0PNC(-.*)?|" // Blue 3D
+<<<<<<< HEAD
     "WDC  ?WDS((120|240|250|400|480|500)G|[124]00T)(1B|2B|1G|2G|[12]R)0[AB](-.*)?|"
       // *B* = Blue, *G* = Green, *2B* = Blue 3D NAND, *[12]R* = Red SA500
     "WD (Blue|Red) SA5[01]0 2\\.5 ((25|50|100)0G|[24]T)B|" // tested with
@@ -5243,6 +5913,11 @@ const drive_settings builtin_knowndrives[] = {
       // WD Red SA500 2.5 4TB/540500WD (printed label: WDS400T2R0A-68CKB0)
     "SanDisk Portable SSD", // tested with SanDisk Portable SSD/UM5004RL
                             // (Sandisk SDSSDE30-2T00, 0x0781:0x55b0)
+=======
+    "WDC  ?WDS((120|240|250|480|500)G|[124]00T)(1B|2B|1G|2G|1R)0[AB](-.*)?|"
+      // *B* = Blue, *G* = Green, *2B* = Blue 3D NAND, *1R* = Red SA500
+    "WD Blue SA510 2.5 1000GB", // tested with WD Blue SA510 2.5 1000GB/52008100
+>>>>>>> upstream/master
     "", "",
   //"-v 5,raw16(raw16),Reallocated_Sector_Ct " // Reassigned Block Count
   //"-v 9,raw24(raw8),Power_On_Hours "
@@ -5372,11 +6047,22 @@ const drive_settings builtin_knowndrives[] = {
     "WDC WD((16|20|25|32|40|50|64|75)00AAKS|1602ABKS|10EALS)-.*",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Western Digital Blue (CMR)", // tested with WDC WD5000AZLX-00K4KA0/80.00A80,
       // WDC WD10EZEX-00RKKA0/80.00A80, WDC WD10EZEX-75M2NA0/01.01A01,
       // WDC WD40EZRZ-00WN9B0/80.00A80, WDC WD80EAZZ-00BKLB0/80.00A80,
       // APPLE HDD WDC WD10EALX-408EA0/07.01D03
     "(APPLE HDD )?WDC WD((25|32|50)00AAKX|5000AZ(LX|RZ)|7500A(AL|ZE)X|[123468]0E(ALX|A[ARZ]Z|Z[AE]X|ZRZ))-.*",
+=======
+  { "Western Digital Blue", // tested with WDC WD5000AZLX-00K4KA0/80.00A80,
+      // WDC WD10EZEX-00RKKA0/80.00A80, WDC WD10EZEX-75M2NA0/01.01A01, WDC WD40EZRZ-00WN9B0/80.00A80,
+      // APPLE HDD WDC WD10EALX-408EA0/07.01D03
+    "(APPLE HDD )?WDC WD((25|32|50)00AAKX|5000AZ(LX|RZ)|7500A(AL|ZE)X|10E(AL|ZE)X|[1-6]0EZRZ)-.*",
+    "", "", ""
+  },
+  { "Western Digital Blue (SMR)", // tested with WDC WD40EZAZ-00SF3B0/80.00A80 (TRIM: zeroed)
+    "WDC WD(20|40|60)EZAZ-.*",
+>>>>>>> upstream/master
     "", "", ""
   },
   { "Western Digital Blue (SMR)", // tested with WDC WD40EZAZ-00SF3B0/80.00A80 (TRIM: zeroed),
@@ -5464,6 +6150,7 @@ const drive_settings builtin_knowndrives[] = {
       // WDC WD1003FZEX-00MK2A0/01.01A01, WDC WD3001FAEX-00MJRA0/01.01L01,
       // WDC WD3003FZEX-00Z4SA0/01.01A01, WDC WD4001FAEX-00MJRA0/01.01L01
       // WDC WD4003FZEX-00Z4SA0/01.01A01, WDC WD5003AZEX-00RKKA0/80.00A80,
+<<<<<<< HEAD
       // WDC WD4004FZWX-00GBGB0/81.H0A81, WDC WD4005FZBX-00K5WB0/01.01A01,
       // WDC WD6003FZBX-00K5WB0/01.01A01, WDC WD6004FZWX-00BKVA0/02.01A02,
       // WDC WD8002FZWX-00BKUA0/02.01A02
@@ -5472,6 +6159,12 @@ const drive_settings builtin_knowndrives[] = {
     //             WD4003FZEX WD5003AZEX WD3003FZEX WD4004FZWX
     //             WD102FZBX  WD101FZBX  WD8002FZBX WD8001FZBX WD8002FZWX
     //             WD6004FZBX WD6003FZBX WD6004FZWX WD4006FZBX WD4005FZBX
+=======
+      // WDC WD4004FZWX-00GBGB0/81.H0A81, WDC WD4005FZBX-00K5WB0/01.01A01
+    "WDC WD(6001|2003|5001|1003|4003|4004|4005|5003|3003|3001)(FZW|FZE|FZB|AZE)X-.*|" // could be
+    // new series  WD6001FZWX WD2003FZEX WD5001FZWX WD1003FZEX
+    //             WD4003FZEX WD5003AZEX WD3003FZEX WD4004FZWX
+>>>>>>> upstream/master
     "WDC WD(4001|3001|2002|1002|5003|7500|5000|3200|2500|1600)(FAE|AZE)X-.*",
     // old series: WD4001FAEX WD3001FAEX WD2002FAEX WD1002FAEX  WD5003AZEX
     "", "", ""
@@ -5547,6 +6240,7 @@ const drive_settings builtin_knowndrives[] = {
     "WDC WD(50|75)00BPKT-.*",
     "", "", ""
   },
+<<<<<<< HEAD
   { "Western Digital Red (CMR)", // tested with // WDC WD80EZZX-11CSGA0/83.H0A03 (My Book 0x1058:0x25ee),
       // WDC WD120EMFZ-11A6JA0/81.00A81 (Easystore 0x1058:0x25fb)
       // WDC WD160EMFZ-11AFXA0/81.00A81,
@@ -5592,9 +6286,46 @@ const drive_settings builtin_knowndrives[] = {
       // WDC WD10PURZ-85U8XY0/01.01A01, WDC WD40PURZ-85TTDY0/80.00A80,
       // WDC WD80PUZX-64NEAY0/80.H0A80, WDC WD121PURP-85B5SY0/82.00A82
     "WDC WD[1234568](0|[0248]1)PU[RZ][PXZ]-.*",
+=======
+  { "Western Digital Red", // tested with WDC WD10EFRX-68JCSN0/01.01A01,
+      // WDC WD10JFCX-68N6GN0/01.01A01, WDC WD30EFRX-68EUZN0/82.00A82,
+      // WDC WD40EFRX-68WT0N0/80.00A80, WDC WD40EFPX-68C6CN0/81.00A81,
+      // WDC WD60EFRX-68MYMN1/82.00A82, WDC WD60EFPX-68C5ZN0/81.00A81,
+      // WDC WD80EFAX-68LHPN0/83.H0A83, WDC WD80EFZX-68UW8N0/83.H0A83,
+      // WDC WD80EZZX-11CSGA0/83.H0A03 (My Book 0x1058:0x25ee),
+      // WDC WD100EFAX-68LHPN0/83.H0A83, WDC WD120EFBX-68B0EN0/85.00A85
+      // WDC WD120EMFZ-11A6JA0/81.00A81 (Easystore 0x1058:0x25fb)
+      // WDC WD160EMFZ-11AFXA0/81.00A81
+      // WDC WD40EFZX-68AWUN0/81.00B81, WDC WD20EFZX-68AWUN0/81.00B81
+      // WDC WD140EFFX-68VBXN0/81.00A81
+    "WDC WD(7500BFCX|10JFCX|[1-6]0EFRX|1(20|01)EFBX|[2-8]0EFPX|[2468]0E[FZ]ZX|80EFZZ|(8|10)0EFAX|1[26]0EMFZ|140E(FF|FG)X)-.*",
+    "", "",
+    "-v 22,raw48,Helium_Level" // WD80EFAX, WD80EFZX, WD100EFAX, WD120EMFZ, WD160EMFZ
+  },
+  { "Western Digital Red (SMR)", // ticket #1313, tested with WDC WD60EFAX-68SHWN0/82.00A82
+    "WDC WD[2346]0EFAX-.*",
+>>>>>>> upstream/master
     "", "", ""
   //"-v 22,raw48,Helium_Level" // WD121PURP-85B5SY0, WD80PUZX-64NEAY0
   },
+<<<<<<< HEAD
+=======
+  { "Western Digital Red Pro", // tested with WDC WD2001FFSX-68JNUN0/81.00A81,
+      // WDC WD6002FFWX-68TZ4N0/83.H0A83, WDC WD101KFBX-68R56N0/83.H0A03,
+      // WDC WD102KFBX-68M95N0/83.00A83
+    "WDC WD([2-68]00[123]FF[BSW]|10[12]KFB)X-.*",
+    "", "",
+    "-v 22,raw48,Helium_Level" // WD101KFBX (but not WD102KFBX)
+  },
+  { "Western Digital Purple (Pro)", // tested with WDC WD40PURX-64GVNY0/80.00A80,
+      // WDC WD40PURZ-85TTDY0/80.00A80
+      // WDC WD80PUZX-64NEAY0/80.H0A80
+      // WDC WD121PURP-85B5SY0/82.00A82
+    "WDC WD[1234568](0|[0248]1)PU[RZ][PXZ]-.*",
+    "", "", 
+    "-v 22,raw48,Helium_Level" // WD121PURP-85B5SY0, WD80PUZX-64NEAY0
+  },
+>>>>>>> upstream/master
   { "Western Digital Gold", // tested with WDC WD1005FBYZ-01YCBB2/RR07,
       // WDC WD1005VBYZ-02RRWB2/RR07, WDC WD2005VBYZ-02RRWB2/RR07
       // WDC WD2005FBYZ-01YCBB2/RR07, WDC WD4002FYYZ-01B7CB0/01.01M02,
@@ -5603,8 +6334,13 @@ const drive_settings builtin_knowndrives[] = {
       // WDC WD102KRYZ-01A5AB0/01.01H01, WDC WD121KRYZ-01W0RB0/01.01H01,
       // WDC WD141KRYZ-01C66B0/01.01H01, WDC WD161KRYZ-01AGBB0/01.01H01
     "WDC WD([12]005[FV]B|4002FY|4003FR|600[23]FR|800[234]FR|([12][02468]1|102)KR)YZ-.*",
+<<<<<<< HEAD
     "", "", ""
   //"-v 22,raw48,Helium_Level" // WD121KRYZ, WD141KRYZ
+=======
+    "", "",
+    "-v 22,raw48,Helium_Level" // WD121KRYZ, WD141KRYZ
+>>>>>>> upstream/master
   },
   { "Western Digital Blue Mobile", // tested with WDC WD5000LPVX-08V0TT2/03.01A03,
       // WDC WD10JPVX-75JC3T0/0301A03,  WDC WD10JPVX-22JC3T0/01.01A01,
@@ -5722,6 +6458,7 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   // Blueendless
   { "USB: Blueendless; Initio",
     "0x0204:0x3639", // U23QC
@@ -5729,6 +6466,8 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+=======
+>>>>>>> upstream/master
   // 0x0350 (?)
   { "USB: ViPowER USB3.0 Storage; ",
     "0x0350:0x0038",
@@ -5743,12 +6482,15 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d usbsunplus"
   },
+<<<<<<< HEAD
   { "USB: HP x911w; ",
     "0x03f0:0x0c5c",
     "",
     "",
      "-d sat"
   },
+=======
+>>>>>>> upstream/master
   { "USB: HP Desktop HD BD07; ", // 2TB
     "0x03f0:0xbd07",
     "",
@@ -5782,7 +6524,24 @@ const drive_settings builtin_knowndrives[] = {
     "0x0411:0x039d",
     "",
     "",
+<<<<<<< HEAD
     "" // smartmontools >= r5168: -d sntasmedia
+=======
+    "-d sat"
+  },
+  { "USB: Buffalo DriveStation HD-LBU2 ; Medialogic MLDU11",
+    "0x0411:0x01ea",
+    "",
+    "",
+    "-d sat"
+  },
+  { "USB: Buffalo; ",
+    "0x0411:0x0(157|1[df]9|1e7|240|251|27e)", // 0x0157: HD-PEU2, 0x01d9: HD-PCTU2 (0x0108), 0x01e7: HD-PNTU3,
+      // 0x01f9: HD-PZU3 (0x0100), 0x0240: HD-PCFU3, 0x0251: HD-PNFU3, 0x027e: HD-LC3
+    "",
+    "",
+    "-d sat"
+>>>>>>> upstream/master
   },
   // LG Electronics
   { "USB: LG Mini HXD5; JMicron",
@@ -5926,19 +6685,25 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   { "USB: Samsung Portable SSD T9; ASMedia ASM2362",
     "0x04e8:0x61fd",
     "", // 0x0100
     "",
     "" // smartmontools >= r5168: -d sntasmedia
   },
+=======
+>>>>>>> upstream/master
   { "USB: Samsung; ",
     "0x04e8:0x8003", // USB3 Adapter from SSD EVO 850 Starter Kit
     "", // 0x0100
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   // Sony
+=======
+>>>>>>> upstream/master
   { "USB: Sony HD-E1; ",
     "0x054c:0x05bf", //  Sony HD-E1B - 1TB USB3.0
     "", // 0x6610
@@ -6152,10 +6917,16 @@ const drive_settings builtin_knowndrives[] = {
     "" // unsupported
   },
   { "USB: ; Genesys Logic",
+<<<<<<< HEAD
     "0x05e3:0x(07(18|3[15]|61)|2013)", // 0x0718(0x0041): Requires '-T permissive',
     "", // 0x0731: Genesys Logic GL3310, Chieftec USB 3.0 2.5" case, 0x0735(0x1003): ?,
     "", // 0x0761(0x2402): Other World Computing SATA Adapter PA023U3,
         // 0x2013(0x0100): Sharkoon QuickPort Duo Clone USB 3.1 Type-C
+=======
+    "0x05e3:0x(0718|073[15]|2013)", // 0x0718(0x0041): Requires '-T permissive',
+    "", // 0x0731: Genesys Logic GL3310, Chieftec USB 3.0 2.5" case, 0x0735(0x1003): ?,
+    "", // 0x2013(0x0100): Sharkoon QuickPort Duo Clone USB 3.1 Type-C
+>>>>>>> upstream/master
     "-d sat"
   },
   // Micron
@@ -6192,15 +6963,33 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   // Jess-Link
+<<<<<<< HEAD
   { "USB: Packard Bell Carbon; SunPlus",
     "0x0766:0x0017",
     "", // 0x0108
     "",
     "-d usbsunplus"
+=======
+  { "USB: Packard Bell Carbon; ",
+    "0x0766:0x0017",
+    "", // 0x0108
+    "",
+    "" // unsupported
+>>>>>>> upstream/master
   },
   // Logitec
   { "USB: Logitec LGB-4BNHUC; ",
     "0x0789:0x0296",
+<<<<<<< HEAD
+=======
+    "",
+    "",
+    "-d sat"
+  },
+  // SanDisk
+  { "USB: SanDisk SDCZ80 Flash Drive; Fujitsu", // ATA ID: SanDisk pSSD
+    "0x0781:0x558[08]",
+>>>>>>> upstream/master
     "",
     "",
     "-d sat"
@@ -6344,6 +7133,7 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat,12"
   },
+<<<<<<< HEAD
   // Kingston
   { "USB: Kingston DataTraveller; ",
     "0x0951:0x177f",
@@ -6357,6 +7147,8 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+=======
+>>>>>>> upstream/master
   // Apricorn
   { "USB: Apricorn; ",
     "0x0984:0x0(040|301|320)", // 0x0040: Apricorn SATA Wire
@@ -6410,6 +7202,7 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   // Realtek
+<<<<<<< HEAD
   { "USB: ; Realtek RTL9201", // USB->SATA
     "0x0bda:0x9201",
     "", // 0xf200
@@ -6428,17 +7221,34 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sntrealtek" // NVMe or ...
   },
+=======
+  { "USB: ; Realtek RTL9210", // USB->PCIe (NVMe)
+    "0x0bda:0x9210",
+    "", // 0x2100
+    "",
+    "-d sntrealtek"
+  },
+  { "USB: ; Realtek RTL9211", // USB->PCIe (NVMe) or SATA
+    "0x(0bda|2eb9):0x9211", // 0x0bda: guessed, 0x2eb9: Sabrent EC-WPTF
+    ".*", // fall through to next entry and report ambiguous result
+    "",
+    "-d sntrealtek" // NVMe or ...
+  },
+>>>>>>> upstream/master
   { "USB: ; Realtek RTL9211",
     "0x(0bda|2eb9):0x9211",
     "",
     "",
     "" // ... SATA (unsupported)
+<<<<<<< HEAD
   },
   { "USB: ; Realtek RTL9220", // USB->PCIe (NVMe) or SATA
     "0x0bda:0x9220",
     "",
     "",
     "-d sntrealtek" // ... SATA (requires `-d sat`)
+=======
+>>>>>>> upstream/master
   },
   // Addonics
   { "USB: Addonics HDMU3; ", // (ticket #609)
@@ -6565,6 +7375,7 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d usbcypress"
   },
+<<<<<<< HEAD
   { "USB: Western Digital; ASMedia ASM236x",
     "0x1058:0x266e", // WD Elements SE SSD
     "",
@@ -6584,6 +7395,13 @@ const drive_settings builtin_knowndrives[] = {
     "", // '-d sat' works with SATA disks and also provides some info from SAS disks.
     "-d sat" // 'smartctl -d scsi -i ...' with a SAS disk times out, disconnects the device
              // and then requires a power cycle.
+=======
+  { "USB: Western Digital; ",
+    "0x1058:0x....",
+    "",
+    "",
+    "-d sat"
+>>>>>>> upstream/master
   },
   // Atech Flash Technology
   { "USB: ; Atech", // Kingston
@@ -6599,13 +7417,27 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+  // Brain Actuated Technologies
+  { "USB: ; Atech", // ICY BOX 2x Raid enclosure IB-RD2253-U31
+    "0x1234:0x5678",
+    "", // 0x0100
+    "",
+    "-d sat"
+  },
   // ADATA
   { "USB: ADATA; ",
+<<<<<<< HEAD
     "0x125f:0xa(1[135]|21|31|3[57]|68|7[56]|8[35])a", // 0xa11a: Classic CH11 1TB, 0xa13a: NH13 1TB,
     "", // 0xa15a: HD710 1TB, 0xa21a: HV610 (0x4504), 0xa31a: HV620 2TB (0x0100),
     "", // 0xa35a: HD650 2TB (0x6503), 0xa37a: Silverstone MS10 M.2 (0x3103), 0xa75a: HD710P 4TB,
         // 0xa68a: SD600, 0xa76a: ED600 (0x0204), 0xa83a: HD330 (0x0100),
         // 0xa85a: HD680 (0x100)
+=======
+    "0x125f:0xa(1[135]|21|31|3[57]|68|7[56]|83)a", // 0xa11a: Classic CH11 1TB, 0xa13a: NH13 1TB,
+    "", // 0xa15a: HD710 1TB, 0xa21a: HV610 (0x4504), 0xa31a: HV620 2TB (0x0100),
+    "", // 0xa35a: HD650 2TB (0x6503), 0xa37a: Silverstone MS10 M.2 (0x3103), 0xa75a: HD710P 4TB,
+        // 0xa68a: SD600, 0xa76a: ED600 (0x0204), 0xa83a: HD330 (0x0100)
+>>>>>>> upstream/master
     "-d sat"
   },
   { "USB: ADATA; Cypress",
@@ -6680,7 +7512,11 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   { "USB: ; JMicron JMS562", // USB2/3+eSATA->2xSATA, USB2/3->3xSATA (RAID0/1)
+=======
+  { "USB: ; JMicron JM562", // USB2/3+eSATA->2xSATA, USB2/3->3xSATA (RAID0/1)
+>>>>>>> upstream/master
     "0x152d:0x0562",
     "", // 0x0106, Fantec QB-X2US3R (ticket #966)
     "", // only ATA IDENTIFY works, SMART commands don't work
@@ -6698,6 +7534,7 @@ const drive_settings builtin_knowndrives[] = {
     "", // 0x0205, 2.05, Mediasonic ProBox HF2-SU3S2 Rev 3 (port multiplier, ticket #504)
     "-d sat"
   },
+<<<<<<< HEAD
   { "USB: ; JMicron",
     "0x152d:0x05(7[789]|80)", // 0x0579 (0x0100): Intenso External
     "", // (0x0100), (0x0201), 0x0577 (0x0210), 0x0578 (0x0204)
@@ -6709,6 +7546,19 @@ const drive_settings builtin_knowndrives[] = {
     "", // 0x4204
     "",
     "-d sntjmicron" // smartmontools >= r5677: -d sntjmicron/sat
+=======
+  { "USB: ; JMicron JMS578", // USB->SATA
+    "0x152d:0x0578",
+    "", // 0x0100, 0x0204
+    "",
+    "-d sat"
+  },
+  { "USB: ; JMicron",
+    "0x152d:0x0579", // Intenso External
+    "", // 0x0100
+    "",
+    "-d sat"
+>>>>>>> upstream/master
   },
   { "USB: ; JMicron JMS583", // USB->PCIe (NVMe)
     "0x152d:0x[0a]583",
@@ -6722,12 +7572,15 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "" // unsupported
   },
+<<<<<<< HEAD
   { "USB: ; JMicron JMS578", // USB->SATA
     "0x152d:0x0901",
     "", // 0x0215: TOPMORE
     "",
     "-d sat"
   },
+=======
+>>>>>>> upstream/master
   { "USB: ; JMicron",
     "0x152d:0x1337",
     "", // 0x0508, Digitus DA-71106
@@ -6741,8 +7594,13 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   { "USB: ; JMicron JMS576", // USB3.1->SATA
+<<<<<<< HEAD
     "0x152d:0x[01a]576", // 0x1576 (0x0204): ICY BOX IB-223U3a-B
     "", // 0xa576 (0x5102): JMicron SY-ENC50104 USB Device
+=======
+    "0x152d:0x[01]576",
+    "", // 0x0204, ICY BOX IB-223U3a-B
+>>>>>>> upstream/master
     "",
     "-d sat"
   },
@@ -6831,9 +7689,15 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   { "USB: ; JMicron",
+<<<<<<< HEAD
     "0x152d:0x(578e|a5(78|80)|b567)",
     "", // 0x578e(0x1402): Intenso Memory Center, 0xa578: Sabrent EC-DFLT,
     "", // 0xa580(0x003): CENMATE 2 Bay RAID Enclosure, 0xb567: Fantec AD-U3S
+=======
+    "0x152d:0x578e",
+    "", // 0x1402, Intenso Memory Center
+    "",
+>>>>>>> upstream/master
     "-d sat"
   },
   { "USB: ; JMicron JMS561", // USB3->2xSATA
@@ -6842,12 +7706,15 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   { "USB: ; JMicron JMS581", // USB3.2->SATA+PCIe (NVMe)
     "0x152d:0xb581",
     "", // 0x4403: Unitek M.2 NVMe/SATA USB adapter
     "",
     "-d sntjmicron" // smartmontools >= r5677: -d sntjmicron/sat
   },
+=======
+>>>>>>> upstream/master
   // PNY
   { "USB: ; PNY",
     "0x154b:0x(5678|8001|f009)",
@@ -6855,6 +7722,7 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   // Pinas
   { "USB: ; Pinas",
     "0x1741:0x1156", // Argon EON, device #2
@@ -6862,6 +7730,8 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+=======
+>>>>>>> upstream/master
   // ASMedia
   { "USB: ; ASMedia ASM236x", // USB->PCIe (NVMe)
     "0x174c:0x236[24]",
@@ -6869,12 +7739,15 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "" // smartmontools >= r5168: -d sntasmedia
   },
+<<<<<<< HEAD
   { "USB: ; ASMedia ASM2464PD", // USB4->PCIe (NVMe) in USB3
     "0x174c:0x2463",
     "",
     "",
     "" // smartmontools >= r5168: -d sntasmedia
   },
+=======
+>>>>>>> upstream/master
   { "USB: ; ASMedia",
     "0x174c:0x....",
     "",
@@ -6884,6 +7757,7 @@ const drive_settings builtin_knowndrives[] = {
   // ASMedia
   { "USB: ; ASMedia ASM1352-PM", // USB3->2xSATA
     "0x174d:0x1352",
+<<<<<<< HEAD
     "", // 0x0100
     "",
     "-d sat"
@@ -6891,6 +7765,8 @@ const drive_settings builtin_knowndrives[] = {
   // Pinas
   { "USB: ; Pinas",
     "0x174e:0x1155", // Argon EON, device #1
+=======
+>>>>>>> upstream/master
     "", // 0x0100
     "",
     "-d sat"
@@ -6952,7 +7828,11 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat,12"
   },
   { "USB: Verbatim External Hard Drive; ", // USB 3.0
+<<<<<<< HEAD
     "0x18a5:0x04(0[08]|46)", // 00=3TB, 08=1TB, 46=500MB Mobile
+=======
+    "0x18a5:0x040[08]", // 0=3TB, 8=1TB
+>>>>>>> upstream/master
     "",
     "",
     "-d sat"
@@ -6978,6 +7858,7 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d usbsunplus"
   },
+<<<<<<< HEAD
   // Actions Microelectronics
   { "USB: ; Actions AM8180", // rebranded Realtek RTL9210
     "0x1de1:0xe101",
@@ -6985,6 +7866,8 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sntrealtek"
   },
+=======
+>>>>>>> upstream/master
   // Kanguru Solutions
   { "USB: ; ", // ICY BOX IB-256WP
     "0x1e1d:0x20a0",
@@ -7000,6 +7883,7 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   // Other World Computing
+<<<<<<< HEAD
   { "USB: OWC; ",
     "0x1e91:0xa([23]a5|4a7)", // 0xa2a5 (0x0100): Envoy Pro, 0xa3a5 (0x0100): Elite Pro Dual,
     "", // 0xa4a7 (0x0100): Mercury Elite Pro Quad
@@ -7011,6 +7895,19 @@ const drive_settings builtin_knowndrives[] = {
     "", // 0x0100
     "",
     "" // smartmontools >= r5168: -d sntasmedia
+=======
+  { "USB: OWC Envoy Pro; ",
+    "0x1e91:0xa2a5",
+    "", // 0x0100
+    "",
+    "-d sat"
+  },
+  { "USB: OWC Mercury Elite Pro Quad; ",
+    "0x1e91:0xa4a7",
+    "", // 0x0100
+    "",
+    "-d sat"
+>>>>>>> upstream/master
   },
   // Innostor
   { "USB: ; Innostor IS611", // USB3->SATA+PATA
@@ -7057,6 +7954,7 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   // Transcend (?)
+<<<<<<< HEAD
   { "USB: Transcend ESD310/400; ",
     "0x2174:0x2[01]00", // 0x2000: TS256GESD400K. 0x2100: TS512GESD310C
     "", // 0x1000, 0x0100
@@ -7067,6 +7965,11 @@ const drive_settings builtin_knowndrives[] = {
   { "USB: ; ",
     "0x235c:0xa006", // Terramaster D4-320 (see also 0x5432:0x235c)
     "", // 0x0100
+=======
+  { "USB: Transcend ESD400; ",
+    "0x2174:0x2000", // TS256GESD400K
+    "", // 0x1000
+>>>>>>> upstream/master
     "",
     "-d sat"
   },
@@ -7077,6 +7980,7 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+<<<<<<< HEAD
   // 0x2bdf (?)
   { "USB: ; ",
     "0x2bdf:0x0580", // HIKSEMI
@@ -7084,6 +7988,8 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "-d sat"
   },
+=======
+>>>>>>> upstream/master
   // InX8 / AKiTiO
   { "USB: AkiTio NT2 U3.1C; ",
     "0x2ce5:0x0014",
@@ -7092,6 +7998,7 @@ const drive_settings builtin_knowndrives[] = {
     "-d sat"
   },
   // 0x2eb9 (?): See Realtek (0x0bda) above
+<<<<<<< HEAD
   // KIOXIA (?)
   { "USB: ; ", // KIOXIA EXCERIA PLUS
     "0x30de:0x1000",
@@ -7113,6 +8020,8 @@ const drive_settings builtin_knowndrives[] = {
     "",
     "" // smartmontools >= r5168: -d sntasmedia
   },
+=======
+>>>>>>> upstream/master
   // Power Quotient International
   { "USB: PQI bridge; ",
     "0x3538:0x0064",
@@ -7125,6 +8034,13 @@ const drive_settings builtin_knowndrives[] = {
     "", // 0x0000
     "",
     "-d sat"
+  },
+  // Power Quotient International
+  { "USB: PQI bridge; ",
+    "0x3538:0x0064",
+    "",
+    "",
+    "-d usbsunplus"
   },
   // Sharkoon
   { "USB: Sharkoon QuickPort XT USB 3.0; ",

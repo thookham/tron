@@ -64,19 +64,6 @@ color 0f
 set SCRIPT_VERSION=1.2.3
 set SCRIPT_DATE=2024-03-09
 
-:: Check for Windows Terminal
-if defined WT_SESSION (
-    color 0c
-    echo.
-    echo  ERROR
-    echo.
-    echo  Tron does not work correctly in Windows Terminal.
-    echo  Please run this script using the legacy Command Prompt ^(cmd.exe^).
-    echo.
-    pause
-    exit /b 1
-)
-
 :: Get in the correct drive (~d0) and path (~dp0). Sometimes needed when run from a network or thumb drive.
 :: We stay in the \resources directory for the rest of the script
 %~d0 2>NUL
@@ -95,17 +82,6 @@ for %%i in (%*) do ( if /i %%i==-h ( call :display_help && exit /b 0) )
 
 :: Parse command-line switches. If used these will override related settings specified in tron_settings.bat.
 call :parse_cmdline_args %*
-
-:: INTERNAL PREP: Check for missing tools and automatically download them
-if /i %DRY_RUN%==no (
-    if not exist "resources\stage_3_disinfect\mbam\mbam-setup.exe" (
-        if not exist "resources\stage_3_disinfect\mbam\mb3-setup*.exe" (
-            echo.
-            echo  ! Missing third-party tools detected. Attempting silent download...
-            call resources\functions\fetch_tools.bat
-        )
-    )
-)
 
 :: Do the pre-run checks and tasks (Admin rights check, temp directory check, SSD check etc)
 call functions\prerun_checks_and_tasks.bat
@@ -332,6 +308,7 @@ echo  *  6 Optimize:  defrag %SystemDrive% (mechanical only, SSDs skipped)      
 echo  *  7 Wrap-up:   collect logs, send email report (if requested)        *
 echo  *  8 Custom:    If present, execute user-provided custom scripts      *
 echo  *                                                                     *
+echo  * \tron\resources\stage_9_manual_tools contains other useful utils    *
 echo  ***********************************************************************
 :: So ugly
 echo  Current settings (run tron.bat -c to dump full config):
@@ -486,7 +463,6 @@ if /i "%SAFE_MODE%"=="yes" (
 echo stage_0_prep>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_0_prep]
 call stage_0_prep\stage_0_prep.bat
-if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 0 failed with error code %ERRORLEVEL%"
 
 
 
@@ -498,7 +474,6 @@ if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 0 failed wit
 echo stage_1_tempclean>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_1_tempclean]
 call stage_1_tempclean\stage_1_tempclean.bat
-if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 1 failed with error code %ERRORLEVEL%"
 
 
 
@@ -511,7 +486,6 @@ echo stage_2_de-bloat>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_2_de-bloat]
 if /i %SKIP_DEBLOAT%==no (
 	call stage_2_de-bloat\stage_2_de-bloat.bat
-	if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 2 failed with error code %ERRORLEVEL%"
 ) else (
 	call functions\log_with_date.bat "! SKIP_DEBLOAT (-sdb) set, skipping Stage 2..."
 )
@@ -527,7 +501,6 @@ echo stage_3_disinfect>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_3_disinfect]
 if /i %SKIP_ANTIVIRUS_SCANS%==no (
 	call stage_3_disinfect\stage_3_disinfect.bat
-	if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 3 failed with error code %ERRORLEVEL%"
 ) else (
 	call functions\log_with_date.bat "! SKIP_ANTIVIRUS_SCANS (-sa) set. Skipping Stage 3 (AdwCleaner, KVRT, MBAM)."
 )
@@ -545,7 +518,6 @@ call :set_cur_date
 echo stage_4_repair>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_4_repair]
 call stage_4_repair\stage_4_repair.bat
-if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 4 failed with error code %ERRORLEVEL%"
 
 :: Set current date again, since Stage 4 can take quite a while to run
 call :set_cur_date
@@ -560,7 +532,6 @@ call :set_cur_date
 echo stage_5_patch>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_5_patch]
 call stage_5_patch\stage_5_patch.bat
-if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 5 failed with error code %ERRORLEVEL%"
 
 
 
@@ -572,7 +543,6 @@ if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 5 failed wit
 echo stage_6_optimize>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_6_optimize]
 call stage_6_optimize\stage_6_optimize.bat
-if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 6 failed with error code %ERRORLEVEL%"
 
 
 
@@ -584,7 +554,6 @@ if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 6 failed wit
 echo stage_7_wrap-up>tron_stage.txt
 title Tron v%TRON_VERSION% [stage_7_wrap-up]
 call stage_7_wrap-up\stage_7_wrap-up.bat
-if /i not %ERRORLEVEL%==0 call functions\log_with_date.bat "! Stage 7 failed with error code %ERRORLEVEL%"
 
 
 
@@ -636,7 +605,7 @@ stage_0_prep\caffeine\caffeine.exe -appexit
 
 :: Notify of Tron completion
 title Tron v%TRON_VERSION% (%TRON_DATE%) [DONE]
-call functions\log_with_date.bat "  TRON RUN COMPLETE."
+call functions\log_with_date.bat "  TRON RUN COMPLETE. Use \resources\stage_9_manual_tools if further action is required."
 
 
 :: Check if auto-reboot was requested
@@ -774,7 +743,8 @@ ENDLOCAL
 :::::::::::::::
 :: Get the date into ISO 8601 standard format (yyyy-mm-dd) so we can use it
 :set_cur_date
-for /f "usebackq delims=" %%a in (`powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd'"`) do set CUR_DATE=%%a
+for /f %%a in ('^<NUL %WMIC% OS GET LocalDateTime ^| %FIND% "."') DO set DTS=%%a
+set CUR_DATE=%DTS:~0,4%-%DTS:~4,2%-%DTS:~6,2%
 goto :eof
 
 :: Parse CLI switches and flip the appropriate variables

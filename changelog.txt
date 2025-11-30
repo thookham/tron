@@ -15,6 +15,16 @@ Version legend:
 
 
 #########################
+#########################
+# v13.2.0 // 2025-11-29 #
+#########################
+  * Major Upgrade
+     + Synced with upstream bmrf/tron (v12.0.8+)
+     + Added support for Windows 10/11 modern builds
+     + Updated all core logic and tools
+     + Working Releases: This fork now provides working binary releases!
+
+#########################
 # v13.1.1 // 2025-11-29 #
 #########################
   * Documentation Overhaul

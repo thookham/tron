@@ -6,8 +6,8 @@
 @echo off
 
 :: Tron Project version and date. These two variables determine the overall project version and date
-set TRON_VERSION=13.1.1
-set TRON_DATE=2025-11-29
+set TRON_VERSION=12.0.7
+set TRON_DATE=2024-03-xx
 
 :: Set window title
 title Tron v%TRON_VERSION% (%TRON_DATE%)
@@ -41,7 +41,8 @@ set REG=%SystemRoot%\System32\reg.exe
 
 
 :: Get the date into ISO 8601 standard format (yyyy-mm-dd)
-for /f "usebackq delims=" %%a in (`powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd'"`) do set CUR_DATE=%%a
+for /f %%a in ('^<NUL %WMIC% OS GET LocalDateTime ^| %FIND% "."') DO set DTS=%%a
+set CUR_DATE=%DTS:~0,4%-%DTS:~4,2%-%DTS:~6,2%
 
 
 :: Get Time Zone name and value
@@ -55,8 +56,8 @@ set RESUME_DETECTED=no
 
 
 :: Detect the version of Windows we're on. This determines a few things later on
-for /f "tokens=2 delims==" %%i in ('wmic os get Caption /value') do set WIN_VER=%%i
-for /f "tokens=2 delims==" %%i in ('wmic os get Version /value') do set WIN_VER_NUM=%%i
+for /f "tokens=3*" %%i IN ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName ^| %FIND% "ProductName"') DO set WIN_VER=%%i %%j
+for /f "tokens=3*" %%i IN ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v CurrentVersion ^| %FIND% "CurrentVersion"') DO set WIN_VER_NUM=%%i
 
 
 :: Detect system language. This determines which string we look for in ipconfig output for determining if we have an active network connection
@@ -134,20 +135,30 @@ if /i %ERRORLEVEL%==0 (
 :: Detect network connection. We assume it's available unless we actively detect it isn't
 :detect_network_connection
 set NETWORK_AVAILABLE=yes
-:: Use ping to check for connectivity (Google DNS)
-ping -n 1 8.8.8.8 >nul 2>&1
-if /i not %ERRORLEVEL%==0 (
-    :: Fallback to checking for any active network adapter via PowerShell if ping fails (e.g. firewall)
-    :: Only run this check if PowerShell is available (Vista+)
-    powershell -command "exit" >nul 2>&1
-    if %errorlevel% equ 0 (
-        powershell -NoProfile -Command "if ((Get-NetAdapter | Where-Object { $_.Status -eq 'Up' }).Count -eq 0) { exit 1 }" >nul 2>&1
-        if /i not %errorlevel%==0 set NETWORK_AVAILABLE=no
-    ) else (
-        :: On XP, if ping failed, we assume no network
-        set NETWORK_AVAILABLE=no
-    )
-)
+:: English
+if %SYSTEM_LANGUAGE%==en %WinDir%\system32\ipconfig /all | %FIND% /i "Subnet Mask" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: English UK
+if %SYSTEM_LANGUAGE%==gb %WinDir%\system32\ipconfig /all | %FIND% /i "Subnet Mask" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: German
+if %SYSTEM_LANGUAGE%==de %WinDir%\system32\ipconfig /all | %FIND% /i "Subnetzmaske" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: Italian
+if %SYSTEM_LANGUAGE%==it %WinDir%\system32\ipconfig /all | %FIND% /i "Subnet Mask" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: French
+if %SYSTEM_LANGUAGE%==fr %WinDir%\system32\ipconfig /all | %FIND% /i "Masque de" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: Spanish
+if %SYSTEM_LANGUAGE%==es %WinDir%\system32\ipconfig /all | %FIND% /i "de subred" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: Turkish
+::if %SYSTEM_LANGUAGE%==fr %WinDir%\system32\ipconfig /all | %FIND% /i "xxxx" >NUL 2>&1
+::if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
+:: Brazilian Portugese
+if %SYSTEM_LANGUAGE%==pb %WinDir%\system32\ipconfig /all | %FIND% /i "de Sub-rede" >NUL 2>&1
+if /i not %ERRORLEVEL%==0 set NETWORK_AVAILABLE=no
 
 
 :: Build USERPROFILES variable which works across ALL versions of Windows for determining location of C:\Users or C:\Documents and Settings
