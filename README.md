@@ -50,6 +50,7 @@ An automated Windows cleanup, disinfection, and maintenance script that runs a c
 - [Email Reports](#email-reports)
 - [Safe Mode](#safe-mode)
 - [Changelog](#changelog)
+- [Development Roadmap](#development-roadmap)
 - [Support](#support)
 - [Related Projects](#related-projects)
 - [License](#license)
@@ -491,6 +492,16 @@ On next run, Tron will ask if you want to resume from where it left off.
 - Maintained working release packaging
 
 See [changelog.txt](changelog.txt) for complete version history.
+
+## Development Roadmap
+
+Tron's future development is planned across three time horizons:
+
+- **Short-term (3-6 months)**: Tool updates, enhanced logging, improved error handling, progress indicators
+- **Medium-term (6-12 months)**: Modular architecture, GUI frontend, configuration file support, advanced telemetry removal
+- **Long-term (12-18 months)**: Plugin system, multi-language support, backup/restore, Linux/macOS porting
+
+See **[ROADMAP.md](ROADMAP.md)** for the complete development roadmap with detailed goals, timelines, and implementation guidance.
 
 ## Support
 
