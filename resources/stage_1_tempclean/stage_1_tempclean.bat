@@ -323,8 +323,7 @@ if /i %DRY_RUN%==no (
 
 :: Stage complete
 call functions\log_with_date.bat "  stage_1_tempclean complete."
-=======
-:: Purpose:       Sub-script containing all commands for Tron's Stage 1: Temp Cleanup stage. Called by tron.bat and returns control when finished
+=======:: Purpose:       Sub-script containing all commands for Tron's Stage 1: Temp Cleanup stage. Called by tron.bat and returns control when finished
 :: Requirements:  1. Administrator access
 ::                2. Safe mode is recommended but not required
 :: Author:        vocatus on reddit.com/r/TronScript ( vocatus.gate at gmail ) // PGP key: 0x07d1490f82a211a2
@@ -548,14 +547,11 @@ call functions\log_with_date.bat "    Saving logs to "%BACKUPS%" first..."
 :: Backup all logs first. Redirect error output to NUL (2>nul) because due to the way WMI formats lists, there is
 :: a trailing blank line which messes up the last iteration of the FOR loop, but we can safely suppress errors from it
 SETLOCAL ENABLEDELAYEDEXPANSION
-if /i %DRY_RUN%==no for /f %%i in ('^<NUL %WMIC% nteventlog where "filename like '%%'" list instance') do %WMIC% nteventlog where "filename like '%%%%i%%'" backupeventlog "%BACKUPS%\%%i.evt" >> "%LOGPATH%\%LOGFILE%" 2>NUL
+if /i %DRY_RUN%==no for /f %%i in ('wevtutil el') do wevtutil epl "%%i" "%BACKUPS%\%%i.evt" >> "%LOGPATH%\%LOGFILE%" 2>NUL
 ENDLOCAL DISABLEDELAYEDEXPANSION
 call functions\log_with_date.bat "    Backups done, now clearing..."
 :: Clear the logs
-if /i %DRY_RUN%==no <NUL %WMIC% nteventlog where "filename like '%%'" cleareventlog >> "%LOGPATH%\%LOGFILE%"
-:: Alternate Vista-and-up only method
-:: if /i %DRY_RUN%==no for /f %%x in ('wevtutil el') do wevtutil cl "%%x" 2>NUL
-
+if /i %DRY_RUN%==no for /f %%x in ('wevtutil el') do wevtutil cl "%%x" >> "%LOGPATH%\%LOGFILE%" 2>NUL
 call functions\log_with_date.bat "   Done."
 :skip_event_log_clear
 
@@ -648,4 +644,3 @@ if /i %DRY_RUN%==no (
 
 :: Stage complete
 call functions\log_with_date.bat "  stage_1_tempclean complete."
->>>>>>> upstream/master

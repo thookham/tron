@@ -18,6 +18,13 @@ Version legend:
 #########################
 #########################
 #########################
+# v13.2.3 // 2025-12-11 #
+#########################
+ ! bugfix:      Fixed merge conflicts in purge_windows_*_telemetry.bat and stage_5_patch.bat
+ * core:        Replaced deprecated WMIC commands in telemetry, patch, and repair scripts with PowerShell equivalents
+ * core:        Modernized repair_wmi.bat checks
+
+#########################
 # v13.2.2 // 2025-12-11 #
 #########################
  + infra:       Added GitHub Actions workflow for automated release builds

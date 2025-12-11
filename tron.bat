@@ -3,7 +3,9 @@
 ::                  Program:      "That's Tron. He fights for the User."
 :: Requirements:  Run from the current users desktop. Run as Administrator.
 :: Author:        vocatus on reddit.com/r/TronScript
-:: Version:       1.2.3 - Remove all code related to Sophos as it's deprecated
+:: Version:       1.3.0 - Remove all dependencies on WMIC (deprecated) and replace with PowerShell
+::                      - Fix git merge conflicts in stage_1_tempclean.bat and stage_6_optimize.bat
+::                1.2.3 - Remove all code related to Sophos as it's deprecated
 ::                1.2.2 + Add references and variables for new AdwCleaner job
 ::                1.2.1 - Remove references to Adobe Flash
 ::                1.2.0 / Change REMOVE_MALWAREBYTES to PRESERVE_MALWAREBYTES (-pmb)
@@ -61,8 +63,8 @@ SETLOCAL
 :: PREP AND CHECKS ::
 :::::::::::::::::::::
 color 0f
-set SCRIPT_VERSION=1.2.3
-set SCRIPT_DATE=2024-03-09
+set SCRIPT_VERSION=1.3.0
+set SCRIPT_DATE=2025-12-11
 
 :: Get in the correct drive (~d0) and path (~dp0). Sometimes needed when run from a network or thumb drive.
 :: We stay in the \resources directory for the rest of the script
@@ -217,7 +219,6 @@ if /i %CONFIG_DUMP%==yes (
 	echo    RESUME_STAGE:           %RESUME_STAGE%
 	echo    WIN_VER:                !WIN_VER!
 	echo    WIN_VER_NUM:            %WIN_VER_NUM%
-	echo    WMIC:                   %WMIC%
 	ENDLOCAL DISABLEDELAYEDEXPANSION
 	exit /b 0
 )
@@ -743,8 +744,8 @@ ENDLOCAL
 :::::::::::::::
 :: Get the date into ISO 8601 standard format (yyyy-mm-dd) so we can use it
 :set_cur_date
-for /f %%a in ('^<NUL %WMIC% OS GET LocalDateTime ^| %FIND% "."') DO set DTS=%%a
-set CUR_DATE=%DTS:~0,4%-%DTS:~4,2%-%DTS:~6,2%
+for /f %%a in ('powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd'"') do set DTS=%%a
+set CUR_DATE=%DTS%
 goto :eof
 
 :: Parse CLI switches and flip the appropriate variables

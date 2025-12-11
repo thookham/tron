@@ -6,8 +6,8 @@
 @echo off
 
 :: Tron Project version and date. These two variables determine the overall project version and date
-set TRON_VERSION=12.0.7
-set TRON_DATE=2024-03-xx
+set TRON_VERSION=13.2.3
+set TRON_DATE=2025-12-11
 
 :: Set window title
 title Tron v%TRON_VERSION% (%TRON_DATE%)
@@ -34,7 +34,6 @@ set WIN_VER_NUM=undetected
 
 
 :: Force path to some system utilities in case the system PATH is messed up
-set WMIC=%SystemRoot%\System32\wbem\wmic.exe
 set FIND=%SystemRoot%\System32\find.exe
 set FINDSTR=%SystemRoot%\System32\findstr.exe
 set REG=%SystemRoot%\System32\reg.exe

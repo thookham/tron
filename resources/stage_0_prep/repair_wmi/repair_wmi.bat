@@ -35,7 +35,7 @@ set ATTEMPT=0
 
 :BEGINCHK
 echo CHECKING WMI... ATTEMPT:%ATTEMPT%...
-wmic computersystem get name
+powershell -NoProfile -Command "try { Get-CimInstance -ClassName Win32_ComputerSystem -ErrorAction Stop | Out-Null } catch { exit 1 }"
 IF %ERRORLEVEL%==0 goto SUCCESS
 IF %ATTEMPT%==0 GOTO REPAIR1
 IF %ATTEMPT%==1 GOTO REPAIR2
