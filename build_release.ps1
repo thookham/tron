@@ -169,4 +169,14 @@ elseif ($7zPath -and -not (Test-Path $7zSfxPath)) {
 # Cleanup
 Remove-Item $StageDir -Recurse -Force
 
+# --- Generate Checksums ---
+$ChecksumScript = Join-Path $PSScriptRoot "Generate-Checksums.ps1"
+if (Test-Path $ChecksumScript) {
+    Write-Host "Generating checksums..." -ForegroundColor Cyan
+    & $ChecksumScript -Path $OutputDir
+}
+else {
+    Write-Warning "Generate-Checksums.ps1 not found. Skipping checksum generation."
+}
+
 Write-Host "Build complete. Artifacts in: $OutputDir" -ForegroundColor Cyan
