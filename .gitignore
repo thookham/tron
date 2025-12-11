@@ -1,2 +1,5 @@
 
 *.log
+
+releases/*.zip
+releases/*.exe

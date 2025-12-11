@@ -2,7 +2,7 @@
 ::                  Kevin Flynn:  "Who's that guy?"
 ::                  Program:      "That's Tron. He fights for the User."
 :: Requirements:  Run from the current users desktop. Run as Administrator.
-:: Author:        vocatus on reddit.com/r/TronScript ( vocatus.gate at gmail ) // PGP key: 0x07d1490f82a211a2
+:: Author:        vocatus on reddit.com/r/TronScript
 :: Version:       1.2.3 - Remove all code related to Sophos as it's deprecated
 ::                1.2.2 + Add references and variables for new AdwCleaner job
 ::                1.2.1 - Remove references to Adobe Flash
