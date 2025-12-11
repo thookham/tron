@@ -49,8 +49,8 @@ if ($AIO) {
     exit 0
 }
 
-$Version = "13.2.0"
-$ReleaseDate = "2025-11-29"
+$Version = "13.2.3"
+$ReleaseDate = "2025-12-11"
 $OutputDir = Join-Path $PSScriptRoot "releases"
 $SourceFiles = @("tron.bat", "resources", "README.md", "LICENSE", "changelog.txt")
 
