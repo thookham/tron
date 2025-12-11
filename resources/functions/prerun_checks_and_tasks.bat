@@ -150,7 +150,7 @@ pushd stage_6_optimize\defrag\
 
 	:: Look for known problem codes and set skip_defrag if so
 	set WARNING_LIST=(Error Degraded Unknown PredFail Service Stressed NonRecover)
-	for /f %%i in ('^<NUL %WMIC% diskdrive get status') do echo %%i|%FINDSTR% /i "%WARNING_LIST:~1,-1%" && (
+	for /f %%i in ('powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object -ExpandProperty Status"') do echo %%i|%FINDSTR% /i "%WARNING_LIST:~1,-1%" && (
 		set SMART_PROBLEM_CODE=%%i
 		set SKIP_DEFRAG=yes_disk_smart_problem_code
 		set WARNINGS_DETECTED=yes_disk_smart_problem_code
