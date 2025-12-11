@@ -41,12 +41,12 @@ set REG=%SystemRoot%\System32\reg.exe
 
 
 :: Get the date into ISO 8601 standard format (yyyy-mm-dd)
-for /f %%a in ('^<NUL %WMIC% OS GET LocalDateTime ^| %FIND% "."') DO set DTS=%%a
-set CUR_DATE=%DTS:~0,4%-%DTS:~4,2%-%DTS:~6,2%
+for /f "usebackq delims=" %%a in (`powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd'"`) do set CUR_DATE=%%a
 
 
 :: Get Time Zone name and value
-for /f "USEBACKQ skip=1 delims=" %%i IN (`^<NUL %WMIC% timezone get StandardName ^|findstr /b /r [a-z]`) DO set TIME_ZONE_NAME=%%i
+:: Get Time Zone name and value
+for /f "usebackq delims=" %%i IN (`powershell -NoProfile -Command "Get-CimInstance Win32_TimeZone | Select-Object -ExpandProperty StandardName"`) DO set TIME_ZONE_NAME=%%i
 
 
 :: Resume-related stuff (resuming from an interrupted run)
