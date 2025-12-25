@@ -1,0 +1,24 @@
+{
+    "LogPath": "C:\\Logs\\Tron\\neotron.log",
+    "AutoRebootDelay": 15,
+    "Stages": {
+        "Prep": {
+            "Enabled": true
+        },
+        "TempClean": {
+            "Enabled": true
+        },
+        "Debloat": {
+            "Enabled": true
+        },
+        "Disinfect": {
+            "Enabled": true
+        },
+        "Repair": {
+            "Enabled": true
+        },
+        "Optimize": {
+            "Enabled": true
+        }
+    }
+}

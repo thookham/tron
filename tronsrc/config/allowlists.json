@@ -1,0 +1,10 @@
+{
+    "ProtectedApps": [
+        "Microsoft.WindowsCalculator",
+        "Microsoft.WindowsStore",
+        "Microsoft.Windows.Photos",
+        "Microsoft.WindowsCamera",
+        "Microsoft.WindowsAlarms",
+        "Microsoft.MicrosoftStickyNotes"
+    ]
+}
